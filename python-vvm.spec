@@ -6,7 +6,7 @@ Summary:       Vyper version manager
 License:       MIT
 URL:           https://github.com/vyperlang/vvm
 Source0:       %{pypi_source vvm}
-Patch1:        python3-vvm-0001-Switch-to-built-in-setuptols-functionality.patch
+Patch1:        python-vvm-0001-Switch-to-built-in-setuptols-functionality.patch
 BuildRequires: black
 BuildRequires: bumpversion
 BuildRequires: python3-flake8
