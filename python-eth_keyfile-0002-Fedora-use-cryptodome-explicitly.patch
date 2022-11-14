@@ -1,0 +1,26 @@
+From b4537414b9c4104a4bb5536ab0543e00c9c2b29e Mon Sep 17 00:00:00 2001
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Tue, 1 Nov 2022 10:42:37 +0100
+Subject: [PATCH] Fedora: use cryptodome explicitly
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/eth_keyfile/keyfile.py b/eth_keyfile/keyfile.py
+index b621ae4..c6912f2 100644
+--- a/eth_keyfile/keyfile.py
++++ b/eth_keyfile/keyfile.py
+@@ -3,10 +3,10 @@ import hmac
+ import json
+ import uuid
+ 
+-from Crypto import Random
+-from Crypto.Cipher import AES
+-from Crypto.Protocol.KDF import scrypt
+-from Crypto.Util import Counter
++from Cryptodome import Random
++from Cryptodome.Cipher import AES
++from Cryptodome.Protocol.KDF import scrypt
++from Cryptodome.Util import Counter
+ 
+ from eth_keys import keys
+ 
