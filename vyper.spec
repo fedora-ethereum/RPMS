@@ -11,9 +11,10 @@ BuildRequires:	git
 BuildRequires:	python3-asttokens
 BuildRequires:	python3-cached_property
 BuildRequires:	python3-importlib-metadata
-BuildRequires:	python3-pycryptodomex
 BuildRequires:	python3-pip
+BuildRequires:	python3-pycryptodomex
 BuildRequires:	python3-pytest-runner
+BuildRequires:	python3-rpm-generators
 BuildRequires:	python3-rpm-macros
 BuildRequires:	python3-semantic_version
 BuildRequires:	python3-setuptools
