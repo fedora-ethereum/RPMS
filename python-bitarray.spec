@@ -5,6 +5,8 @@ Summary:       Efficient arrays of booleans for Python
 License:       Python-2.0.1
 URL:           https://github.com/ilanschnell/bitarray
 Source0:       %{pypi_source bitarray}
+BuildRequires: gcc
+BuildRequires: python3-devel
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
