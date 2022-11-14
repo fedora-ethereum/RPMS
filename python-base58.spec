@@ -6,6 +6,8 @@ Summary:       Base58 and Base58Check implementation
 License:       MIT
 URL:           https://github.com/keis/base58
 Source0:       %{pypi_source base58}
+BuildRequires: python3-rpm-generators
+BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 %{?python_provide:%python_provide python3-base58}
 
