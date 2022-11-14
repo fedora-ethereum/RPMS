@@ -33,7 +33,7 @@ A tool for exploring the solc abstract syntax tree.
 #%%doc docs
 %doc README.md
 # FIXME conflicts with python-solcast
-%python3_sitelib}/solcast/*
+%{python3_sitelib}/solcast/*
 %{python3_sitelib}/py_solc_ast-*.egg-info/
 
 %changelog
