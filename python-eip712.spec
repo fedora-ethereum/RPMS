@@ -13,6 +13,7 @@ BuildRequires: python-eth_utils
 BuildRequires: python-hexbytes
 BuildRequires: python3-hypothesis
 BuildRequires: python3-myst-parser
+BuildRequires: python3-pip
 BuildRequires: python3-pycryptodomex
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
@@ -20,10 +21,12 @@ BuildRequires: python3-pytest-xdist
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
+BuildRequires: python3-setuptools_scm
 BuildRequires: python3-sphinx
 BuildRequires: python3-sphinx-click
 BuildRequires: python3-sphinx_rtd_theme
 #BuildRequires: python3-sphinxcontrib-napoleon
+BuildRequires: python3-wheel
 BuildRequires: sed
 %{?python_provide:%python_provide python3-eip712}
 
