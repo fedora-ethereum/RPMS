@@ -8,10 +8,13 @@ URL:           https://github.com/multiformats/py-multicodec
 Source0:       %{pypi_source py-multicodec}
 BuildRequires: python-morphys
 BuildRequires: python-varint
+BuildRequires: python3-pip
+BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 BuildRequires: python3-six
+BuildRequires: python3-wheel
 %{?python_provide:%python_provide python3-multicodec}
 
 %description
