@@ -10,9 +10,11 @@ BuildRequires: libsecp256k1-devel
 BuildRequires: python3-asn1crypto
 BuildRequires: python3-cffi
 BuildRequires: python3-devel
+BuildRequires: python3-pip
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
+BuildRequires: python3-wheel
 %{?python_provide:%python_provide python3-coincurve}
 
 %description
