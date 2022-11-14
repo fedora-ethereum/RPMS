@@ -5,7 +5,7 @@ BuildArch:     noarch
 Summary:       Python types for type hinting commonly used ethereum types
 License:       MIT
 URL:           https://github.com/ethereum/eth-typing
-Source0:       https://files.pythonhosted.org/packages/source/e/eth_typing/eth-typing-%{version}.tar.gz
+Source0:       %{pypi_source eth-typing}
 BuildRequires: python3-jinja2
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-xdist
