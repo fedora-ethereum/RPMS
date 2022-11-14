@@ -7,6 +7,7 @@ License:	ASL 2.0
 URL:		https://vyperlang.org
 Source0:	%{pypi_source vyper}
 Patch1:		vyper-0001-Use-Cryptodome.patch
+BuildRequires:	git
 BuildRequires:	python3-asttokens
 BuildRequires:	python3-cached_property
 BuildRequires:	python3-importlib-metadata
@@ -27,6 +28,9 @@ Pythonic Smart Contract Language for the EVM.
 sed -i -e "	s,pycryptodome>=3.5.1\,<4,pycryptodomex>=3.5.1,g;
 		s,semantic-version>=2.10\,<3,semantic-version>=2.8\,<3,g;
 		s,asttokens==2.0.5,asttokens>=2.0.5,g" setup.py
+# v0.3.7 == 6020b8bbf66b062d299d87bc7e4eddc4c9d1c157
+echo "6020b8bb" > "./vyper_git_commithash.txt"
+
 
 %build
 %py3_build
