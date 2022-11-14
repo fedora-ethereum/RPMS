@@ -1,0 +1,41 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Tue, 1 Nov 2022 09:19:33 +0100
+Subject: [PATCH] Switch to built-in setuptools functionality
+
+Looks like setuptools-markdown is deprecated in favor of a built-in
+setuptools functionality. Worse is that setuptools_markdown isn't
+compatible with a recent versions of a pypandoc library. Let's just drop
+it.
+
+See also man-group/pytest-plugins#87.
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/setup.py b/setup.py
+index 1055fb1..1981206 100755
+--- a/setup.py
++++ b/setup.py
+@@ -40,19 +40,21 @@ extras_require['dev'] = (
+     extras_require['doc']
+ )
+ 
++with open('README.md', encoding="utf-8") as f:
++    long_description = f.read()
+ 
+ setup(
+     name='rlp',
+     # *IMPORTANT*: Don't manually change the version here. See README for more.
+     version='3.0.0',
+     description="A package for Recursive Length Prefix encoding and decoding",
+-    long_description_markdown_filename='README.md',
++    long_description=long_description,
++    long_description_content_type="text/markdown",
+     author="jnnk",
+     author_email='jnnknnj@gmail.com',
+     url='https://github.com/ethereum/pyrlp',
+     packages=find_packages(exclude=["tests", "tests.*"]),
+     include_package_data=True,
+-    setup_requires=['setuptools-markdown'],
+     install_requires=[
+         "eth-utils>=2.0.0,<3",
+     ],
