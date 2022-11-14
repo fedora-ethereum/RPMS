@@ -9,6 +9,7 @@ Source0:       %{pypi_source py-multibase}
 BuildRequires: python-baseconv
 BuildRequires: python-morphys
 BuildRequires: python3-pip
+BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
