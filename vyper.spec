@@ -15,6 +15,7 @@ BuildRequires:	python3-pycryptodomex
 BuildRequires:	python3-rpm-macros
 BuildRequires:	python3-semantic_version
 BuildRequires:	python3-setuptools
+BuildRequires:	python3-setuptools_scm
 BuildRequires:	python3-wheel
 BuildRequires:	sed
 %{?python_provide:%python_provide python3-vyper}
@@ -29,7 +30,7 @@ sed -i -e "	s,pycryptodome>=3.5.1\,<4,pycryptodomex>=3.5.1,g;
 		s,semantic-version>=2.10\,<3,semantic-version>=2.8\,<3,g;
 		s,asttokens==2.0.5,asttokens>=2.0.5,g" setup.py
 # v0.3.7 == 6020b8bbf66b062d299d87bc7e4eddc4c9d1c157
-echo "6020b8bb" > "./vyper_git_commithash.txt"
+# echo "6020b8bb" > "./vyper_git_commithash.txt"
 
 
 %build
