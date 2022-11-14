@@ -11,9 +11,12 @@ BuildRequires: python-cid
 BuildRequires: python-multicodec
 BuildRequires: python-varint
 BuildRequires: python3-netaddr
+BuildRequires: python3-pip
+BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
+BuildRequires: python3-wheel
 %{?python_provide:%python_provide python3-multiaddr}
 
 %description
