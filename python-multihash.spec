@@ -9,10 +9,12 @@ Source0:       %{pypi_source py-multihash}
 BuildRequires: python-base58
 BuildRequires: python-morphys
 BuildRequires: python-varint
+BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 BuildRequires: python3-six
+BuildRequires: python3-wheel
 %{?python_provide:%python_provide python3-multihash}
 
 %description
