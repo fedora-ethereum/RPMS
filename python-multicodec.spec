@@ -6,6 +6,7 @@ Summary:       Multicodec implementation in Python
 License:       MIT
 URL:           https://github.com/multiformats/py-multicodec
 Source0:       %{pypi_source py-multicodec}
+Patch1:        python-multicodec-0001-Fix-issues-with-py.test.patch
 BuildRequires: python-morphys
 BuildRequires: python-varint
 BuildRequires: python3-pip
