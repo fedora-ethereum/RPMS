@@ -4,7 +4,7 @@ Release:       %autorelease
 BuildArch:     noarch
 Summary:       The python RLP serialization library
 License:       MIT
-URL:           https://github.com/ilanschnell/rlp
+URL:           https://github.com/ethereum/pyrlp
 Source0:       %{pypi_source rlp}
 Patch1:        python-rlp-0001-Switch-to-built-in-setuptools-functionality.patch
 BuildRequires: python-eth_utils
@@ -31,7 +31,7 @@ A Python implementation of Recursive Length Prefix encoding (RLP).
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
