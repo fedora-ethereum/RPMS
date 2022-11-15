@@ -22,10 +22,8 @@ BuildRequires: tox
 %description
 Python `bytes` subclass that decodes hex, with a readable console output.
 
-
 %prep
 %autosetup -p1 -n hexbytes-%{version}
-
 
 %build
 %py3_build
