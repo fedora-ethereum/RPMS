@@ -6,7 +6,7 @@ Summary:       A tool for exploring the solc abstract syntax tree
 License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/py-solc-ast
 Source0:       %{pypi_source py-solc-ast}
-BuildRequires: python-solcast
+BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
@@ -26,13 +26,13 @@ A tool for exploring the solc abstract syntax tree.
 
 
 %check
-#%%pytest tests/
+%pytest
 
 %files
 #%%license LICENSE
 #%%doc docs
 %doc README.md
-# FIXME conflicts with python-solcast
+# FIXME conflicts with solcast-py
 %{python3_sitelib}/solcast/*
 %{python3_sitelib}/py_solc_ast-*.egg-info/
 
