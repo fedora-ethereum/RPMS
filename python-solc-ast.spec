@@ -7,6 +7,8 @@ License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/py-solc-ast
 Source0:       %{pypi_source py-solc-ast}
 BuildRequires: python3-pytest
+# FIXME not in the setup.cfg
+BuildRequires: python3-pytest-cov
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
