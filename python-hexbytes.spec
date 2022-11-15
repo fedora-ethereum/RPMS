@@ -32,7 +32,8 @@ Python `bytes` subclass that decodes hex, with a readable console output.
 %py3_install
 
 %check
-%pytest
+# FIXME - no pytest tests
+#%%pytest
 
 %files
 %license LICENSE
