@@ -10,6 +10,7 @@ BuildRequires: python-base58
 BuildRequires: python-cid
 BuildRequires: python-multicodec
 BuildRequires: python-varint
+BuildRequires: python3-idna
 BuildRequires: python3-netaddr
 BuildRequires: python3-pip
 BuildRequires: python3-pytest
