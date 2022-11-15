@@ -33,7 +33,7 @@ A python client library for the IPFS API.
 %license LICENSE
 %doc README.md RELEASE.md
 %{python3_sitelib}/ipfshttpclient/
-%{python3_sitelib}/ipfshttpclient-*.egg-info/
+%{python3_sitelib}/ipfshttpclient-*.egg-info
 
 %changelog
 %autochangelog

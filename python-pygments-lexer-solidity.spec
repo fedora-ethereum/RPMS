@@ -23,7 +23,6 @@ Solidity lexer for Pygments.
 
 %install
 %py3_install
-find %{buildroot}
 
 %check
 #%%pytest
@@ -32,7 +31,7 @@ find %{buildroot}
 %license LICENSE.txt
 %doc README.rst
 %{python3_sitelib}/pygments_lexer_solidity/
-%{python3_sitelib}/pygments_lexer_solidity-*.egg-info/
+%{python3_sitelib}/pygments_lexer_solidity-*.egg-info
 
 %changelog
 %autochangelog
