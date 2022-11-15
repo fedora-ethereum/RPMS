@@ -23,6 +23,9 @@ A basic varint implementation in python.
 %install
 %py3_install
 
+%check
+# FIXME - no tests
+
 %files
 %{python3_sitelib}/__pycache__/*
 %{python3_sitelib}/varint-*.egg-info/
