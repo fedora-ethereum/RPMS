@@ -6,6 +6,7 @@ Summary:       An enhanced, tiny reimplementation of dataclasses
 License:       MPL 2.0
 URL:           https://github.com/biqqles/dataclassy
 Source0:       %{pypi_source dataclassy}
+BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
@@ -28,7 +29,7 @@ than dataclasses, while retaining a familiar interface.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE.md
