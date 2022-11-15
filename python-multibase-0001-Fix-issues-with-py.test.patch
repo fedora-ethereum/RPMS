@@ -21,8 +21,3 @@ index 1123424..d2ca88c 100644
  	pragma: no cover
  	def __repr__
  	if self.debug:
-@@ -34,4 +34,3 @@ exclude_lines =
- 	raise NotImplementedError
- 	if 0:
- 	if __name__ == .__main__.:
--
