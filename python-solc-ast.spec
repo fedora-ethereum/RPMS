@@ -12,6 +12,7 @@ BuildRequires: python3-pytest-cov
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
+BuildRequires: tox
 %{?python_provide:%python_provide python3-solc-ast}
 
 %description
@@ -26,9 +27,10 @@ A tool for exploring the solc abstract syntax tree.
 %install
 %py3_install
 
-
 %check
+# FIXME - only coverage
 %pytest
+tox
 
 %files
 #%%license LICENSE
