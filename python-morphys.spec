@@ -27,7 +27,6 @@ Smart conversions between unicode and bytes types for common cases in python.
 
 %check
 %python3 ./tests.py
-#%%pytest
 
 %files
 %license LICENSE.txt
