@@ -23,6 +23,9 @@ A basic baseconv implementation in python.
 %install
 %py3_install
 
+%check
+# FIXME - no tests
+
 %files
 %license LICENSE
 %doc README.rst

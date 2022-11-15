@@ -27,6 +27,7 @@ Efficient arrays of booleans for Python.
 %py3_install
 
 %check
+# FIXME - no pytest tests
 #%%pytest
 
 %files

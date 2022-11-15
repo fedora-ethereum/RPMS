@@ -7,6 +7,7 @@ URL:           https://github.com/amitdev/lru-dict
 Source0:       %{pypi_source lru-dict}
 BuildRequires: gcc
 BuildRequires: python3-devel
+BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
@@ -25,7 +26,7 @@ A fast and memory efficient LRU cache.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
