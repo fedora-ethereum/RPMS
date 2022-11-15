@@ -9,6 +9,7 @@ Source0:       %{pypi_source py-multicodec}
 BuildRequires: python-morphys
 BuildRequires: python-varint
 BuildRequires: python3-pip
+BuildRequires: python3-pytest
 BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
@@ -30,7 +31,7 @@ Multicodec implementation in Python.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
