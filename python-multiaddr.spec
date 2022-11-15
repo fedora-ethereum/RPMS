@@ -12,6 +12,7 @@ BuildRequires: python-multicodec
 BuildRequires: python-varint
 BuildRequires: python3-netaddr
 BuildRequires: python3-pip
+BuildRequires: python3-pytest
 BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
@@ -32,7 +33,7 @@ Multiaddr implementation in Python.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %doc AUTHORS HISTORY.rst README.rst
