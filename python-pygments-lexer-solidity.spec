@@ -23,6 +23,7 @@ Solidity lexer for Pygments.
 
 %install
 %py3_install
+find %{buildroot}
 
 %check
 #%%pytest
