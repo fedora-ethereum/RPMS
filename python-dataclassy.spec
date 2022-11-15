@@ -28,7 +28,8 @@ than dataclasses, while retaining a familiar interface.
 %py3_install
 
 %check
-%python3 test.py
+# FIXME - n/a in pypi
+#%%python3 test.py
 
 %files
 %license LICENSE.md
