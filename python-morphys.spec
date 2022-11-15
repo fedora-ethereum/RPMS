@@ -26,6 +26,7 @@ Smart conversions between unicode and bytes types for common cases in python.
 %py3_install
 
 %check
+%python3 ./tests.py
 #%%pytest
 
 %files
