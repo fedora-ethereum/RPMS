@@ -9,6 +9,7 @@ Source0:       %{pypi_source py-multihash}
 BuildRequires: python-base58
 BuildRequires: python-morphys
 BuildRequires: python-varint
+BuildRequires: python3-pytest
 BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
@@ -30,7 +31,7 @@ Multihash implementation in Python.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
