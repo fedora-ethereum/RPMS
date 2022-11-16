@@ -11,6 +11,7 @@ BuildRequires: python-morphys
 BuildRequires: python-multibase
 BuildRequires: python-multicodec
 BuildRequires: python-multihash
+BuildRequires: python3-pytest
 BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
@@ -35,7 +36,7 @@ sed -i -e "s,1.0.2\,<2.0,1.0.2,g;s,0.2.0\,<1.0.0,0.2.0,g" setup.py
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
