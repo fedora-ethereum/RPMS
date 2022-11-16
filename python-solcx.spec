@@ -44,6 +44,7 @@ Python wrapper and version management tool for the solc Solidity compiler.
 
 %check
 #%%pytest tests/
+tox
 
 %files
 %license LICENSE
