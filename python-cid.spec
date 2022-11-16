@@ -11,6 +11,7 @@ BuildRequires: python-morphys
 BuildRequires: python-multibase
 BuildRequires: python-multicodec
 BuildRequires: python-multihash
+BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
