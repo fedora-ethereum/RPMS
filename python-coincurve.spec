@@ -32,6 +32,7 @@ Cross-platform Python bindings for libsecp256k1.
 
 %check
 #%%pytest
+tox
 
 %files
 #%%license LICENSE-MIT LICENSE-APACHE
