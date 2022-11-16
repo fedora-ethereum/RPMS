@@ -44,7 +44,7 @@ sed -i -e "s,pycryptodome,pycryptodomex,g" setup.py
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
