@@ -21,6 +21,7 @@ BuildRequires:	python3-setuptools
 BuildRequires:	python3-setuptools_scm
 BuildRequires:	python3-wheel
 BuildRequires:	sed
+BuildRequires:	tox
 %{?python_provide:%python_provide python3-vyper}
 
 
@@ -45,6 +46,7 @@ rm -f %{buildroot}/usr/vyper_git_commithash.txt
 
 %check
 #%%pytest
+tox -r -- --reruns 10 --reruns-delay 1 -r aR tests/
 
 %files
 %license LICENSE
