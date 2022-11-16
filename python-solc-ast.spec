@@ -30,7 +30,8 @@ A tool for exploring the solc abstract syntax tree.
 %check
 # FIXME - only coverage
 #%%pytest
-tox
+# FIXME - no Tox config available
+# tox
 
 %files
 #%%license LICENSE
