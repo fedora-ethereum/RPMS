@@ -1,4 +1,3 @@
-From b4537414b9c4104a4bb5536ab0543e00c9c2b29e Mon Sep 17 00:00:00 2001
 From: Peter Lemenkov <lemenkov@gmail.com>
 Date: Tue, 1 Nov 2022 10:42:37 +0100
 Subject: [PATCH] Fedora: use cryptodome explicitly

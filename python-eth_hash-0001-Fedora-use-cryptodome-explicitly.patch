@@ -1,0 +1,54 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 16 Nov 2022 19:25:05 +0100
+Subject: [PATCH] Fedora: use cryptodome explicitly
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/eth_hash/backends/pycryptodome.py b/eth_hash/backends/pycryptodome.py
+index 75eba0a..6794795 100644
+--- a/eth_hash/backends/pycryptodome.py
++++ b/eth_hash/backends/pycryptodome.py
+@@ -2,7 +2,7 @@ from typing import (
+     Union,
+ )
+ 
+-from Crypto.Hash import (
++from Cryptodome.Hash import (
+     keccak,
+ )
+ 
+diff --git a/tests/core/test_import.py b/tests/core/test_import.py
+index 7bf9bbe..491ac77 100644
+--- a/tests/core/test_import.py
++++ b/tests/core/test_import.py
+@@ -24,7 +24,7 @@ def test_import_auto_empty_crash(monkeypatch):
+     clean_module("eth_hash.auto")
+     from eth_hash.auto import keccak
+ 
+-    with mock.patch.dict("sys.modules", {"sha3": None, "Crypto.Hash": None}):
++    with mock.patch.dict("sys.modules", {"sha3": None, "Cryptodome.Hash": None}):
+         with pytest.raises(
+             ImportError, match="None of these hashing backends are installed"
+         ):
+@@ -48,7 +48,7 @@ def test_load_by_env(monkeypatch, backend):
+     from eth_hash.auto import keccak
+ 
+     monkeypatch.setenv("ETH_HASH_BACKEND", backend)
+-    with mock.patch.dict("sys.modules", {"sha3": None, "Crypto.Hash": None}):
++    with mock.patch.dict("sys.modules", {"sha3": None, "Cryptodome..Hash": None}):
+         with pytest.raises(ImportError) as excinfo:
+             keccak(b"triggered")
+     expected_msg = (
+diff --git a/tox.ini b/tox.ini
+index 48c17f0..ace8f0c 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -10,7 +10,7 @@ envlist=
+ combine_as_imports=True
+ force_sort_within_sections=True
+ include_trailing_comma=True
+-known_third_party=hypothesis,pytest,Crypto,sha3
++known_third_party=hypothesis,pytest,Cryptodome,sha3
+ known_first_party=eth_hash
+ line_length=21
+ multi_line_output=3
