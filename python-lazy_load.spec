@@ -11,7 +11,7 @@ BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
-%{?python_provide:%python_provide python3-cid}
+%{?python_provide:%python_provide python3-lazy_load}
 
 %description
 A minimalistic interface that allows lazy evaluation of expressions and
