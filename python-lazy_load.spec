@@ -5,7 +5,7 @@ BuildArch:     noarch
 Summary:       A minimalistic interface that allows lazy evaluation
 License:       MIT
 URL:           https://github.com/kutoga/lazy-load
-Source0:       %{pypi_source lazy-load}
+Source0:       %{pypi_source lazy_load}
 BuildRequires: python3-lazy-object-proxy
 BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
