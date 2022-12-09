@@ -30,6 +30,9 @@ BuildRequires: python3-idna
 #BuildRequires: python3-importlib-metadata
 #BuildRequires: python3-wheel
 #BuildRequires: sed
+BuildRequires: python3-rpm-generators
+BuildRequires: python3-rpm-macros
+BuildRequires: python3-setuptools
 %{?python_provide:%python_provide python3-brownie}
 
 
