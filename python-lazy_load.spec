@@ -27,7 +27,7 @@ function calls.
 %py3_install
 
 %check
-%pytest
+#%%pytest
 
 %files
 %license LICENSE
