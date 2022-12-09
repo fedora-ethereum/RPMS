@@ -39,7 +39,7 @@ implementation in Python.
 
 %files
 %license LICENSE
-%doc CHANGELOG README.md
+%doc README.md
 %{python3_sitelib}/trie/
 %{python3_sitelib}/trie-*.egg-info/
 
