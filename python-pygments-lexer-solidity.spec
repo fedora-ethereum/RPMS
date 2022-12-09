@@ -25,7 +25,7 @@ Solidity lexer for Pygments.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE.txt
