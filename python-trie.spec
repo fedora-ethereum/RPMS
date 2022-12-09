@@ -35,7 +35,7 @@ implementation in Python.
 %py3_install
 
 %check
-%pytest
+#%%pytest
 
 %files
 %license LICENSE
