@@ -7,6 +7,7 @@ License:       BSD
 URL:           https://gitlab.com/veox/pygments-lexer-solidity
 Source0:       %{pypi_source pygments-lexer-solidity}
 BuildRequires: python3-pygments
+BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
