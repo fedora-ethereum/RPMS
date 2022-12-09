@@ -26,8 +26,7 @@ Self-describing content-addressed identifiers for distributed systems
 implementation in Python.
 
 %prep
-%autosetup -p1 -n py-cid-%{version}
-sed -i -e "s,1.0.2\,<2.0,1.0.2,g;s,0.2.0\,<1.0.0,0.2.0,g" setup.py
+%autosetup -p1 -n trie-%{version}
 
 %build
 %py3_build
