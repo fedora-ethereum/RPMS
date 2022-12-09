@@ -22,6 +22,9 @@ BuildRequires:	python3-setuptools_scm
 BuildRequires:	python3-wheel
 BuildRequires:	sed
 BuildRequires:	tox
+BuildRequires:	python3.8
+BuildRequires:	python3.9
+BuildRequires:	python3.10
 %{?python_provide:%python_provide python3-vyper}
 
 
