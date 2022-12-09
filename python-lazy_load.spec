@@ -30,7 +30,8 @@ function calls.
 #%%pytest
 
 %files
-%license LICENSE
+# LICENSE file was missing from PyPi tarball
+#%%license LICENSE
 %doc README.rst
 %{python3_sitelib}/lazy_load/
 %{python3_sitelib}/lazy_load-*.egg-info/
