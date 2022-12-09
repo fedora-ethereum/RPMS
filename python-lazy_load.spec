@@ -18,7 +18,7 @@ A minimalistic interface that allows lazy evaluation of expressions and
 function calls.
 
 %prep
-%autosetup -p1 -n lazy-load-%{version}
+%autosetup -p1 -n lazy_load-%{version}
 
 %build
 %py3_build
