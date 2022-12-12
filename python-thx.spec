@@ -6,10 +6,10 @@ Summary:       A Python library for the MythX platform
 License:       MIT
 URL:           https://github.com/ConsenSys/pythx
 Source0:       %{pypi_source pythx}
+BuildRequires: python-mythx-models
 BuildRequires: python3-dateutil
 BuildRequires: python3-inflection
 BuildRequires: python3-jwt
-BuildRequires: python3-mythx-models
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
 BuildRequires: python3-requests
