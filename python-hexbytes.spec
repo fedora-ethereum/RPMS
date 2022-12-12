@@ -39,9 +39,8 @@ install -D -p -m 0644 %{SOURCE1} ./tox.ini
 %py3_install
 
 %check
-# FIXME - no pytest tests
-#%%pytest
-tox -r
+# FIXME - requires internet access
+#tox -r
 
 %files
 %license LICENSE
