@@ -27,10 +27,13 @@ function calls.
 %py3_install
 
 %check
+# tests are missing from PyPi tarball
+# reported upstream in kutoga/lazy-load#2
 #%%pytest
 
 %files
 # LICENSE file was missing from PyPi tarball
+# reported upstream in kutoga/lazy-load#2
 #%%license LICENSE
 %doc README.rst
 %{python3_sitelib}/lazy_load/
