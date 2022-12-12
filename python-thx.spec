@@ -5,7 +5,7 @@ BuildArch:     noarch
 Summary:       A Python library for the MythX platform
 License:       MIT
 URL:           https://github.com/ConsenSys/pythx
-Source0:       %{pypi_source base58}
+Source0:       %{pypi_source pythx}
 BuildRequires: python3-dateutil
 BuildRequires: python3-inflection
 BuildRequires: python3-jwt
