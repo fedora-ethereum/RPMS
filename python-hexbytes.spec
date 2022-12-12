@@ -6,6 +6,8 @@ Summary:       Python `bytes` subclass that decodes hex, with a readable console
 License:       MIT
 URL:           https://github.com/ethereum/hexbytes
 Source0:       %{pypi_source hexbytes}
+# wget https://raw.githubusercontent.com/ethereum/hexbytes/e940383d8cb3ab5057a1d6af66b369d247f4dfe3/tox.ini
+Source1:       python-hexbytes-tox.ini
 BuildRequires: python-eth_utils
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
@@ -24,6 +26,7 @@ Python `bytes` subclass that decodes hex, with a readable console output.
 
 %prep
 %autosetup -p1 -n hexbytes-%{version}
+install -D -p -m 0644 %{SOURCE1} ./tox.ini
 
 %build
 %py3_build
