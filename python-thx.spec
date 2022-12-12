@@ -12,6 +12,7 @@ BuildRequires: python3-inflection
 BuildRequires: python3-jwt
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
+BuildRequires: python3-pytest-runner
 BuildRequires: python3-requests
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
