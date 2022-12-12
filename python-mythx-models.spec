@@ -39,6 +39,7 @@ Python domain model classes for the MythX platform.
 %doc AUTHORS.rst README.rst
 %{python3_sitelib}/mythx_models-*.egg-info/
 %{python3_sitelib}/mythx_models/
+%exclude %dir %{python3_sitelib}/tests/
 
 %changelog
 %autochangelog
