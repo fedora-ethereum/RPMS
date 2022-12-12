@@ -30,6 +30,8 @@ Python domain model classes for the MythX platform.
 
 %install
 %py3_install
+# FIXME shouldn't even install it
+rm -rf %{buildroot}%{python3_sitelib}/tests/
 
 %check
 %pytest --cov-report html --cov-report term --cov mythx_models tests/
@@ -39,8 +41,6 @@ Python domain model classes for the MythX platform.
 %doc AUTHORS.rst README.rst
 %{python3_sitelib}/mythx_models-*.egg-info/
 %{python3_sitelib}/mythx_models/
-# FIXME shouldn't even install it
-%exclude %dir %{python3_sitelib}/tests/
 
 %changelog
 %autochangelog
