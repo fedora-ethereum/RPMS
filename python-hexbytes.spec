@@ -34,6 +34,7 @@ Python `bytes` subclass that decodes hex, with a readable console output.
 %check
 # FIXME - no pytest tests
 #%%pytest
+tox -r
 
 %files
 %license LICENSE
