@@ -19,6 +19,10 @@ BuildRequires: python3-sphinx
 BuildRequires: python3-sphinx_rtd_theme
 BuildRequires: python3-towncrier
 BuildRequires: tox
+BuildRequires:	python3.7
+BuildRequires:	python3.8
+BuildRequires:	python3.9
+BuildRequires:	pypy3.9
 %{?python_provide:%python_provide python3-hexbytes}
 
 %description
