@@ -13,6 +13,7 @@ BuildRequires: python3-jsonschema
 BuildRequires: python3-pydantic
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
+BuildRequires: python3-pytest-runner
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
