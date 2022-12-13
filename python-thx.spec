@@ -7,6 +7,7 @@ License:       MIT
 URL:           https://github.com/ConsenSys/pythx
 Source0:       %{pypi_source pythx}
 Patch1:        python-thx-0001-Upgrade-PyJWT-1.7.1-2.4.0.patch
+Patch2:        python-thx-0002-Adjust-versions.patch
 BuildRequires: python-mythx-models
 BuildRequires: python3-dateutil
 BuildRequires: python3-inflection
@@ -32,6 +33,8 @@ A Python library for the MythX platform.
 
 %install
 %py3_install
+# FIXME shouldn't even install it
+rm -rf %{buildroot}%{python3_sitelib}/tests/
 
 %check
 %pytest

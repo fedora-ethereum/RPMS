@@ -1,0 +1,21 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Tue, 13 Dec 2022 13:21:38 +0100
+Subject: [PATCH] Adjust versions
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/requirements.txt b/requirements.txt
+index f45047a..4ccc5e7 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,5 +1,5 @@
+-python-dateutil==2.8.1
+-inflection==0.5.1
+-PyJWT==2.4.0
+-requests==2.25.1
+-mythx-models==2.2.0
++python-dateutil>=2.8.1
++inflection>=0.5.1
++PyJWT>=2.4.0
++requests>=2.25.1
++mythx-models>=2.2.0
