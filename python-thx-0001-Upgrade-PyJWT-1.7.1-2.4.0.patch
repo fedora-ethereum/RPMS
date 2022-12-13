@@ -1,0 +1,29 @@
+From: Viacheslav Khromiak <slava.khromyak@gmail.com>
+Date: Sun, 5 Jun 2022 02:59:17 +0300
+Subject: [PATCH] Upgrade PyJWT 1.7.1 -> 2.4.0
+
+
+diff --git a/pythx/api/client.py b/pythx/api/client.py
+index 03376b0..764c196 100644
+--- a/pythx/api/client.py
++++ b/pythx/api/client.py
+@@ -141,7 +141,7 @@ class Client:
+         :param token: The JWT to perform the check on
+         :return: The UTC expiration datetime object
+         """
+-        return datetime.utcfromtimestamp((jwt.decode(token, verify=False)["exp"]))
++        return datetime.utcfromtimestamp((jwt.decode(token, algorithms=["HS256"], options={"verify_signature": False})["exp"]))
+ 
+     def assert_authentication(self) -> None:
+         """Make sure the user is authenticated.
+diff --git a/requirements.txt b/requirements.txt
+index 64c482b..f45047a 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,5 +1,5 @@
+ python-dateutil==2.8.1
+ inflection==0.5.1
+-PyJWT==1.7.1
++PyJWT==2.4.0
+ requests==2.25.1
+ mythx-models==2.2.0

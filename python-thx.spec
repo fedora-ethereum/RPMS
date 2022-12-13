@@ -6,6 +6,7 @@ Summary:       A Python library for the MythX platform
 License:       MIT
 URL:           https://github.com/ConsenSys/pythx
 Source0:       %{pypi_source pythx}
+Patch1:        python-thx-0001-Upgrade-PyJWT-1.7.1-2.4.0.patch
 BuildRequires: python-mythx-models
 BuildRequires: python3-dateutil
 BuildRequires: python3-inflection
