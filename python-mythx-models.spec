@@ -6,6 +6,7 @@ Summary:       Python domain model classes for the MythX platform
 License:       MIT
 URL:           https://github.com/ConsenSys/mythx-models
 Source0:       %{pypi_source mythx-models}
+Patch1:        python-mythx-models-0001-Adjust-versions.patch
 BuildRequires: python3-dateutil
 BuildRequires: python3-hypothesis
 BuildRequires: python3-inflection

@@ -1,0 +1,19 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Tue, 13 Dec 2022 13:17:46 +0100
+Subject: [PATCH] Adjust versions
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/requirements.txt b/requirements.txt
+index 339ddf6..22ea26b 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,4 +1,4 @@
+-jsonschema==3.2.0
+-python-dateutil==2.8.1
+-inflection==0.5.1
+-pydantic>=1.6.2,!=1.7,!=1.7.1,!=1.7.2,!=1.7.3,!=1.8,!=1.8.1,<2.0.0
++jsonschema>=3.2.0
++python-dateutil>=2.8.1
++inflection>=0.5.1
++pydantic>=1.9.0
