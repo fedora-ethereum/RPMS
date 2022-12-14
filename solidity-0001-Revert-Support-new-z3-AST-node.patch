@@ -1,0 +1,30 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Thu, 30 Jun 2022 14:03:38 +0200
+Subject: [PATCH] Revert "Support new z3 AST node"
+
+This reverts commit 60b405aaa9a29acabd65abe16ea6d59afd84983c.
+
+diff --git a/libsmtutil/Z3Interface.cpp b/libsmtutil/Z3Interface.cpp
+index 4abeffa16..962898863 100644
+--- a/libsmtutil/Z3Interface.cpp
++++ b/libsmtutil/Z3Interface.cpp
+@@ -302,7 +302,6 @@ Expression Z3Interface::fromZ3Expr(z3::expr const& _expr)
+ 		arguments.push_back(fromZ3Expr(_expr.arg(i)));
+ 
+ 	auto kind = _expr.decl().decl_kind();
+-
+ 	if (_expr.is_ite())
+ 		return Expression::ite(arguments[0], arguments[1], arguments[2]);
+ 	else if (_expr.is_not())
+@@ -376,10 +375,7 @@ Expression Z3Interface::fromZ3Expr(z3::expr const& _expr)
+ 		return Expression("dt_accessor_" + _expr.decl().name().str(), arguments, sort);
+ 	else if (kind == Z3_OP_DT_IS)
+ 		return Expression("dt_is", {arguments.at(0)}, sort);
+-	else if (
+-		kind == Z3_OP_UNINTERPRETED ||
+-		kind == Z3_OP_RECURSIVE
+-	)
++	else if (kind == Z3_OP_UNINTERPRETED)
+ 		return Expression(_expr.decl().name().str(), arguments, fromZ3Sort(_expr.get_sort()));
+ 
+ 	smtAssert(false);
