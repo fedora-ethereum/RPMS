@@ -1,5 +1,5 @@
 Name:          python-lazy_load
-Version:       0.8.2
+Version:       0.8.3
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A minimalistic interface that allows lazy evaluation
@@ -27,14 +27,10 @@ function calls.
 %py3_install
 
 %check
-# tests are missing from PyPi tarball
-# reported upstream in kutoga/lazy-load#2
-#%%pytest
+%pytest
 
 %files
-# LICENSE file was missing from PyPi tarball
-# reported upstream in kutoga/lazy-load#2
-#%%license LICENSE
+%license LICENSE
 %doc README.rst
 %{python3_sitelib}/lazy_load/
 %{python3_sitelib}/lazy_load-*.egg-info/
