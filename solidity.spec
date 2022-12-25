@@ -5,7 +5,7 @@ Summary:	Object-oriented, high-level language for implementing smart contracts
 Name:		solidity
 Version:	0.8.17
 Release:	1%{?dist}
-URL:		https://docs.soliditylang.org/en/v0.8.15/
+URL:		https://docs.soliditylang.org/
 Source0:	https://github.com/ethereum/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv3
 # Fedora-specific
@@ -15,6 +15,7 @@ Patch3:		solidity-0003-Stop-checking-for-jsoncpp-version.patch
 Patch4:		solidity-0004-Continue-on-big-endians.patch
 Patch5:		solidity-0005-Initialize-vars-before-use.patch
 Patch6:		solidity-0006-Revert-Revert-Support-new-z3-AST-node.patch
+Patch7:		solidity-0007-Workaround-for-compiler-s-issue.patch
 
 %ifarch s390x
 #FIXME
