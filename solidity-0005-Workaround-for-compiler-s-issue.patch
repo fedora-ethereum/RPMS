@@ -5,16 +5,15 @@ Subject: [PATCH] Workaround for compiler's issue
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/libsolidity/ast/ASTJsonExporter.cpp b/libsolidity/ast/ASTJsonExporter.cpp
-index d308cd90c..5d0584e8d 100644
+index d308cd90c..2af2614e0 100644
 --- a/libsolidity/ast/ASTJsonExporter.cpp
 +++ b/libsolidity/ast/ASTJsonExporter.cpp
-@@ -138,7 +138,8 @@ Json::Value ASTJsonExporter::sourceLocationsToJson(vector<SourceLocation> const&
+@@ -138,7 +138,7 @@ Json::Value ASTJsonExporter::sourceLocationsToJson(vector<SourceLocation> const&
  
  string ASTJsonExporter::namePathToString(std::vector<ASTString> const& _namePath)
  {
 -	return boost::algorithm::join(_namePath, ".");
-+	std::string sep = ".";
-+	return boost::algorithm::join(_namePath, sep);
++	return boost::algorithm::join(_namePath, string("."));
  }
  
  Json::Value ASTJsonExporter::typePointerToJson(Type const* _tp, bool _withoutDataLocation)

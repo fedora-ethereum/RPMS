@@ -9,13 +9,11 @@ URL:		https://docs.soliditylang.org/
 Source0:	https://github.com/ethereum/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv3
 # Fedora-specific
-Patch1:		solidity-0001-Revert-Support-new-z3-AST-node.patch
-Patch2:		solidity-0002-Use-system-wide-libs.patch
-Patch3:		solidity-0003-Stop-checking-for-jsoncpp-version.patch
-Patch4:		solidity-0004-Continue-on-big-endians.patch
-Patch5:		solidity-0005-Initialize-vars-before-use.patch
-Patch6:		solidity-0006-Revert-Revert-Support-new-z3-AST-node.patch
-Patch7:		solidity-0007-Workaround-for-compiler-s-issue.patch
+Patch1:		solidity-0001-Use-system-wide-libs.patch
+Patch2:		solidity-0002-Stop-checking-for-jsoncpp-version.patch
+Patch3:		solidity-0003-Continue-on-big-endians.patch
+Patch4:		solidity-0004-Initialize-vars-before-use.patch
+Patch5:		solidity-0005-Workaround-for-compiler-s-issue.patch
 
 %ifarch s390x
 #FIXME
