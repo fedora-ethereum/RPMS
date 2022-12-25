@@ -18,3 +18,16 @@ index d308cd90c..5d0584e8d 100644
  }
  
  Json::Value ASTJsonExporter::typePointerToJson(Type const* _tp, bool _withoutDataLocation)
+diff --git a/libsolidity/codegen/ir/IRGeneratorForStatements.cpp b/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
+index 61ec2b144..2f487fdeb 100644
+--- a/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
++++ b/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
+@@ -179,7 +179,7 @@ private:
+ 			else
+ 			{
+ 				solAssert(!IRVariable{*varDecl}.hasPart("offset"));
+-				value = "0";
++				value = string("0");
+ 			}
+ 		}
+ 		else if (varDecl->type()->dataStoredIn(DataLocation::CallData))
