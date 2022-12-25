@@ -49,6 +49,7 @@ echo %{git_hash} > commit_hash.txt
 #-DUSE_LD_GOLD:BOOL=OFF
 %{cmake} \
 	-DBoost_USE_STATIC_LIBS:BOOL=OFF \
+	-DSOLC_STATIC_STDLIBS:BOOL=ON \
 	-DSTRICT_Z3_VERSION:BOOL=OFF \
 	-DTESTS:BOOL=OFF
 %cmake_build
