@@ -1,5 +1,5 @@
 Name:          python-dataclassy
-Version:       0.11.1
+Version:       1.0.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       An enhanced, tiny reimplementation of dataclasses
