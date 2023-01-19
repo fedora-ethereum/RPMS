@@ -1,5 +1,5 @@
 Name:          python-trie
-Version:       2.0.2
+Version:       2.1.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Library which implements the Ethereum Trie structure
