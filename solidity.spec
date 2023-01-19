@@ -69,8 +69,4 @@ echo %{git_hash} > commit_hash.txt
 
 
 %changelog
-* Wed Dec 14 2022 Peter Lemenkov <lemenkov@gmail.com> - 0.8.17-1
-- Upgrade to 0.8.17
-
-* Thu Jun 30 2022 Peter Lemenkov <lemenkov@gmail.com> - 0.8.15-1
-- Initial package for Fedora
+%autochangelog
