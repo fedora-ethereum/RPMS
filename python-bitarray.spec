@@ -1,5 +1,5 @@
 Name:          python-bitarray
-Version:       2.6.0
+Version:       2.6.2
 Release:       %autorelease
 Summary:       Efficient arrays of booleans for Python
 License:       Python-2.0.1
