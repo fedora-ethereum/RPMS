@@ -1,5 +1,5 @@
 Name:          python-eip712
-Version:       0.1.5
+Version:       0.1.7
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Message classes for typed structured data hashing and signing in Ethereum
