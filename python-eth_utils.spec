@@ -1,5 +1,5 @@
 Name:          python-eth_utils
-Version:       2.0.0
+Version:       2.1.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Utility functions for working with ethereum related codebases
@@ -29,7 +29,6 @@ Utility functions for working with ethereum related codebases.
 
 %prep
 %autosetup -p1 -n eth-utils-%{version}
-sed -i -e "s,<0.4.0,<0.6.0,g" setup.py
 
 %build
 %py3_build

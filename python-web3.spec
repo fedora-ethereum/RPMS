@@ -1,5 +1,5 @@
 Name:          python-web3
-Version:       5.31.1
+Version:       5.31.3
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A library for interacting with the Ethereum blockchain and ecosystem
@@ -30,7 +30,7 @@ A library for interacting with the Ethereum blockchain and ecosystem.
 
 %prep
 %autosetup -p1 -n web3-%{version}
-sed -i -e "	s,eth-abi>=2.0.0b6\,<3.0.0,eth-abi>=2.0.0b6,g;
+sed -i -e "	s,eth-abi>=2.2.0\,<3.0.0,eth-abi>=2.2.0,g;
 		s,eth-account>=0.5.9\,<0.6.0,eth-account>=0.5.9,g;
 		s,eth-hash\[pycryptodome\]>=0.2.0\,<1.0.0,eth-hash>=0.2.0,g;
 		s,eth-rlp<0.3,eth-rlp<=0.3,g;
