@@ -5,16 +5,14 @@ Subject: [PATCH] Remove pysha3
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/eth_hash/backends/__init__.py b/eth_hash/backends/__init__.py
-index fbe00fe..720fcd5 100644
+index fbe00fe..d91d1be 100644
 --- a/eth_hash/backends/__init__.py
 +++ b/eth_hash/backends/__init__.py
-@@ -9,6 +9,5 @@ See :ref:`Choose a hashing backend` for more.
- """
+@@ -10,5 +10,4 @@ See :ref:`Choose a hashing backend` for more.
  
  SUPPORTED_BACKENDS = [
--    "pycryptodome",
+     "pycryptodome",
 -    "pysha3",
-+    "pycryptodome"
  ]
 diff --git a/eth_hash/backends/pysha3.py b/eth_hash/backends/pysha3.py
 deleted file mode 100644
@@ -358,7 +356,7 @@ index dfbfcb1..0000000
 -
 -    assert deserialized(b"arst") == keccak_auto(b"arst")
 diff --git a/tests/core/test_import.py b/tests/core/test_import.py
-index 491ac77..8ddd956 100644
+index e9fe541..3d0f2b2 100644
 --- a/tests/core/test_import.py
 +++ b/tests/core/test_import.py
 @@ -40,7 +40,6 @@ def test_import():

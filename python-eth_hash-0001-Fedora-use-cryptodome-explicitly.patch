@@ -18,7 +18,7 @@ index 75eba0a..6794795 100644
  )
  
 diff --git a/tests/core/test_import.py b/tests/core/test_import.py
-index 7bf9bbe..491ac77 100644
+index 7bf9bbe..e9fe541 100644
 --- a/tests/core/test_import.py
 +++ b/tests/core/test_import.py
 @@ -24,7 +24,7 @@ def test_import_auto_empty_crash(monkeypatch):
@@ -35,7 +35,7 @@ index 7bf9bbe..491ac77 100644
  
      monkeypatch.setenv("ETH_HASH_BACKEND", backend)
 -    with mock.patch.dict("sys.modules", {"sha3": None, "Crypto.Hash": None}):
-+    with mock.patch.dict("sys.modules", {"sha3": None, "Cryptodome..Hash": None}):
++    with mock.patch.dict("sys.modules", {"sha3": None, "Cryptodome.Hash": None}):
          with pytest.raises(ImportError) as excinfo:
              keccak(b"triggered")
      expected_msg = (
