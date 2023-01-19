@@ -30,7 +30,7 @@ encoding and decoding.
 
 %prep
 %autosetup -p1 -n eth_abi-%{version}
-sed -i -e "s,<0.9.0,<0.10.0,g" setup.py
+sed -i -e "s,\,<0.9.0,,g" setup.py
 
 %build
 %py3_build
