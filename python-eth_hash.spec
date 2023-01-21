@@ -7,7 +7,6 @@ License:       MIT
 URL:           https://github.com/ethereum/eth-hash
 Source0:       %{pypi_source eth-hash}
 Patch1:        python-eth_hash-0001-Fedora-use-cryptodome-explicitly.patch
-Patch2:        python-eth_hash-0002-Remove-pysha3.patch
 BuildRequires: python-pycryptodomex
 BuildRequires: python3-jinja2
 BuildRequires: python3-pytest
@@ -34,7 +33,7 @@ The Ethereum hashing function, keccak256, sometimes (erroneously) called sha256 
 %py3_install
 
 %check
-%pytest
+%pytest ./tests/core/ ./tests/backends/pycryptodome
 
 %files
 %license LICENSE
