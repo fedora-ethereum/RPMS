@@ -1,0 +1,17 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Sun, 22 Jan 2023 19:24:01 +0100
+Subject: [PATCH] We don't use PIP
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/eth_utils/__init__.py b/eth_utils/__init__.py
+index 876f816..a154677 100644
+--- a/eth_utils/__init__.py
++++ b/eth_utils/__init__.py
+@@ -107,6 +107,3 @@ if sys.version_info.major < 3:
+         )
+     )
+     warnings.resetwarnings()
+-
+-
+-__version__ = pkg_resources.get_distribution("eth-utils").version

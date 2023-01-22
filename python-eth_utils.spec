@@ -10,6 +10,7 @@ URL:           https://github.com/ethereum/eth-utils
 # See comments below
 #Source0:       %{pypi_source eth-utils}
 Source:        https://github.com/ethereum/eth-utils/archive/v%{version}/eth_utils-%{version}.tar.gz
+Patch1:        python-eth_utils-0001-We-don-t-use-PIP.patch
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python3-cached_property
