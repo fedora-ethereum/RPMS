@@ -5,7 +5,11 @@ BuildArch:     noarch
 Summary:       Utility functions for working with ethereum related codebases
 License:       MIT
 URL:           https://github.com/ethereum/eth-utils
-Source0:       %{pypi_source eth-utils}
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# https://github.com/ethereum/eth-utils/issues/130
+# See comments below
+#Source0:       %{pypi_source eth-utils}
+Source:        https://github.com/ethereum/eth-utils/archive/v%{version}/eth_utils-%{version}.tar.gz
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python3-cached_property
@@ -37,7 +41,10 @@ Utility functions for working with ethereum related codebases.
 %py3_install
 
 %check
-#%%pytest
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# https://github.com/ethereum/eth-utils/issues/130
+# See comments below
+%pytest
 
 %files
 %license LICENSE
