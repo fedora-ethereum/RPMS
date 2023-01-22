@@ -45,7 +45,7 @@ Utility functions for working with ethereum related codebases.
 # FIXME no tests shipped to pypi. Should we just grab tarball from github?
 # https://github.com/ethereum/eth-utils/issues/130
 # See comments below
-%pytest
+%pytest ./tests
 
 %files
 %license LICENSE
