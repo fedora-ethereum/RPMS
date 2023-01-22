@@ -31,7 +31,7 @@ Python types for type hinting commonly used ethereum types.
 %py3_install
 
 %check
-#%%pytest
+%pytest ./tests/core
 
 %files
 %license LICENSE
