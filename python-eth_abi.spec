@@ -5,7 +5,10 @@ BuildArch:     noarch
 Summary:       Python utilities for working with Ethereum ABI definitions
 License:       MIT
 URL:           https://github.com/ethereum/eth-abi
-Source0:       %{pypi_source eth_abi}
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# See comments below
+#Source0:       %{pypi_source eth_abi}
+Source:        https://github.com/ethereum/eth-abi/archive/v%{version}/eth_abi-%{version}.tar.gz
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
@@ -39,6 +42,8 @@ sed -i -e "s,\,<0.9.0,,g" setup.py
 %py3_install
 
 %check
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# See comments above
 %pytest
 
 %files
