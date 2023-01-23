@@ -29,7 +29,7 @@ sed -i -e "s,\,<2.0.0,,g;s,\,<3.0.0,,g;s,\,<13.0.0,,g" setup.py
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
