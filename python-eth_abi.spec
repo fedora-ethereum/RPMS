@@ -39,7 +39,7 @@ sed -i -e "s,\,<0.9.0,,g" setup.py
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
