@@ -35,7 +35,7 @@ RLP definitions for common Ethereum objects in Python.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
