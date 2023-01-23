@@ -5,7 +5,10 @@ BuildArch:     noarch
 Summary:       A common API for Ethereum key operations.
 License:       MIT
 URL:           https://github.com/ethereum/eth-keys
-Source0:       %{pypi_source eth-keys}
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# See comments below
+#Source0:       %{pypi_source eth-keys}
+Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
@@ -29,6 +32,8 @@ sed -i -e "s,\,<2.0.0,,g;s,\,<3.0.0,,g;s,\,<13.0.0,,g" setup.py
 %py3_install
 
 %check
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# See comments above
 %pytest
 
 %files
