@@ -14,6 +14,7 @@ Source:        https://github.com/ethereum/eth-keys/archive/1b52a4d6ad23f7d88197
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
+BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
