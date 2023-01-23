@@ -18,6 +18,8 @@ BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 BuildRequires: python3-towncrier
 BuildRequires: tox
+# FIXME should be picked up automatically
+Requires: python3dist(pycryptodomex)
 %{?python_provide:%python_provide python3-eth_hash}
 
 %description
