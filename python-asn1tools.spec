@@ -1,5 +1,5 @@
 Name:          python-asn1tools
-Version:       0.156.0
+Version:       0.165.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       ASN.1 parsing, encoding and decoding
