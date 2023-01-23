@@ -11,6 +11,7 @@ URL:           https://github.com/ethereum/eth-keys
 # FIXME they messed up with tags
 #Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
 Source:        https://github.com/ethereum/eth-keys/archive/1b52a4d6ad23f7d8819739a58426baf1c067d9e0/eth_keys-%{version}.tar.gz
+BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
