@@ -13,6 +13,7 @@ BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
 BuildRequires: python-parsimonious
+BuildRequires: python3-hypothesis
 BuildRequires: python3-jinja2
 BuildRequires: python3-pytest
 #BuildRequires: python3-pytest-pythonpath
