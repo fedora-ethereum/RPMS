@@ -7,6 +7,7 @@ License:       MIT
 URL:           https://github.com/eerimoq/asn1tools
 Source0:       %{pypi_source asn1tools}
 BuildRequires: python3-bitstruct
+BuildRequires: python3-diskcache
 BuildRequires: python3-prompt-toolkit
 BuildRequires: python3-pyparsing
 BuildRequires: python3-pytest

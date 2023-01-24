@@ -21,6 +21,9 @@ BuildArch:      noarch
 BuildRequires:  dos2unix
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  python%{python3_pkgversion}-setuptools
+BuildRequires: python3-coverage
+BuildRequires: python3-jinja2
+BuildRequires: python3-railroad-diagrams
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 
