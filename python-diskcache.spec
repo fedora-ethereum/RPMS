@@ -7,6 +7,7 @@ License:       ASL 2.0
 URL:           https://grantjenks.com/docs/diskcache/
 Source0:       %{pypi_source diskcache}
 BuildRequires: python3-mock
+BuildRequires: python3-nose
 BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
