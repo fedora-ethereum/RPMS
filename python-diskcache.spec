@@ -13,7 +13,7 @@ BuildRequires: python3-setuptools
 %{?python_provide:%python_provide python3-diskcache}
 
 %description
-ASN.1 parsing, encoding and decoding.
+Disk and file-based cache.
 
 %prep
 %autosetup -p1 -n diskcache-%{version}
