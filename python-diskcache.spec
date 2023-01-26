@@ -13,6 +13,9 @@ BuildRequires: python3-django
 BuildRequires: python3-mock
 BuildRequires: python3-nose
 BuildRequires: python3-pytest
+BuildRequires: python3-pytest-cov
+BuildRequires: python3-pytest-django
+BuildRequires: python3-pytest-xdist
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
