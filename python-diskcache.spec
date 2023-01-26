@@ -1,11 +1,14 @@
 Name:          python-diskcache
-Version:       0.7.0
+Version:       5.4.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Disk and file-based cache
 License:       ASL 2.0
 URL:           https://grantjenks.com/docs/diskcache/
-Source0:       %{pypi_source diskcache}
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# See comments below
+#Source0:       %{pypi_source diskcache}
+Source:        https://github.com/grantjenks/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires: python3-django
 BuildRequires: python3-mock
 BuildRequires: python3-nose
@@ -19,7 +22,7 @@ BuildRequires: python3-setuptools
 Disk and file-based cache.
 
 %prep
-%autosetup -p1 -n diskcache-%{version}
+%autosetup -p1
 
 %build
 %py3_build
@@ -28,6 +31,8 @@ Disk and file-based cache.
 %py3_install
 
 %check
+# FIXME no tests shipped to pypi. Should we just grab tarball from github?
+# See comments above
 %pytest
 
 %files
