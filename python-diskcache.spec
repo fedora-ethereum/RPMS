@@ -41,8 +41,8 @@ Disk and file-based cache.
 %files
 %license LICENSE
 %doc README.rst
-%{python3_sitelib}/asn1tools-*.egg-info/
-%{python3_sitelib}/asn1tools/
+%{python3_sitelib}/diskcache-*.egg-info/
+%{python3_sitelib}/diskcache/
 
 %changelog
 %autochangelog
