@@ -1,0 +1,82 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Fri, 27 Jan 2023 10:39:15 +0100
+Subject: [PATCH] Suppress function-scoped fixtures warnings
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/tests/backends/test_backends.py b/tests/backends/test_backends.py
+index d4099d7..ca7f7fe 100644
+--- a/tests/backends/test_backends.py
++++ b/tests/backends/test_backends.py
+@@ -128,6 +128,7 @@ def test_compress_public_key_bytes(key_api, key_fixture):
+ @given(
+     private_key_bytes=private_key_st,
+ )
++@settings(suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_compress_decompress_inversion(key_api, private_key_bytes):
+     private_key = key_api.PrivateKey(private_key_bytes)
+ 
+@@ -141,6 +142,7 @@ def test_compress_decompress_inversion(key_api, private_key_bytes):
+     private_key_bytes=private_key_st,
+     message_hash=message_hash_st,
+ )
++@settings(suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_signatures_with_high_s(key_api, private_key_bytes, message_hash):
+     private_key = key_api.PrivateKey(private_key_bytes)
+     low_s_signature = private_key.sign_msg_hash(message_hash)
+diff --git a/tests/backends/test_native_backend_against_coincurve.py b/tests/backends/test_native_backend_against_coincurve.py
+index 6d6ef24..4f26faf 100644
+--- a/tests/backends/test_native_backend_against_coincurve.py
++++ b/tests/backends/test_native_backend_against_coincurve.py
+@@ -44,7 +44,7 @@ def coincurve_key_api():
+ @given(
+     private_key_bytes=private_key_st,
+ )
+-@settings(max_examples=MAX_EXAMPLES)
++@settings(max_examples=MAX_EXAMPLES, suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_public_key_generation_is_equal(private_key_bytes,
+                                         native_key_api,
+                                         coincurve_key_api):
+@@ -58,7 +58,7 @@ def test_public_key_generation_is_equal(private_key_bytes,
+     private_key_bytes=private_key_st,
+     message_hash=message_hash_st,
+ )
+-@settings(max_examples=MAX_EXAMPLES)
++@settings(max_examples=MAX_EXAMPLES, suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_signing_is_equal(private_key_bytes,
+                           message_hash,
+                           native_key_api,
+@@ -89,7 +89,7 @@ def test_signing_is_equal(private_key_bytes,
+         st.just('native-to-coincurve'),
+     ),
+ )
+-@settings(max_examples=MAX_EXAMPLES)
++@settings(max_examples=MAX_EXAMPLES, suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_native_to_coincurve_recover(private_key_bytes,
+                                      message_hash,
+                                      direction,
+@@ -121,7 +121,7 @@ def test_native_to_coincurve_recover(private_key_bytes,
+         st.just('native-to-coincurve'),
+     ),
+ )
+-@settings(max_examples=MAX_EXAMPLES)
++@settings(max_examples=MAX_EXAMPLES, suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_coincurve_to_native_invalid_signatures(message_hash,
+                                                 signature_bytes,
+                                                 direction,
+@@ -167,6 +167,7 @@ def test_coincurve_to_native_invalid_signatures(message_hash,
+ @given(
+     private_key_bytes=private_key_st,
+ )
++@settings(suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_public_key_compression_is_equal(private_key_bytes,
+                                          native_key_api,
+                                          coincurve_key_api):
+@@ -182,6 +183,7 @@ def test_public_key_compression_is_equal(private_key_bytes,
+ @given(
+     private_key_bytes=private_key_st,
+ )
++@settings(suppress_health_check=(HealthCheck.function_scoped_fixture,))
+ def test_public_key_decompression_is_equal(private_key_bytes,
+                                            native_key_api,
+                                            coincurve_key_api):

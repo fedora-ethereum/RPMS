@@ -11,6 +11,8 @@ URL:           https://github.com/ethereum/eth-keys
 # FIXME they messed up with tags
 #Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
 Source:        https://github.com/ethereum/eth-keys/archive/1b52a4d6ad23f7d8819739a58426baf1c067d9e0/eth_keys-%{version}.tar.gz
+Patch1:		python-eth_keys-0001-Relax-dependency-constraints.patch
+Patch2:		python-eth_keys-0002-Suppress-function-scoped-fixtures-warnings.patch
 BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
@@ -32,7 +34,6 @@ RLP definitions for common Ethereum objects in Python.
 # FIXME they messed up with tags
 #%%autosetup -p1 -n eth-keys-%{version}
 %autosetup -p1 -n eth-keys-1b52a4d6ad23f7d8819739a58426baf1c067d9e0
-sed -i -e "s,\,<2.0.0,,g;s,\,<3.0.0,,g;s,\,<13.0.0,,g" setup.py
 
 %build
 %py3_build
