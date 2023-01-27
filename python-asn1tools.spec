@@ -34,6 +34,7 @@ ASN.1 parsing, encoding and decoding.
 %files
 %license LICENSE
 %doc README.rst
+%{_bindir}/asn1tools
 %{python3_sitelib}/asn1tools-*.egg-info/
 %{python3_sitelib}/asn1tools/
 
