@@ -17,6 +17,7 @@ Patch5:		solidity-0005-Workaround-for-compiler-s-issue.patch
 Patch6:		solidity-0006-Use-static-linking-for-internal-libs.patch
 Patch7:		solidity-0007-libsolutil-Add-missing-include.patch
 Patch8:		solidity-0008-libsmtutil-Explicitly-use-derived-operator-from-base.patch
+Patch9:		solidity-0009-libsolutil-Add-missing-include.patch
 
 %ifarch s390x
 #FIXME
