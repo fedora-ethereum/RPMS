@@ -1,5 +1,5 @@
 %global git_hash e14f27147bd4ffc63e2bf46a68e0d271fad0ed79
-#%%undefine _package_note_file
+%undefine _package_note_file
 
 Summary:	Object-oriented, high-level language for implementing smart contracts
 Name:		solidity
