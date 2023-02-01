@@ -1,0 +1,48 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 1 Feb 2023 20:48:43 +0100
+Subject: [PATCH] libsmtutil: Explicitly use derived operator from base class
+
+Thus suppress the following issue when compiling with
+-Werror=overloaded-virtual:
+
+```
+In file included from /builddir/build/BUILD/solidity-0.8.18/libsmtutil/SolverInterface.h:22,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsmtutil/CHCSolverInterface.h:25,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsmtutil/CHCSmtLib2Interface.h:25,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsmtutil/CHCSmtLib2Interface.cpp:19:
+/builddir/build/BUILD/solidity-0.8.18/libsmtutil/Sorts.h:47:22: error: 'virtual bool solidity::smtutil::Sort::operator==(const solidity::smtutil::Sort&) const' was hidden [-Werror=overloaded-virtual=]
+   47 |         virtual bool operator==(Sort const& _other) const { return kind == _other.kind; }
+      |                      ^~~~~~~~
+/builddir/build/BUILD/solidity-0.8.18/libsmtutil/Sorts.h:60:14: note:   by 'bool solidity::smtutil::IntSort::operator==(const solidity::smtutil::IntSort&) const'
+   60 |         bool operator==(IntSort const& _other) const
+      |              ^~~~~~~~
+/builddir/build/BUILD/solidity-0.8.18/libsmtutil/Sorts.h:47:22: error: 'virtual bool solidity::smtutil::Sort::operator==(const solidity::smtutil::Sort&) const' was hidden [-Werror=overloaded-virtual=]
+   47 |         virtual bool operator==(Sort const& _other) const { return kind == _other.kind; }
+      |                      ^~~~~~~~
+/builddir/build/BUILD/solidity-0.8.18/libsmtutil/Sorts.h:75:14: note:   by 'bool solidity::smtutil::BitVectorSort::operator==(const solidity::smtutil::BitVectorSort&) const'
+   75 |         bool operator==(BitVectorSort const& _other) const
+      |              ^~~~~~~~
+```
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/libsmtutil/Sorts.h b/libsmtutil/Sorts.h
+index 107dc1f2c..cddb0f776 100644
+--- a/libsmtutil/Sorts.h
++++ b/libsmtutil/Sorts.h
+@@ -57,6 +57,7 @@ struct IntSort: public Sort
+ 		isSigned(_signed)
+ 	{}
+ 
++	using Sort::operator==;
+ 	bool operator==(IntSort const& _other) const
+ 	{
+ 		return Sort::operator==(_other) && isSigned == _other.isSigned;
+@@ -72,6 +73,7 @@ struct BitVectorSort: public Sort
+ 		size(_size)
+ 	{}
+ 
++	using Sort::operator==;
+ 	bool operator==(BitVectorSort const& _other) const
+ 	{
+ 		return Sort::operator==(_other) && size == _other.size;
