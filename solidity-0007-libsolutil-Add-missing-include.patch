@@ -1,0 +1,30 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 1 Feb 2023 20:00:20 +0100
+Subject: [PATCH] libsolutil: Add missing include
+
+This helps suppressing the following message during compilation:
+
+```
+/builddir/build/BUILD/solidity-0.8.18/libsolutil/Common.h:55:27: error: 'uint8_t' was not declared in this scope
+   55 | using bytes = std::vector<uint8_t>;
+      |                           ^~~~~~~
+/builddir/build/BUILD/solidity-0.8.18/libsolutil/Common.h:49:1: note: 'uint8_t' is defined in header '<cstdint>'; did you forget to '#include <cstdint>'?
+   48 | #include <functional>
+  +++ |+#include <cstdint>
+   49 | #include <string>
+```
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/libsolutil/Common.h b/libsolutil/Common.h
+index eea9dacd5..ddaa719f6 100644
+--- a/libsolutil/Common.h
++++ b/libsolutil/Common.h
+@@ -46,6 +46,7 @@
+ #include <utility>
+ #include <vector>
+ #include <functional>
++#include <cstdint>
+ #include <string>
+ 
+ namespace solidity

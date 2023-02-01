@@ -15,6 +15,7 @@ Patch3:		solidity-0003-Continue-on-big-endians.patch
 Patch4:		solidity-0004-Initialize-vars-before-use.patch
 Patch5:		solidity-0005-Workaround-for-compiler-s-issue.patch
 Patch6:		solidity-0006-Use-static-linking-for-internal-libs.patch
+Patch7:		solidity-0007-libsolutil-Add-missing-include.patch
 
 %ifarch s390x
 #FIXME
