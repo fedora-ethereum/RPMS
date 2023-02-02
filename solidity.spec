@@ -64,7 +64,6 @@ echo %{git_hash} > commit_hash.txt
 
 %files
 %{_bindir}/solc
-%{_bindir}/solidity-upgrade
 %{_bindir}/yul-phaser
 %doc README.md
 %doc SECURITY.md
