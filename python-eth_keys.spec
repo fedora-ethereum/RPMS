@@ -1,5 +1,5 @@
 Name:          python-eth_keys
-Version:       0.3.4
+Version:       0.4.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A common API for Ethereum key operations.
@@ -8,12 +8,10 @@ URL:           https://github.com/ethereum/eth-keys
 # FIXME no tests shipped to pypi. Should we just grab tarball from github?
 # See comments below
 #Source0:       %{pypi_source eth-keys}
-# FIXME they messed up with tags
-#Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
-Source:        https://github.com/ethereum/eth-keys/archive/1b52a4d6ad23f7d8819739a58426baf1c067d9e0/eth_keys-%{version}.tar.gz
-Patch1:		python-eth_keys-0001-Relax-dependency-constraints.patch
-Patch2:		python-eth_keys-0002-Suppress-function-scoped-fixtures-warnings.patch
-Patch3:		python-eth_keys-0003-FIXME.-Skip-two-tests-for-now.patch
+Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
+#Patch1:		python-eth_keys-0001-Relax-dependency-constraints.patch
+#Patch2:		python-eth_keys-0002-Suppress-function-scoped-fixtures-warnings.patch
+#Patch3:		python-eth_keys-0003-FIXME.-Skip-two-tests-for-now.patch
 BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
@@ -32,9 +30,7 @@ BuildRequires: sed
 RLP definitions for common Ethereum objects in Python.
 
 %prep
-# FIXME they messed up with tags
-#%%autosetup -p1 -n eth-keys-%{version}
-%autosetup -p1 -n eth-keys-1b52a4d6ad23f7d8819739a58426baf1c067d9e0
+%autosetup -p1 -n eth-keys-%{version}
 
 %build
 %py3_build
