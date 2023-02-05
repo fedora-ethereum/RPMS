@@ -5,7 +5,7 @@ Subject: [PATCH] FIXME. Skip two tests for now
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/tests/backends/test_native_backend_against_coincurve.py b/tests/backends/test_native_backend_against_coincurve.py
-index 22cabc9..a865a79 100644
+index c4d8fa3..bd174ce 100644
 --- a/tests/backends/test_native_backend_against_coincurve.py
 +++ b/tests/backends/test_native_backend_against_coincurve.py
 @@ -55,6 +55,7 @@ def test_public_key_generation_is_equal(private_key_bytes,

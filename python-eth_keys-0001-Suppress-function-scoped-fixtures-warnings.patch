@@ -5,7 +5,7 @@ Subject: [PATCH] Suppress function-scoped fixtures warnings
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/tests/backends/test_backends.py b/tests/backends/test_backends.py
-index d4099d7..0b6d2c8 100644
+index 2ba8c19..c6a1de1 100644
 --- a/tests/backends/test_backends.py
 +++ b/tests/backends/test_backends.py
 @@ -4,6 +4,8 @@ import pytest
@@ -34,7 +34,7 @@ index d4099d7..0b6d2c8 100644
      private_key = key_api.PrivateKey(private_key_bytes)
      low_s_signature = private_key.sign_msg_hash(message_hash)
 diff --git a/tests/backends/test_native_backend_against_coincurve.py b/tests/backends/test_native_backend_against_coincurve.py
-index 6d6ef24..22cabc9 100644
+index 2980386..c4d8fa3 100644
 --- a/tests/backends/test_native_backend_against_coincurve.py
 +++ b/tests/backends/test_native_backend_against_coincurve.py
 @@ -3,6 +3,7 @@ import pytest
