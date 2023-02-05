@@ -48,8 +48,8 @@ sed -i -e "	s,pycryptodome>=3.5.1\,<4,pycryptodomex>=3.5.1,g;
 rm -f %{buildroot}/usr/vyper_git_commithash.txt
 
 %check
-#%%pytest
-tox -r -- --reruns 10 --reruns-delay 1 -r aR tests/
+%pytest
+#tox -r -- --reruns 10 --reruns-delay 1 -r aR tests/
 
 %files
 %license LICENSE
