@@ -20,6 +20,8 @@ Patch8:		solidity-0008-Explicitly-use-derived-operator-from-base-class.patch
 Patch9:		solidity-0009-libsolutil-Add-missing-include.patch
 Patch10:	solidity-0010-libsolidity-Redundant-std-move.patch
 Patch11:	solidity-0011-Suppress-one-particular-check-dangling-reference.patch
+Patch12:	solidity-0012-Revert-Stop-checking-for-jsoncpp-version.patch
+Patch13:	solidity-0013-Stop-checking-for-jsoncpp-version.patch
 
 %ifarch s390x
 #FIXME
