@@ -1,0 +1,71 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 8 Feb 2023 13:40:30 +0100
+Subject: [PATCH] Type recognition workaround for some GCC compilers
+
+Looks like somewhat old GCC compilers, namely 12.2.1, cannot recognize a
+string literal sometimes. Let's help it to avoid error logs like this
+one:
+
+```
+[ 75%] Building CXX object libsolidity/CMakeFiles/solidity.dir/codegen/ir/IRGeneratorForStatements.cpp.o
+cd /builddir/build/BUILD/solidity-0.8.18/redhat-linux-build/libsolidity && /usr/bin/g++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DFMT_HEADER_ONLY=1 -DHAVE_CVC4 -DHAVE_Z3 -I/builddir/build/BUILD/solidity-0.8.18/redhat-linux-build/include -I/builddir/build/BUILD/solidity-0.8.18 -isystem /usr/include/z3 -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64  -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fuse-ld=gold -O3 -DNDEBUG -fstack-protector-strong -Wimplicit-fallthrough -fmacro-prefix-map=/builddir/build/BUILD/solidity-0.8.18=/solidity -Wpessimizing-move -Wredundant-move -Wall -Wextra -Werror -pedantic -Wmissing-declarations -Wno-unknown-pragmas -Wsign-conversion -Wconversion -Wextra-semi -Wduplicated-cond -Wlogical-op -fdiagnostics-color -std=c++17 -MD -MT libsolidity/CMakeFiles/solidity.dir/codegen/ir/IRGeneratorForStatements.cpp.o -MF CMakeFiles/solidity.dir/codegen/ir/IRGeneratorForStatements.cpp.o.d -o CMakeFiles/solidity.dir/codegen/ir/IRGeneratorForStatements.cpp.o -c /builddir/build/BUILD/solidity-0.8.18/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
+In file included from /usr/include/c++/12/string:40,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsolidity/ast/ASTForward.h:27,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsolidity/ast/AST.h:26,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsolidity/ast/ASTVisitor.h:26,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsolidity/codegen/ir/IRGeneratorForStatements.h:24,
+                 from /builddir/build/BUILD/solidity-0.8.18/libsolidity/codegen/ir/IRGeneratorForStatements.cpp:22:
+In function 'std::char_traits<char>::copy(char*, char const*, unsigned long)',
+    inlined from 'std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long)' at /usr/include/c++/12/bits/basic_string.h:423:21,
+    inlined from 'std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)' at /usr/include/c++/12/bits/basic_string.tcc:532:22,
+    inlined from 'std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(char const*)' at /usr/include/c++/12/bits/basic_string.h:1647:19,
+    inlined from 'std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(char const*)' at /usr/include/c++/12/bits/basic_string.h:815:28,
+    inlined from '(anonymous namespace)::CopyTranslate::translateReference(solidity::yul::Identifier const&)' at /builddir/build/BUILD/solidity-0.8.18/libsolidity/codegen/ir/IRGeneratorForStatements.cpp:182:13:
+/usr/include/c++/12/bits/char_traits.h:431:56: error: 'memcpy' accessing 9223372036854775810 or more bytes at offsets -4611686018427387902 and [-4611686018427387903, 4611686018427387904] may overlap up to 9223372036854775813 bytes at offset -3 [-Werror=restrict]
+  431 |         return static_cast<char_type*>(__builtin_memcpy(__s1, __s2, __n));
+      |                                        ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors
+gmake[2]: *** [libsolidity/CMakeFiles/solidity.dir/build.make:695: libsolidity/CMakeFiles/solidity.dir/codegen/ir/IRGeneratorForStatements.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: Leaving directory '/builddir/build/BUILD/solidity-0.8.18/redhat-linux-build'
+gmake[1]: *** [CMakeFiles/Makefile2:414: libsolidity/CMakeFiles/solidity.dir/all] Error 2
+gmake[1]: Leaving directory '/builddir/build/BUILD/solidity-0.8.18/redhat-linux-build'
+gmake: *** [Makefile:139: all] Error 2
+```
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/libsolidity/ast/ASTJsonExporter.cpp b/libsolidity/ast/ASTJsonExporter.cpp
+index b791c0b6b..7db502eef 100644
+--- a/libsolidity/ast/ASTJsonExporter.cpp
++++ b/libsolidity/ast/ASTJsonExporter.cpp
+@@ -45,6 +45,7 @@
+ #include <range/v3/view/map.hpp>
+ 
+ using namespace std;
++using namespace std::string_literals;
+ using namespace solidity::langutil;
+ 
+ namespace
+@@ -138,7 +139,7 @@ Json::Value ASTJsonExporter::sourceLocationsToJson(vector<SourceLocation> const&
+ 
+ string ASTJsonExporter::namePathToString(std::vector<ASTString> const& _namePath)
+ {
+-	return boost::algorithm::join(_namePath, string("."));
++	return boost::algorithm::join(_namePath, "."s);
+ }
+ 
+ Json::Value ASTJsonExporter::typePointerToJson(Type const* _tp, bool _withoutDataLocation)
+diff --git a/libsolidity/codegen/ir/IRGeneratorForStatements.cpp b/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
+index 133ba6b42..fd0199204 100644
+--- a/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
++++ b/libsolidity/codegen/ir/IRGeneratorForStatements.cpp
+@@ -179,7 +179,7 @@ private:
+ 			else
+ 			{
+ 				solAssert(!IRVariable{*varDecl}.hasPart("offset"));
+-				value = string("0");
++				value = "0"s;
+ 			}
+ 		}
+ 		else if (varDecl->type()->dataStoredIn(DataLocation::CallData))

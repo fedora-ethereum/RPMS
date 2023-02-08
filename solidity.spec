@@ -13,7 +13,7 @@ Patch1:		solidity-0001-Use-system-wide-libs.patch
 Patch2:		solidity-0002-Stop-checking-for-jsoncpp-version.patch
 Patch3:		solidity-0003-Continue-on-big-endians.patch
 Patch4:		solidity-0004-Initialize-vars-before-use.patch
-#Patch5:		solidity-0005-Workaround-for-compiler-s-issue.patch
+Patch5:		solidity-0005-Workaround-for-compiler-s-issue.patch
 Patch6:		solidity-0006-Use-static-linking-for-internal-libs.patch
 Patch7:		solidity-0007-libsolutil-Add-missing-include.patch
 Patch8:		solidity-0008-Explicitly-use-derived-operator-from-base-class.patch
@@ -22,6 +22,7 @@ Patch10:	solidity-0010-libsolidity-Redundant-std-move.patch
 Patch11:	solidity-0011-Suppress-one-particular-check-dangling-reference.patch
 Patch12:	solidity-0012-Revert-Stop-checking-for-jsoncpp-version.patch
 Patch13:	solidity-0013-Stop-checking-for-jsoncpp-version.patch
+Patch14:	solidity-0014-Type-recognition-workaround-for-some-GCC-compilers.patch
 
 %ifarch s390x
 #FIXME
