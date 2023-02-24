@@ -1,9 +1,9 @@
-%global git_hash e14f27147bd4ffc63e2bf46a68e0d271fad0ed79
+%global git_hash 7dd6d404815651b2341ecae220709a88aaed4038
 %undefine _package_note_file
 
 Summary:	Object-oriented, high-level language for implementing smart contracts
 Name:		solidity
-Version:	0.8.18
+Version:	0.8.19
 Release:	1%{?dist}
 URL:		https://docs.soliditylang.org/
 Source0:	https://github.com/ethereum/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -13,16 +13,10 @@ Patch1:		solidity-0001-Use-system-wide-libs.patch
 Patch2:		solidity-0002-Stop-checking-for-jsoncpp-version.patch
 Patch3:		solidity-0003-Continue-on-big-endians.patch
 Patch4:		solidity-0004-Initialize-vars-before-use.patch
-Patch5:		solidity-0005-Workaround-for-compiler-s-issue.patch
-Patch6:		solidity-0006-Use-static-linking-for-internal-libs.patch
-Patch7:		solidity-0007-libsolutil-Add-missing-include.patch
-Patch8:		solidity-0008-Explicitly-use-derived-operator-from-base-class.patch
-Patch9:		solidity-0009-libsolutil-Add-missing-include.patch
-Patch10:	solidity-0010-libsolidity-Redundant-std-move.patch
-Patch11:	solidity-0011-Suppress-one-particular-check-dangling-reference.patch
-Patch12:	solidity-0012-Revert-Stop-checking-for-jsoncpp-version.patch
-Patch13:	solidity-0013-Stop-checking-for-jsoncpp-version.patch
-Patch14:	solidity-0014-Type-recognition-workaround-for-some-GCC-compilers.patch
+Patch5:		solidity-0005-Use-static-linking-for-internal-libs.patch
+Patch6:		solidity-0006-Explicitly-use-derived-operator-from-base-class.patch
+Patch7:		solidity-0007-Suppress-one-particular-check-dangling-reference.patch
+
 
 %ifarch s390x
 #FIXME

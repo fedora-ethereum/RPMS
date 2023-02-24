@@ -68,10 +68,10 @@ index 107dc1f2c..cddb0f776 100644
  	{
  		return Sort::operator==(_other) && size == _other.size;
 diff --git a/libsolidity/ast/Types.h b/libsolidity/ast/Types.h
-index cdb54ec07..201a1fa02 100644
+index d7312aa1d..057a3532d 100644
 --- a/libsolidity/ast/Types.h
 +++ b/libsolidity/ast/Types.h
-@@ -771,6 +771,7 @@ public:
+@@ -786,6 +786,7 @@ public:
  	/// if the type has an interfaceType.
  	virtual BoolResult validForLocation(DataLocation _loc) const = 0;
  

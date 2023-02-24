@@ -53,10 +53,10 @@ index fce54dd24..7f21284d7 100644
  	target_link_libraries(libsolc PRIVATE solidity)
  endif()
 diff --git a/libsolidity/CMakeLists.txt b/libsolidity/CMakeLists.txt
-index c331f1a4b..a6e0d8f1b 100644
+index 32869ba13..0bb63970e 100644
 --- a/libsolidity/CMakeLists.txt
 +++ b/libsolidity/CMakeLists.txt
-@@ -183,6 +183,5 @@ set(sources
+@@ -184,6 +184,5 @@ set(sources
  	parsing/Token.h
  )
  

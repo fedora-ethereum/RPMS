@@ -5,7 +5,7 @@ Subject: [PATCH] Suppress one particular check (dangling-reference)
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/libsolidity/analysis/FunctionCallGraph.cpp b/libsolidity/analysis/FunctionCallGraph.cpp
-index e941c99c5..cdd7a55a2 100644
+index ce5c53934..1b5befd90 100644
 --- a/libsolidity/analysis/FunctionCallGraph.cpp
 +++ b/libsolidity/analysis/FunctionCallGraph.cpp
 @@ -97,6 +97,8 @@ CallGraph FunctionCallGraphBuilder::buildDeployedGraph(
