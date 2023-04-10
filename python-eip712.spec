@@ -35,7 +35,7 @@ Message classes for typed structured data hashing and signing in Ethereum.
 
 %prep
 %autosetup -p1 -n eip712-%{version}
-sed -i -e "s,pycryptodome,pycryptodomex,g" setup.py
+sed -i -e "s,pycryptodome,pycryptodomex,g;s,dataclassy>=0.8.2\,<1,dataclassy>=0.8.2,g" setup.py
 
 %build
 %py3_build
