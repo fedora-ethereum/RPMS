@@ -8,6 +8,7 @@ URL:           https://github.com/ipfs-shipyard/py-ipfs-http-client
 Source0:       https://files.pythonhosted.org/packages/source/i/ipfshttpclient/ipfshttpclient-0.8.0a2.tar.gz
 #Source0:       %{pypi_source ipfshttpclient}
 BuildRequires: python-multiaddr
+BuildRequires: python3-flit-core
 BuildRequires: python3-requests
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
