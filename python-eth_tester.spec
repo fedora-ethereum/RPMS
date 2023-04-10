@@ -30,6 +30,8 @@ Tool suite for testing ethereum applications.
 %prep
 %autosetup -p1 -n eth-tester-%{version}-beta.3
 sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
+# FIXME return as soon as we package py-evm
+rm -rf tests/backends
 
 %build
 %py3_build
