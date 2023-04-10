@@ -8,7 +8,7 @@ URL:           https://github.com/ethereum/eth-tester
 # FIXME no tests shipped to pypi. Should we just grab tarball from github?
 # See comments below
 #Source0:       %{pypi_source eth-tester}
-Source1:        https://github.com/ethereum/eth-tester/archive/v0.8.0-beta.3/eth_tester-%{version}.tar.gz
+Source0:        https://github.com/ethereum/eth-tester/archive/v0.8.0-beta.3/eth_tester-%{version}.tar.gz
 BuildRequires: python-eth_abi
 BuildRequires: python-eth_account
 BuildRequires: python-eth_hash
