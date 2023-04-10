@@ -9,9 +9,9 @@ Source0:	%{pypi_source vyper}
 Patch1:		vyper-0001-Use-Cryptodomex.patch
 Patch2:		vyper-0002-Ease-version-requirements.patch
 BuildRequires:	git
+BuildRequires:	python-eth_tester
 BuildRequires:	python3-asttokens
 BuildRequires:	python3-cached_property
-BuildRequires:	python3-eth_tester
 BuildRequires:	python3-importlib-metadata
 BuildRequires:	python3-pip
 BuildRequires:	python3-pycryptodomex
