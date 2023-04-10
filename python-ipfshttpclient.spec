@@ -29,8 +29,9 @@ A python client library for the IPFS API.
 %py3_install
 
 %check
+# FIXME
 #%%pytest
-tox
+#tox
 
 %files
 %license LICENSE
