@@ -49,7 +49,9 @@ developing applications that use %{name}.
 %configure --disable-static \
            --enable-module-recovery \
            --enable-experimental \
-           --enable-module-ecdh
+           --enable-module-ecdh \
+           --enable-module-extrakeys \
+           --enable-module-schnorrsig
 
 
 %make_build
