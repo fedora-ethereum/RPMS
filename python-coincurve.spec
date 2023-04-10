@@ -33,7 +33,7 @@ Cross-platform Python bindings for libsecp256k1.
 
 %check
 # FIXME
-#%%pytest
+%pytest
 #tox
 
 %files
