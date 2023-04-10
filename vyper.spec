@@ -10,6 +10,7 @@ Patch1:		vyper-0001-Use-Cryptodomex.patch
 Patch2:		vyper-0002-Ease-version-requirements.patch
 BuildRequires:	git
 BuildRequires:	python-eth_tester
+BuildRequires:	python-web3
 BuildRequires:	python3-asttokens
 BuildRequires:	python3-cached_property
 BuildRequires:	python3-importlib-metadata
