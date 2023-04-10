@@ -1,9 +1,22 @@
 From: Peter Lemenkov <lemenkov@gmail.com>
 Date: Tue, 1 Nov 2022 20:45:19 +0100
-Subject: [PATCH] Use Cryptodome
+Subject: [PATCH] Use Cryptodomex
 
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
+diff --git a/setup.py b/setup.py
+index 03237a43..83bc2ead 100644
+--- a/setup.py
++++ b/setup.py
+@@ -93,7 +93,7 @@ setup(
+     py_modules=["vyper"],
+     install_requires=[
+         "asttokens==2.0.5",
+-        "pycryptodome>=3.5.1,<4",
++        "pycryptodomex>=3.5.1,<4",
+         "semantic-version>=2.10,<3",
+         "cached-property==1.5.2 ; python_version<'3.8'",
+         "importlib-metadata ; python_version<'3.8'",
 diff --git a/vyper/utils.py b/vyper/utils.py
 index 90b0675c..eb13801a 100644
 --- a/vyper/utils.py
