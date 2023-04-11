@@ -1,5 +1,5 @@
 Name:          python-diskcache
-Version:       5.4.0
+Version:       5.5.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Disk and file-based cache
