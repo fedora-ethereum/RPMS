@@ -6,8 +6,8 @@ Summary:       Tools for handling the encrypted keyfile format used to store pri
 License:       MIT
 URL:           https://github.com/ethereum/eth-keyfile
 Source0:       %{pypi_source eth-keyfile}
-Patch1:        python-eth_keyfile-0001-remove-deprecated-setuptools-markdown-bump-setuptool.patch
-Patch2:        python-eth_keyfile-0002-Fedora-use-cryptodome-explicitly.patch
+Patch1:        python-eth_keyfile-0001-Fedora-use-cryptodome-explicitly.patch
+Patch2:        python-eth_keyfile-0002-Relax-dependencies.patch
 BuildRequires: python-eth_keys
 BuildRequires: python-eth_utils
 BuildRequires: python3-pycryptodomex
@@ -23,7 +23,6 @@ Tools for handling the encrypted keyfile format used to store private keys.
 
 %prep
 %autosetup -p1 -n eth-keyfile-%{version}
-sed -i -e "s,0.4.0\,<0.5.0,0.3.4,g;s,pycryptodome,pycryptodomex,g" setup.py
 
 %build
 %py3_build
