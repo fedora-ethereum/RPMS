@@ -1,3 +1,5 @@
+# FIXME we have a package in Fedora 37+
+
 %global srcname pyparsing
 
 # when bootstrapping Python 3, pyparsing needs to be rebuilt before dependency generator is available
