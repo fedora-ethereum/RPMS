@@ -1,3 +1,5 @@
+# FIXME looks like this library is archived at GitHub
+
 Name:          python-baseconv
 Version:       1.2.2
 Release:       %autorelease

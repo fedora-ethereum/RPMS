@@ -1,3 +1,5 @@
+# FIXME looks like this library is archived at GitHub
+
 Name:          python-cid
 Version:       0.3.0
 Release:       %autorelease
