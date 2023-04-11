@@ -9,7 +9,6 @@ URL:           https://grantjenks.com/docs/diskcache/
 # See comments below
 #Source0:       %{pypi_source diskcache}
 Source:        https://github.com/grantjenks/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch1:        python-diskcache-0001-No-more-cache-in-FetchFromCacheMiddleware.patch
 BuildRequires: python3-django
 BuildRequires: python3-mock
 BuildRequires: python3-nose
@@ -26,11 +25,7 @@ BuildRequires: python3-setuptools
 Disk and file-based cache.
 
 %prep
-%setup -q
-%if 0%{?fedora} >= 39
-# Modern Django 4.1.x
-%patch1 -p1
-%endif
+%autosetup -p1
 
 %build
 %py3_build
