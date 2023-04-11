@@ -1,3 +1,5 @@
+# FIXME we have a package in Fedora 37+
+
 Name:           python-railroad-diagrams
 Version:        2.0.4
 Release:        %autorelease
