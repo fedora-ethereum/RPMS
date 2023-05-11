@@ -13,7 +13,7 @@ Patch1:		solidity-0001-Use-system-wide-libs.patch
 Patch2:		solidity-0002-Stop-checking-for-jsoncpp-version.patch
 Patch3:		solidity-0003-Continue-on-big-endians.patch
 Patch4:		solidity-0004-Use-static-linking-for-internal-libs.patch
-Patch5:		solidity-0005-Suppress-one-particular-check-dangling-reference.patch
+#Patch5:		solidity-0005-Suppress-one-particular-check-dangling-reference.patch
 
 
 %ifarch s390x
@@ -58,6 +58,8 @@ echo %{git_hash} > commit_hash.txt
 %install
 %cmake_install
 
+%check
+# TODO
 
 %files
 %{_bindir}/solc
