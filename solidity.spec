@@ -13,11 +13,10 @@ Patch1:		solidity-0001-Use-system-wide-libs.patch
 Patch2:		solidity-0002-Stop-checking-for-jsoncpp-version.patch
 Patch3:		solidity-0003-Continue-on-big-endians.patch
 Patch4:		solidity-0004-Use-static-linking-for-internal-libs.patch
-#Patch5:		solidity-0005-Suppress-one-particular-check-dangling-reference.patch
 
 
 %ifarch s390x
-#FIXME
+#FIXME see patch no. 3
 %endif
 
 
@@ -26,9 +25,9 @@ BuildRequires:	cmake >= 3.0
 BuildRequires:	cvc4-devel
 BuildRequires:	fmt-devel
 BuildRequires:	gcc-c++
-# Should be dependency of cvc4
+# Should be dependency of cvc4. See https://bugzilla.redhat.com/2203174
 BuildRequires:	gmp-devel
-# Should be dependency of cvc4
+# Should be dependency of cvc4. See https://bugzilla.redhat.com/2203174
 BuildRequires:	symfpu-devel
 BuildRequires:	jsoncpp-devel
 BuildRequires:	range-v3-devel
