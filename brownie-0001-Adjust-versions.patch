@@ -5,7 +5,7 @@ Subject: [PATCH] Adjust versions
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/requirements.in b/requirements.in
-index ad82b203..5a3d2f95 100644
+index ad82b203..1f368d79 100644
 --- a/requirements.in
 +++ b/requirements.in
 @@ -1,13 +1,13 @@
@@ -34,11 +34,12 @@ index ad82b203..5a3d2f95 100644
  pygments-lexer-solidity<1
  pygments<3
 -pytest-xdist<2
-+pytest-xdist>=2
- pytest<7
+-pytest<7
 -python-dotenv>=0.16.0,<0.17.0
 -pythx<=1.6.1
 -pyyaml>=5.3.0,<6
++pytest-xdist>=2
++pytest<10
 +python-dotenv>=0.16.0
 +pythx>=1.6.1
 +pyyaml>=5.3.0

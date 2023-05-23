@@ -50,9 +50,6 @@ the Ethereum Virtual Machine.
 %autosetup -p1 -n eth-brownie-%{version}
 # FIXME we do not rely on pre-generated requirements.txt
 cp -arv requirements.in requirements.txt
-sed -i -e "	s,pycryptodome>=3.5.1\,<4,pycryptodomex>=3.5.1,g;
-		s,semantic-version>=2.10\,<3,semantic-version>=2.8\,<3,g;
-		s,asttokens==2.0.5,asttokens>=2.0.5,g" setup.py
 
 %build
 %py3_build
