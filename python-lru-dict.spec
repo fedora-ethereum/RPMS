@@ -1,5 +1,5 @@
 Name:          python-lru-dict
-Version:       1.1.8
+Version:       1.2.0
 Release:       %autorelease
 Summary:       A fast and memory efficient LRU cache
 License:       MIT
