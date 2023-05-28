@@ -10,7 +10,7 @@ URL:           https://github.com/ethereum/eth-keys
 #Source0:       %{pypi_source eth-keys}
 Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
 Patch1:		python-eth_keys-0001-Suppress-function-scoped-fixtures-warnings.patch
-Patch2:		python-eth_keys-0002-FIXME.-Skip-two-tests-for-now.patch
+#Patch2:		python-eth_keys-0002-FIXME.-Skip-two-tests-for-now.patch
 BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
