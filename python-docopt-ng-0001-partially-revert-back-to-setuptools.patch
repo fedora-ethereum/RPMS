@@ -1,0 +1,130 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 31 May 2023 17:58:32 +0200
+Subject: [PATCH] partially revert back to setuptools
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 6df7698..597e5d8 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,53 +1,5 @@
+ [build-system]
+-requires = ["pdm-backend"]
+-build-backend = "pdm.backend"
+-
+-[project]
+-name = "docopt-ng"
+-dynamic = ["version"]
+-description = "Jazzband-maintained fork of docopt, the humane command line arguments parser."
+-authors = [
+-    {name = "Nick Crews", email = "nicholas.b.crews@gmail.com"},
+-]
+-dependencies = []
+-requires-python = ">=3.7"
+-license = {text = "MIT"}
+-readme = "README.md"
+-classifiers = [
+-    "Development Status :: 4 - Beta",
+-    "Intended Audience :: Developers",
+-    "License :: OSI Approved :: MIT License",
+-    "Operating System :: OS Independent",
+-    "Programming Language :: Python",
+-    "Programming Language :: Python :: 3",
+-    "Programming Language :: Python :: 3 :: Only",
+-    "Programming Language :: Python :: 3.7",
+-    "Programming Language :: Python :: 3.8",
+-    "Programming Language :: Python :: 3.9",
+-    "Programming Language :: Python :: 3.10",
+-    "Programming Language :: Python :: Implementation :: CPython",
+-    "Programming Language :: Python :: Implementation :: PyPy",
+-]
+-[project.urls]
+-Homepage = "https://github.com/jazzband/docopt-ng"
+-Repository = "https://github.com/jazzband/docopt-ng"
+-
+-[tool.pdm.version]
+-source = "file"
+-path = "docopt/_version.py"
+-
+-
+-[tool.pdm.dev-dependencies]
+-dev = [
+-    "black",
+-    "mypy",
+-    "ruff",
+-    "pre-commit",
+-    "pytest",
+-    "pytest-cov",
+-    "pytest-mypy",
+-]
+-
++requires = ['setuptools', 'wheel']
+ 
+ [tool.pytest.ini_options]
+ testpaths = ["./tests"]
+diff --git a/setup.cfg b/setup.cfg
+new file mode 100644
+index 0000000..5e68def
+--- /dev/null
++++ b/setup.cfg
+@@ -0,0 +1,48 @@
++[metadata]
++name = docopt-ng
++version = attr: docopt.__version__
++url = https://github.com/jazzband/docopt-ng
++license = MIT
++author = Nick Crews
++author_email = nicholas.b.crews@gmail.com
++description = Jazzband-maintained fork of docopt, the humane command line arguments parser.
++long_description = file: README.md
++long_description_content_type = text/markdown
++classifiers =
++    Development Status :: 4 - Beta
++    Intended Audience :: Developers
++    License :: OSI Approved :: MIT License
++    Operating System :: OS Independent
++    Programming Language :: Python
++    Programming Language :: Python :: 3
++    Programming Language :: Python :: 3 :: Only
++    Programming Language :: Python :: 3.7
++    Programming Language :: Python :: 3.8
++    Programming Language :: Python :: 3.9
++    Programming Language :: Python :: 3.10
++    Programming Language :: Python :: Implementation :: CPython
++    Programming Language :: Python :: Implementation :: PyPy
++
++[options]
++python_requires = >=3.7
++packages = find:
++
++[options.package_data]
++# If any package or subpackage contains py.typed, include it
++* = py.typed
++
++
++[options.extras_require]
++dev =
++    black
++    build
++    ruff,
++    mypy
++    pre-commit
++    pytest
++    pytest-mypy
++    pytest-cov
++    twine
++
++[bdist_wheel]
++universal = 1
+diff --git a/setup.py b/setup.py
+new file mode 100644
+index 0000000..49590f6
+--- /dev/null
++++ b/setup.py
+@@ -0,0 +1,5 @@
++# Included as a placeholder to allow editable installs.
++# Hopefully this can be removed in the future.
++from setuptools import setup
++
++setup()

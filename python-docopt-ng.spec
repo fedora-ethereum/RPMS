@@ -7,6 +7,7 @@ Summary:        Pythonic argument parser, that will make you smile
 License:        MIT
 URL:            https://github.com/jazzband/docopt-ng
 Source0:        %{pypi_source docopt_ng}
+Patch1:         python-docopt-ng-0001-partially-revert-back-to-setuptools.patch
 BuildArch:      noarch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
