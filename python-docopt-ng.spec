@@ -11,11 +11,12 @@ Patch1:         python-docopt-ng-0001-Revert-Remerge-master-changes.patch
 Patch2:         python-docopt-ng-0002-partially-revert-back-to-setuptools.patch
 Patch3:         python-docopt-ng-0003-Replace-unmaintained-docopt.patch
 BuildArch:      noarch
-BuildRequires: python3-devel
-BuildRequires: python3-pytest
-BuildRequires: python3-rpm-generators
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
+BuildRequires:  python3-devel
+BuildRequires:  python3-pytest
+BuildRequires:  python3-rpm-generators
+BuildRequires:  python3-rpm-macros
+BuildRequires:  python3-setuptools
+Obsoletes:      python3-docopt
 %{?python_provide:%python_provide python3-docopt-ng}
 
 %description
