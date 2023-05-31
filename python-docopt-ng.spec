@@ -29,7 +29,6 @@ and instead can write only the help message--*the way you want it*.
 
 %prep
 %autosetup -n docopt_ng-%{version}
-#ln -s ../docopt_ng-%{version} ../docopt-%{version}
 
 %build
 %py3_build
@@ -38,15 +37,14 @@ and instead can write only the help message--*the way you want it*.
 %py3_install
 
 %check
-#py.test-%{python3_version} -v
 %pytest
 
 %files
 %license LICENSE-MIT
-%doc README.rst examples/
+%doc README.md
 %{python3_sitelib}/docopt-*.egg-info/
 %{python3_sitelib}/docopt/
-%{python3_sitelib}/__pycache__/docopt.*
+#%%{python3_sitelib}/__pycache__/docopt.*
 
 %changelog
 %autochangelog
