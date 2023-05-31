@@ -6,7 +6,7 @@ Release:        %autorelease
 Summary:        Pythonic argument parser, that will make you smile
 License:        MIT
 URL:            https://github.com/jazzband/docopt-ng
-Source0:        %{pypi_source docopt-ng}
+Source0:        %{pypi_source docopt_ng}
 BuildArch:      noarch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
@@ -25,7 +25,7 @@ This way you don't need to write thisstupid repeatable parser-code,
 and instead can write only the help message--*the way you want it*.
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+%autosetup -n docopt_ng-%{version}
 
 %build
 %py3_build
