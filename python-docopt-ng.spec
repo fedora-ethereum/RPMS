@@ -1,7 +1,7 @@
 %global pypi_name docopt-ng
 
 Name:           python-docopt
-Version:        0.6.2
+Version:        0.9.0
 Release:        %autorelease
 Summary:        Pythonic argument parser, that will make you smile
 License:        MIT
