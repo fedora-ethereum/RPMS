@@ -65,7 +65,7 @@ index 6df7698..597e5d8 100644
  testpaths = ["./tests"]
 diff --git a/setup.cfg b/setup.cfg
 new file mode 100644
-index 0000000..7000c88
+index 0000000..1a95495
 --- /dev/null
 +++ b/setup.cfg
 @@ -0,0 +1,48 @@

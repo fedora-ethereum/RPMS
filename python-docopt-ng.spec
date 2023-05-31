@@ -9,6 +9,7 @@ URL:            https://github.com/jazzband/docopt-ng
 Source0:        %{pypi_source docopt_ng}
 Patch1:         python-docopt-ng-0001-Revert-Remerge-master-changes.patch
 Patch2:         python-docopt-ng-0002-partially-revert-back-to-setuptools.patch
+Patch3:         python-docopt-ng-0003-Replace-unmaintained-docopt.patch
 BuildArch:      noarch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
@@ -41,9 +42,9 @@ py.test-%{python3_version} -v
 %files
 %license LICENSE-MIT
 %doc README.rst examples/
-%{python3_sitelib}/%{pypi_name}-*.egg-info/
-%{python3_sitelib}/%{pypi_name}.py
-%{python3_sitelib}/__pycache__/%{pypi_name}.*
+%{python3_sitelib}/docopt-*.egg-info/
+%{python3_sitelib}/docopt/
+%{python3_sitelib}/__pycache__/docopt.*
 
 %changelog
 %autochangelog
