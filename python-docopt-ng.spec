@@ -28,7 +28,7 @@ and instead can write only the help message--*the way you want it*.
 %autosetup -n docopt_ng-%{version}
 
 %build
-#%%py3_build
+%py3_build
 
 %install
 %py3_install
