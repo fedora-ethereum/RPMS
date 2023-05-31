@@ -29,7 +29,7 @@ and instead can write only the help message--*the way you want it*.
 
 %prep
 %autosetup -n docopt_ng-%{version}
-ln -s ../docopt_ng-%{version} ../docopt-%{version}
+#ln -s ../docopt_ng-%{version} ../docopt-%{version}
 
 %build
 %py3_build
@@ -38,7 +38,8 @@ ln -s ../docopt_ng-%{version} ../docopt-%{version}
 %py3_install
 
 %check
-py.test-%{python3_version} -v
+#py.test-%{python3_version} -v
+%pytest
 
 %files
 %license LICENSE-MIT
