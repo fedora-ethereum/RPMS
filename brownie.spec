@@ -1,12 +1,15 @@
 Summary:       A framework for smart contracts for EVM
 Name:          brownie
-Version:       1.19.2
+Version:       1.19.3
 Release:       %autorelease
 BuildArch:     noarch
 License:       ASL 2.0
 URL:           https://github.com/eth-brownie/brownie
 Source0:       %{pypi_source eth-brownie}
 Patch1:        brownie-0001-Adjust-versions.patch
+Patch2:        brownie-0002-Drop-bundled-docopt-ng.patch
+Patch3:        brownie-0003-Drop-bundled-toposort.patch
+BuildRequires: python-docopt
 BuildRequires: python-eip712
 BuildRequires: python-eth_abi
 BuildRequires: python-eth_account
@@ -16,6 +19,7 @@ BuildRequires: python-eth_rlp
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
 BuildRequires: python-hexbytes
+BuildRequires: python-toposort
 BuildRequires: python3-setuptools
 BuildRequires: python3-aiohttp
 BuildRequires: python3-asttokens

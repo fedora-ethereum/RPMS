@@ -5,7 +5,7 @@ Subject: [PATCH] Adjust versions
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/requirements.in b/requirements.in
-index ad82b203..1f368d79 100644
+index 3256d529..297f6f85 100644
 --- a/requirements.in
 +++ b/requirements.in
 @@ -1,13 +1,13 @@
