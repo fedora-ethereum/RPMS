@@ -148,7 +148,7 @@ index 310f946f..d8d9c22d 100644
  __doc__ = """Usage: brownie pm <command> [<arguments> ...] [options]
  
 diff --git a/brownie/_cli/run.py b/brownie/_cli/run.py
-index 64603a1b..7879bbbb 100644
+index 64603a1b..745d6358 100644
 --- a/brownie/_cli/run.py
 +++ b/brownie/_cli/run.py
 @@ -10,7 +10,7 @@ from brownie._config import CONFIG, _update_argv_from_docopt
@@ -160,6 +160,15 @@ index 64603a1b..7879bbbb 100644
  
  __doc__ = f"""Usage: brownie run <filename> [<function>] [<arg>...] [options]
  
+@@ -33,7 +33,7 @@ interactions, or for gas profiling."""
+ 
+ 
+ def main():
+-    args = docopt(__doc__, more_magic=True)
++    args = docopt(__doc__)
+     _update_argv_from_docopt(args)
+ 
+     active_project = None
 diff --git a/brownie/_cli/test.py b/brownie/_cli/test.py
 index 474ecbc1..dd183325 100644
 --- a/brownie/_cli/test.py
