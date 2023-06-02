@@ -114,3 +114,15 @@ index 7cafcf67..00000000
 -    for d in toposort(data):
 -        result.extend((sorted if sort else list)(d))
 -    return result
+diff --git a/requirements.in b/requirements.in
+index 3fbfb3e5..34ed32bd 100644
+--- a/requirements.in
++++ b/requirements.in
+@@ -25,6 +25,7 @@ pyyaml>=5.3.0
+ requests>=2.25.0,<3
+ rlp>=3
+ semantic-version<3
++toposort
+ tqdm<5
+ vvm>=0.1.0,<1
+ vyper>=0.2.11,<1
