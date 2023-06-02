@@ -4,15 +4,6 @@ Subject: [PATCH] Drop bundled docopt-ng
 
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
-diff --git a/.coveragerc b/.coveragerc
-index 0a5f75d9..242b46a4 100644
---- a/.coveragerc
-+++ b/.coveragerc
-@@ -1,3 +1,3 @@
- [run]
- branch = True
--omit = brownie/_gui/*,brownie/_cli/gui.py,brownie/utils/docopt.py
-+omit = brownie/_gui/*,brownie/_cli/gui.py
 diff --git a/brownie/_cli/__main__.py b/brownie/_cli/__main__.py
 index 74e8b116..b999d45a 100644
 --- a/brownie/_cli/__main__.py
