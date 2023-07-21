@@ -65,7 +65,7 @@ index 32869ba13..0bb63970e 100644
  target_link_libraries(solidity PUBLIC yul evmasm langutil smtutil solutil Boost::boost fmt::fmt-header-only Threads::Threads)
 -
 diff --git a/libsolutil/CMakeLists.txt b/libsolutil/CMakeLists.txt
-index b368e12f9..9ce18d63a 100644
+index 201429bb7..9e87a5f0a 100644
 --- a/libsolutil/CMakeLists.txt
 +++ b/libsolutil/CMakeLists.txt
 @@ -44,7 +44,7 @@ set(sources
@@ -75,16 +75,13 @@ index b368e12f9..9ce18d63a 100644
 -add_library(solutil ${sources})
 +add_library(solutil STATIC ${sources})
  target_link_libraries(solutil PUBLIC jsoncpp Boost::boost Boost::filesystem Boost::system range-v3 fmt::fmt-header-only)
- target_include_directories(solutil PUBLIC "${CMAKE_SOURCE_DIR}")
+ target_include_directories(solutil PUBLIC "${PROJECT_SOURCE_DIR}")
  add_dependencies(solutil solidity_BuildInfo.h)
 diff --git a/libyul/CMakeLists.txt b/libyul/CMakeLists.txt
-index cc7033a0b..8749077a4 100644
+index 0bb98e467..8bd85e398 100644
 --- a/libyul/CMakeLists.txt
 +++ b/libyul/CMakeLists.txt
-@@ -14,7 +14,7 @@ foreach(polyfill IN LISTS POLYFILLS)
- 	list(APPEND GENERATED_POLYFILL_HEADERS ${CMAKE_BINARY_DIR}/include/ewasmPolyfills/${polyfill}.h)
- endforeach()
- 
+@@ -1,4 +1,4 @@
 -add_library(yul
 +add_library(yul STATIC
  	${GENERATED_POLYFILL_HEADERS}

@@ -1,10 +1,11 @@
-%global git_hash 7dd6a1b79de64235f13e6b06e088fe6365c5a12d13d3
+# Git hash of a tagged commit
+%global git_hash d9974bed7134e043f7ccc593c0c19c67d2d45dc4
 %undefine _package_note_file
 
 Summary:	Object-oriented, high-level language for implementing smart contracts
 Name:		solidity
-Version:	0.8.20
-Release:	1%{?dist}
+Version:	0.8.21
+Release:	%autorelease
 URL:		https://docs.soliditylang.org/
 Source0:	https://github.com/ethereum/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 License:	GPLv3
