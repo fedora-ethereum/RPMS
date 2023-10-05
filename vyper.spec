@@ -7,6 +7,7 @@ License:	ASL 2.0
 URL:		https://vyperlang.org
 Source0:	%{pypi_source vyper}
 Patch1:		vyper-0001-Use-Cryptodomex.patch
+Patch2:		vyper-0002-Ease-version-requirements.patch
 BuildRequires:	git
 BuildRequires:	python-base58
 BuildRequires:	python-eth_tester
