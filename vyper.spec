@@ -1,13 +1,12 @@
 Summary:	Pythonic Smart Contract Language for the EVM
 Name:		vyper
-Version:	0.3.8
+Version:	0.3.10
 Release:	%autorelease
 BuildArch:	noarch
 License:	ASL 2.0
 URL:		https://vyperlang.org
 Source0:	%{pypi_source vyper}
 Patch1:		vyper-0001-Use-Cryptodomex.patch
-Patch2:		vyper-0002-Ease-version-requirements.patch
 BuildRequires:	git
 BuildRequires:	python-base58
 BuildRequires:	python-eth_tester
@@ -34,8 +33,8 @@ Pythonic Smart Contract Language for the EVM.
 
 %prep
 %autosetup -p1
-# v0.3.8 == 036f153683e0d55b890305eb4c77680a0872fcba
-echo "036f1536" > "./vyper_git_commithash.txt"
+# v0.3.10 == 9136169468f317a53b4e7448389aa315f90b95ba
+echo "91361694" > "./vyper_git_commithash.txt"
 
 
 %build
