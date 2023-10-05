@@ -1,5 +1,5 @@
 Name:          python-eth_abi
-Version:       3.0.1
+Version:       4.2.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Python utilities for working with Ethereum ABI definitions
@@ -34,7 +34,7 @@ encoding and decoding.
 
 %prep
 %autosetup -p1 -n eth-abi-%{version}
-sed -i -e "s,\,<0.9.0,,g" setup.py
+#sed -i -e "s,\,<0.9.0,,g" setup.py
 
 %build
 %py3_build
