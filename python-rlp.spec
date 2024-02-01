@@ -1,12 +1,11 @@
 Name:          python-rlp
-Version:       3.0.0
+Version:       4.0.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       The python RLP serialization library
 License:       MIT
 URL:           https://github.com/ethereum/pyrlp
 Source0:       %{pypi_source rlp}
-Patch1:        python-rlp-0001-Switch-to-built-in-setuptools-functionality.patch
 BuildRequires: python-eth_utils
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
