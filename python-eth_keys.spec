@@ -1,16 +1,11 @@
 Name:          python-eth_keys
-Version:       0.4.0
+Version:       0.5.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A common API for Ethereum key operations.
 License:       MIT
 URL:           https://github.com/ethereum/eth-keys
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# See comments below
-#Source0:       %{pypi_source eth-keys}
-Source:        https://github.com/ethereum/eth-keys/archive/v%{version}/eth_keys-%{version}.tar.gz
-Patch1:		python-eth_keys-0001-Suppress-function-scoped-fixtures-warnings.patch
-#Patch2:		python-eth_keys-0002-FIXME.-Skip-two-tests-for-now.patch
+Source0:       %{pypi_source eth-keys}
 BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
@@ -38,8 +33,6 @@ RLP definitions for common Ethereum objects in Python.
 %py3_install
 
 %check
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# See comments above
 %pytest
 
 %files
