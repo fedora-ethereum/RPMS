@@ -30,7 +30,7 @@ eth_abi: Python utilities for working with Ethereum ABI definitions, especially
 encoding and decoding.
 
 %prep
-%autosetup -p1 -n eth-abi-%{version}
+%autosetup -p1 -n eth_abi-%{version}
 #sed -i -e "s,\,<0.9.0,,g" setup.py
 
 %build
