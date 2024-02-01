@@ -5,6 +5,8 @@ Summary:       Cross-platform Python bindings for libsecp256k1
 License:       MIT or ASL-2.0
 URL:           https://github.com/ofek/coincurve
 Source0:       %{pypi_source coincurve}
+BuildRequires: autoconf
+BuildRequires: automake
 BuildRequires: gcc
 BuildRequires: libsecp256k1-devel
 BuildRequires: python3-asn1crypto
@@ -18,6 +20,7 @@ BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 BuildRequires: python3-wheel
 BuildRequires: tox
+Provides: bundled(libsecp256k1)
 %{?python_provide:%python_provide python3-coincurve}
 
 %description
