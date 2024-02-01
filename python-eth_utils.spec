@@ -11,6 +11,7 @@ BuildRequires: python-eth_typing
 BuildRequires: python3-cached_property
 BuildRequires: python3-cytoolz
 BuildRequires: python3-hypothesis
+BuildRequires: python3-mypy
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-xdist
 BuildRequires: python3-rpm-generators
