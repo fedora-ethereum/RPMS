@@ -1,6 +1,6 @@
 %global pypi_name docopt-ng
 
-Name:           python-docopt
+Name:           python-docopt-ng
 Version:        0.9.0
 Release:        %autorelease
 Summary:        Pythonic argument parser, that will make you smile
