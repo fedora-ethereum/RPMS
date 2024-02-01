@@ -1,16 +1,11 @@
 Name:          python-eth_utils
-Version:       2.1.0
+Version:       3.0.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Utility functions for working with ethereum related codebases
 License:       MIT
 URL:           https://github.com/ethereum/eth-utils
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# https://github.com/ethereum/eth-utils/issues/130
-# See comments below
-#Source0:       %{pypi_source eth-utils}
-Source:        https://github.com/ethereum/eth-utils/archive/v%{version}/eth_utils-%{version}.tar.gz
-Patch1:        python-eth_utils-0001-We-don-t-use-PIP.patch
+Source0:       %{pypi_source eth-utils}
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python3-cached_property
@@ -42,9 +37,6 @@ Utility functions for working with ethereum related codebases.
 %py3_install
 
 %check
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# https://github.com/ethereum/eth-utils/issues/130
-# See comments below
 %pytest ./tests
 
 %files
