@@ -1,14 +1,11 @@
 Name:          python-eth_abi
-Version:       4.2.1
+Version:       5.0.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Python utilities for working with Ethereum ABI definitions
 License:       MIT
 URL:           https://github.com/ethereum/eth-abi
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# See comments below
-#Source0:       %{pypi_source eth_abi}
-Source:        https://github.com/ethereum/eth-abi/archive/v%{version}/eth_abi-%{version}.tar.gz
+Source0:       %{pypi_source eth_abi}
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
@@ -43,8 +40,6 @@ encoding and decoding.
 %py3_install
 
 %check
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# See comments above
 %pytest
 
 %files
