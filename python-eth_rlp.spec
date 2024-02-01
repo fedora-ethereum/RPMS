@@ -18,6 +18,7 @@ BuildRequires: python3-setuptools
 BuildRequires: python3-sphinx
 BuildRequires: python3-sphinx_rtd_theme
 BuildRequires: python3-towncrier
+BuildRequires: python3-typing-extensions
 BuildRequires: tox
 %{?python_provide:%python_provide python3-eth_rlp}
 
