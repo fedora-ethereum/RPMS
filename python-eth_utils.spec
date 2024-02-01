@@ -6,6 +6,7 @@ Summary:       Utility functions for working with ethereum related codebases
 License:       MIT
 URL:           https://github.com/ethereum/eth-utils
 Source0:       %{pypi_source eth-utils}
+Patch1:        python-eth_utils-0001-Readd-fixtures-to-PyPi-tarball.patch
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python3-cached_property
