@@ -8,7 +8,9 @@ Source0:       %{pypi_source coincurve}
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc
-BuildRequires: libsecp256k1-devel
+#BuildRequires: libsecp256k1-devel
+BuildRequires: libtool
+BuildRequires: make
 BuildRequires: python3-asn1crypto
 BuildRequires: python3-cffi
 BuildRequires: python3-devel
