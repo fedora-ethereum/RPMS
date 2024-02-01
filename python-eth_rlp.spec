@@ -1,14 +1,11 @@
 Name:          python-eth_rlp
-Version:       0.3.0
+Version:       1.0.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       RLP definitions for common Ethereum objects in Python
 License:       MIT
 URL:           https://github.com/ethereum/eth-rlp
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# See comments below
-#Source0:       %{pypi_source eth-rlp}
-Source:        https://github.com/ethereum/eth-rlp/archive/v%{version}/eth_rlp-%{version}.tar.gz
+Source0:       %{pypi_source eth-rlp}
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_utils
 BuildRequires: python-hexbytes
@@ -38,8 +35,6 @@ RLP definitions for common Ethereum objects in Python.
 %py3_install
 
 %check
-# FIXME no tests shipped to pypi. Should we just grab tarball from github?
-# See comments above
 %pytest
 
 %files
