@@ -1,4 +1,4 @@
-Name:           python-parsimonious
+Name:           python-compat-parsimonious09
 Version:        0.9.0
 Release:        %autorelease
 Summary:        A fast pure-Python PEG parser
