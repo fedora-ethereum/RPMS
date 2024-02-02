@@ -10,7 +10,7 @@ Source0:       %{pypi_source eth_abi}
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
-BuildRequires: python-parsimonious
+BuildRequires: python-compat-parsimonious09
 BuildRequires: python3-hypothesis
 BuildRequires: python3-jinja2
 BuildRequires: python3-pytest
