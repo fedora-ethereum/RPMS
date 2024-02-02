@@ -1,5 +1,5 @@
 Name:          python-hexbytes
-Version:       0.3.0
+Version:       0.3.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Python `bytes` subclass that decodes hex, with a readable console output
