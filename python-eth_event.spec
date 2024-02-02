@@ -1,5 +1,5 @@
 Name:          python-eth_event
-Version:       1.2.3
+Version:       1.2.5
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Tools for Ethereum event decoding and topic generation.
@@ -21,9 +21,7 @@ Tools for Ethereum event decoding and topic generation.
 
 %prep
 %autosetup -p1 -n eth-event-%{version}
-sed -i -e "s,eth-abi>=2.0.0\,<3.0.0,eth-abi>=2.0.0,g;
-	s,eth-hash\[pycryptodome\],eth-hash,g;
-	s,eth-utils>=1.2.0\,<2.0.0,eth-utils>=1.2.0,g" setup.py
+sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
 
 %build
 %py3_build
