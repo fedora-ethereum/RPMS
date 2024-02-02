@@ -6,6 +6,7 @@ Summary:       Python utilities for working with Ethereum ABI definitions
 License:       MIT
 URL:           https://github.com/ethereum/eth-abi
 Source0:       %{pypi_source eth_abi}
+Patch1:        python-eth_abi-0001-Fix-four-tests.patch
 # FIXME replace with current parsimonious as soon as support lands upstream
 BuildRequires: python-compat-parsimonious09
 BuildRequires: python-eth_hash
