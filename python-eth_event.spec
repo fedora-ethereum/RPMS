@@ -33,8 +33,7 @@ sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
 #%%pytest
 
 %files
-#%%license LICENSE
-#%%doc docs
+%license LICENSE
 %doc README.md
 %{python3_sitelib}/eth_event/
 %{python3_sitelib}/eth_event-*.egg-info/
