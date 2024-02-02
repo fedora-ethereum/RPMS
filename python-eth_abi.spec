@@ -6,7 +6,7 @@ Summary:       Python utilities for working with Ethereum ABI definitions
 License:       MIT
 URL:           https://github.com/ethereum/eth-abi
 Source0:       %{pypi_source eth_abi}
-Patch1:        python-eth_abi-0001-Don-t-use-reserved-words.patch
+#Patch1:        python-eth_abi-0001-Don-t-use-reserved-words.patch
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
