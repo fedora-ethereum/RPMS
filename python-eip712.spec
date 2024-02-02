@@ -8,6 +8,7 @@ URL:           https://github.com/ApeWorX/eip712
 Source0:       %{pypi_source eip712}
 BuildRequires: python-dataclassy
 BuildRequires: python-eth_abi
+BuildRequires: python-eth_account
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
 BuildRequires: python-hexbytes
@@ -25,7 +26,6 @@ BuildRequires: python3-setuptools_scm
 BuildRequires: python3-sphinx
 BuildRequires: python3-sphinx-click
 BuildRequires: python3-sphinx_rtd_theme
-#BuildRequires: python3-sphinxcontrib-napoleon
 BuildRequires: python3-wheel
 BuildRequires: sed
 %{?python_provide:%python_provide python3-eip712}
