@@ -28,7 +28,7 @@ Tools for Ethereum event decoding and topic generation.
 %autosetup -p1 -n eth-event-%{version}
 sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
 # FIXME should go into PyPi package
-install -D -p -m 0644 %{SOURCE2} tests/trace.json
+install -D -p -m 0644 %{SOURCE1} tests/trace.json
 
 %build
 %py3_build
