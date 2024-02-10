@@ -7,11 +7,9 @@ License:       MIT
 URL:           https://github.com/keis/base58
 Source0:       %{pypi_source base58}
 BuildRequires: python3-hamcrest
-BuildRequires: python3-mypy
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-benchmark
 BuildRequires: python3-pytest-cov
-BuildRequires: python3-pytest-flake8
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
