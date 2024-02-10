@@ -6,6 +6,8 @@ Summary:       An enhanced, tiny reimplementation of dataclasses
 License:       MPL 2.0
 URL:           https://github.com/biqqles/dataclassy
 Source0:       %{pypi_source dataclassy}
+# FIXME should go into PyPi package
+Source1:       python-dataclassy-tests.py
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
@@ -19,7 +21,8 @@ than dataclasses, while retaining a familiar interface.
 
 %prep
 %autosetup -p1 -n dataclassy-%{version}
-
+# FIXME should go into PyPi package
+install -D -p -m 0644 %{SOURCE1} tests.py
 
 %build
 %py3_build
@@ -29,7 +32,7 @@ than dataclasses, while retaining a familiar interface.
 
 %check
 # FIXME - n/a in pypi
-#%%python3 test.py
+%python3 test.py
 
 %files
 %license LICENSE.md
