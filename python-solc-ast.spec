@@ -1,5 +1,5 @@
 Name:          python-solc-ast
-Version:       1.2.9
+Version:       1.2.10
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A tool for exploring the solc abstract syntax tree
@@ -7,7 +7,6 @@ License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/py-solc-ast
 Source0:       %{pypi_source py-solc-ast}
 BuildRequires: python3-pytest
-# FIXME not in the setup.cfg
 BuildRequires: python3-pytest-cov
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
@@ -28,14 +27,10 @@ A tool for exploring the solc abstract syntax tree.
 %py3_install
 
 %check
-# FIXME - only coverage
-#%%pytest
-# FIXME - no Tox config available
-# tox
+%pytest
 
 %files
-#%%license LICENSE
-#%%doc docs
+%license LICENSE
 %doc README.md
 # FIXME conflicts with solcast-py
 %{python3_sitelib}/solcast/*
