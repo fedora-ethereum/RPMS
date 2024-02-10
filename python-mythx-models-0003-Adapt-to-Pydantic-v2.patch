@@ -1,0 +1,395 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Sat, 10 Feb 2024 14:12:28 +0100
+Subject: [PATCH] Adapt to Pydantic v2
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/mythx_models/request/analysis_input.py b/mythx_models/request/analysis_input.py
+index 96c227a..2dfa272 100644
+--- a/mythx_models/request/analysis_input.py
++++ b/mythx_models/request/analysis_input.py
+@@ -1,6 +1,6 @@
+ """This module contains the AnalysisInputRequest domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class AnalysisInputRequest(BaseModel):
+diff --git a/mythx_models/request/analysis_list.py b/mythx_models/request/analysis_list.py
+index 494b344..1a74157 100644
+--- a/mythx_models/request/analysis_list.py
++++ b/mythx_models/request/analysis_list.py
+@@ -3,7 +3,7 @@
+ from datetime import datetime
+ from typing import Optional
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class AnalysisListRequest(BaseModel):
+diff --git a/mythx_models/request/analysis_status.py b/mythx_models/request/analysis_status.py
+index 1c893c2..2578d07 100644
+--- a/mythx_models/request/analysis_status.py
++++ b/mythx_models/request/analysis_status.py
+@@ -1,6 +1,6 @@
+ """This module contains the AnalysisStatusRequest domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class AnalysisStatusRequest(BaseModel):
+diff --git a/mythx_models/request/analysis_submission.py b/mythx_models/request/analysis_submission.py
+index e75c591..4096e03 100644
+--- a/mythx_models/request/analysis_submission.py
++++ b/mythx_models/request/analysis_submission.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import Any, Dict, List, Optional
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ from mythx_models.util import dict_delete_none_fields
+ 
+diff --git a/mythx_models/request/auth_login.py b/mythx_models/request/auth_login.py
+index 5ba5895..561a938 100644
+--- a/mythx_models/request/auth_login.py
++++ b/mythx_models/request/auth_login.py
+@@ -1,6 +1,6 @@
+ """This module contains the AuthLoginRequest domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class AuthLoginRequest(BaseModel):
+diff --git a/mythx_models/request/auth_logout.py b/mythx_models/request/auth_logout.py
+index 57fe5e0..178d310 100644
+--- a/mythx_models/request/auth_logout.py
++++ b/mythx_models/request/auth_logout.py
+@@ -1,6 +1,6 @@
+ """This module contains the AuthLogoutRequest domain model."""
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class AuthLogoutRequest(BaseModel):
+diff --git a/mythx_models/request/auth_refresh.py b/mythx_models/request/auth_refresh.py
+index a67daa5..ea1e7b3 100644
+--- a/mythx_models/request/auth_refresh.py
++++ b/mythx_models/request/auth_refresh.py
+@@ -1,6 +1,6 @@
+ """This module contains the AuthRefreshRequest domain model."""
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class AuthRefreshRequest(BaseModel):
+diff --git a/mythx_models/request/detected_issues.py b/mythx_models/request/detected_issues.py
+index ec09d3d..b297479 100644
+--- a/mythx_models/request/detected_issues.py
++++ b/mythx_models/request/detected_issues.py
+@@ -1,6 +1,6 @@
+ """This module contains the DetectedIssuesRequest domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class DetectedIssuesRequest(BaseModel):
+diff --git a/mythx_models/request/group_creation.py b/mythx_models/request/group_creation.py
+index 552ac1c..408b84f 100644
+--- a/mythx_models/request/group_creation.py
++++ b/mythx_models/request/group_creation.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import Optional
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class GroupCreationRequest(BaseModel):
+diff --git a/mythx_models/request/group_list.py b/mythx_models/request/group_list.py
+index 5fbd15c..db500a9 100644
+--- a/mythx_models/request/group_list.py
++++ b/mythx_models/request/group_list.py
+@@ -3,7 +3,7 @@
+ from datetime import datetime
+ from typing import Optional
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class GroupListRequest(BaseModel):
+diff --git a/mythx_models/request/group_operation.py b/mythx_models/request/group_operation.py
+index adbbd29..ca7a39f 100644
+--- a/mythx_models/request/group_operation.py
++++ b/mythx_models/request/group_operation.py
+@@ -1,6 +1,6 @@
+ """This module contains the GroupOperation domain model."""
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ from typing import Optional
+ 
+ class GroupOperationRequest(BaseModel):
+diff --git a/mythx_models/request/group_status.py b/mythx_models/request/group_status.py
+index 3638858..33292aa 100644
+--- a/mythx_models/request/group_status.py
++++ b/mythx_models/request/group_status.py
+@@ -1,6 +1,6 @@
+ """This module contains the GroupRequest domain model."""
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class GroupStatusRequest(BaseModel):
+diff --git a/mythx_models/request/project_creation.py b/mythx_models/request/project_creation.py
+index dcf0502..68c7d7e 100644
+--- a/mythx_models/request/project_creation.py
++++ b/mythx_models/request/project_creation.py
+@@ -1,6 +1,6 @@
+ from typing import List
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class ProjectCreationRequest(BaseModel):
+diff --git a/mythx_models/request/project_deletion.py b/mythx_models/request/project_deletion.py
+index f1116e5..a55c9e2 100644
+--- a/mythx_models/request/project_deletion.py
++++ b/mythx_models/request/project_deletion.py
+@@ -1,4 +1,4 @@
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class ProjectDeleteRequest(BaseModel):
+diff --git a/mythx_models/request/project_list.py b/mythx_models/request/project_list.py
+index 990b35a..23f9ee8 100644
+--- a/mythx_models/request/project_list.py
++++ b/mythx_models/request/project_list.py
+@@ -1,6 +1,6 @@
+ from typing import Optional
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class ProjectListRequest(BaseModel):
+diff --git a/mythx_models/request/project_status.py b/mythx_models/request/project_status.py
+index 7de49f8..0b390e5 100644
+--- a/mythx_models/request/project_status.py
++++ b/mythx_models/request/project_status.py
+@@ -1,4 +1,4 @@
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class ProjectStatusRequest(BaseModel):
+diff --git a/mythx_models/request/project_update.py b/mythx_models/request/project_update.py
+index 12ffda4..2fa6bbf 100644
+--- a/mythx_models/request/project_update.py
++++ b/mythx_models/request/project_update.py
+@@ -1,6 +1,6 @@
+ from typing import Optional
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class ProjectUpdateRequest(BaseModel):
+diff --git a/mythx_models/request/version.py b/mythx_models/request/version.py
+index da148ee..b01fc79 100644
+--- a/mythx_models/request/version.py
++++ b/mythx_models/request/version.py
+@@ -1,6 +1,6 @@
+ """This module contains the VersionRequest domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class VersionRequest(BaseModel):
+diff --git a/mythx_models/response/analysis.py b/mythx_models/response/analysis.py
+index b5a8918..02c3b78 100644
+--- a/mythx_models/response/analysis.py
++++ b/mythx_models/response/analysis.py
+@@ -3,7 +3,7 @@
+ import logging
+ from enum import Enum
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ from mythx_models.response.group import VulnerabilityStatistics
+ 
+diff --git a/mythx_models/response/analysis_list.py b/mythx_models/response/analysis_list.py
+index c2bf337..5395dec 100644
+--- a/mythx_models/response/analysis_list.py
++++ b/mythx_models/response/analysis_list.py
+@@ -3,7 +3,7 @@
+ 
+ from typing import List
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ from .analysis import AnalysisShort
+ 
+diff --git a/mythx_models/response/auth_login.py b/mythx_models/response/auth_login.py
+index 374fcf7..1d5333c 100644
+--- a/mythx_models/response/auth_login.py
++++ b/mythx_models/response/auth_login.py
+@@ -1,6 +1,6 @@
+ """This module contains the AuthLoginResponse domain model."""
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class AuthLoginResponse(BaseModel):
+diff --git a/mythx_models/response/auth_logout.py b/mythx_models/response/auth_logout.py
+index ebd0bd6..7392307 100644
+--- a/mythx_models/response/auth_logout.py
++++ b/mythx_models/response/auth_logout.py
+@@ -1,6 +1,6 @@
+ """This module contains the AuthLogoutResponse domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class AuthLogoutResponse(BaseModel):
+diff --git a/mythx_models/response/auth_refresh.py b/mythx_models/response/auth_refresh.py
+index 6a1dfbf..868e8cc 100644
+--- a/mythx_models/response/auth_refresh.py
++++ b/mythx_models/response/auth_refresh.py
+@@ -1,6 +1,6 @@
+ """This module contains the AuthRefreshResponse domain model."""
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ 
+ class AuthRefreshResponse(BaseModel):
+diff --git a/mythx_models/response/detected_issues.py b/mythx_models/response/detected_issues.py
+index aa9b0a4..9fdc128 100644
+--- a/mythx_models/response/detected_issues.py
++++ b/mythx_models/response/detected_issues.py
+@@ -2,7 +2,7 @@
+ and a report helper."""
+ from typing import Any, Dict, List, Optional
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ from mythx_models.response.issue import Issue, SourceFormat, SourceType
+ 
+diff --git a/mythx_models/response/group.py b/mythx_models/response/group.py
+index b6bb788..608e9db 100644
+--- a/mythx_models/response/group.py
++++ b/mythx_models/response/group.py
+@@ -4,7 +4,7 @@ import logging
+ from enum import Enum
+ from typing import List, Optional
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ LOGGER = logging.getLogger(__name__)
+ 
+diff --git a/mythx_models/response/group_list.py b/mythx_models/response/group_list.py
+index 243f56f..7ddf47e 100644
+--- a/mythx_models/response/group_list.py
++++ b/mythx_models/response/group_list.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import List
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ from .group import Group
+ 
+diff --git a/mythx_models/response/issue.py b/mythx_models/response/issue.py
+index e9486a0..df82f0f 100644
+--- a/mythx_models/response/issue.py
++++ b/mythx_models/response/issue.py
+@@ -3,7 +3,7 @@
+ from typing import Any, Dict, List, Optional, Tuple, Union
+ from enum import Enum
+ 
+-from pydantic import BaseModel, Field
++from pydantic.v1 import BaseModel, Field
+ 
+ try:
+     from typing_extensions import Literal
+diff --git a/mythx_models/response/project.py b/mythx_models/response/project.py
+index 6fc6058..f7039be 100644
+--- a/mythx_models/response/project.py
++++ b/mythx_models/response/project.py
+@@ -1,6 +1,6 @@
+ from datetime import datetime
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class ShortProject(BaseModel):
+diff --git a/mythx_models/response/project_deletion.py b/mythx_models/response/project_deletion.py
+index b7db0d4..8ab49b3 100644
+--- a/mythx_models/response/project_deletion.py
++++ b/mythx_models/response/project_deletion.py
+@@ -1,4 +1,4 @@
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class ProjectDeletionResponse(BaseModel):
+diff --git a/mythx_models/response/project_list.py b/mythx_models/response/project_list.py
+index b0aba01..38466f2 100644
+--- a/mythx_models/response/project_list.py
++++ b/mythx_models/response/project_list.py
+@@ -1,6 +1,6 @@
+ from typing import List
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ from .project import ShortProject
+ 
+diff --git a/mythx_models/response/version.py b/mythx_models/response/version.py
+index 795eee6..c8f1b9b 100644
+--- a/mythx_models/response/version.py
++++ b/mythx_models/response/version.py
+@@ -1,6 +1,6 @@
+ """This module contains the VersionResponse domain model."""
+ 
+-from pydantic import BaseModel
++from pydantic.v1 import BaseModel
+ 
+ 
+ class VersionResponse(BaseModel):
+diff --git a/tests/test_detected_issues_response.py b/tests/test_detected_issues_response.py
+index 7611567..b512ac0 100644
+--- a/tests/test_detected_issues_response.py
++++ b/tests/test_detected_issues_response.py
+@@ -1,7 +1,7 @@
+ from typing import List
+ 
+ from hypothesis import HealthCheck, given, settings
+-from pydantic import parse_obj_as
++from pydantic.v1 import parse_obj_as
+ 
+ from mythx_models.response import IssueReport
+ 
