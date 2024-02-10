@@ -11,6 +11,7 @@ BuildRequires: python-eth_hash
 BuildRequires: python-eth_utils
 BuildRequires: python-hexbytes
 BuildRequires: python3-pytest
+BuildRequires: python3-pytest-cov
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
