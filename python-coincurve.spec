@@ -6,6 +6,7 @@ License:       MIT or ASL-2.0
 URL:           https://github.com/ofek/coincurve
 Source0:       %{pypi_source coincurve}
 Patch1:        python-coincurve-0001-Re-add-tests-forgotten-in-PyPi.patch
+Patch2:        python-coincurve-0002-Don-t-use-leading-dot-while-importing-tests.patch
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc

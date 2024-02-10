@@ -1,0 +1,56 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Sat, 10 Feb 2024 12:40:49 +0100
+Subject: [PATCH] Don't use leading dot while importing tests
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/tests/test_bench.py b/tests/test_bench.py
+index 1a1095d..7c4908e 100644
+--- a/tests/test_bench.py
++++ b/tests/test_bench.py
+@@ -1,6 +1,6 @@
+ from coincurve import PrivateKey, PublicKey, verify_signature
+ 
+-from .samples import MESSAGE, PRIVATE_KEY_BYTES, PUBLIC_KEY_COMPRESSED, SIGNATURE
++from samples import MESSAGE, PRIVATE_KEY_BYTES, PUBLIC_KEY_COMPRESSED, SIGNATURE
+ 
+ 
+ def test_verify_signature_util(benchmark):
+diff --git a/tests/test_ecdsa.py b/tests/test_ecdsa.py
+index c90a6e5..d9675ba 100644
+--- a/tests/test_ecdsa.py
++++ b/tests/test_ecdsa.py
+@@ -1,6 +1,6 @@
+ from coincurve.ecdsa import cdata_to_der, der_to_cdata
+ 
+-from .samples import SIGNATURE
++from samples import SIGNATURE
+ 
+ 
+ def test_der():
+diff --git a/tests/test_keys.py b/tests/test_keys.py
+index 05616e8..2180b7b 100644
+--- a/tests/test_keys.py
++++ b/tests/test_keys.py
+@@ -7,7 +7,7 @@ from coincurve.ecdsa import deserialize_recoverable, recover
+ from coincurve.keys import PrivateKey, PublicKey, PublicKeyXOnly
+ from coincurve.utils import bytes_to_int, int_to_bytes_padded, verify_signature
+ 
+-from .samples import (
++from samples import (
+     MESSAGE,
+     PRIVATE_KEY_BYTES,
+     PRIVATE_KEY_DER,
+diff --git a/tests/test_utils.py b/tests/test_utils.py
+index 39ba688..a7f8e2c 100644
+--- a/tests/test_utils.py
++++ b/tests/test_utils.py
+@@ -17,7 +17,7 @@ from coincurve.utils import (
+     verify_signature,
+ )
+ 
+-from .samples import MESSAGE, PRIVATE_KEY_DER, PUBLIC_KEY_COMPRESSED, PUBLIC_KEY_UNCOMPRESSED, SIGNATURE
++from samples import MESSAGE, PRIVATE_KEY_DER, PUBLIC_KEY_COMPRESSED, PUBLIC_KEY_UNCOMPRESSED, SIGNATURE
+ 
+ 
+ class TestPadScalar:
