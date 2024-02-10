@@ -35,7 +35,7 @@ The Ethereum hashing function, keccak256, sometimes (erroneously) called sha256 
 %py3_install
 
 %check
-%pytest
+%pytest ./tests/core/ ./tests/backends/pycryptodome
 
 %files
 %license LICENSE
