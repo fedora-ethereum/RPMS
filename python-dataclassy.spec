@@ -32,7 +32,7 @@ install -D -p -m 0644 %{SOURCE1} tests.py
 
 %check
 # FIXME - n/a in pypi
-%python3 test.py
+%python3 tests.py
 
 %files
 %license LICENSE.md
