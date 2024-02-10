@@ -39,7 +39,7 @@ Utility functions for working with ethereum related codebases.
 %py3_install
 
 %check
-%pytest ./tests
+%pytest
 
 %files
 %license LICENSE
