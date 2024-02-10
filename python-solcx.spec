@@ -36,7 +36,7 @@ Python wrapper and version management tool for the solc Solidity compiler.
 %py3_install
 
 %check
-%pytest
+%pytest --no-install
 
 %files
 %license LICENSE
