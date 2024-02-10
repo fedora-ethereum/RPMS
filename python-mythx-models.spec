@@ -35,7 +35,7 @@ Python domain model classes for the MythX platform.
 rm -rf %{buildroot}%{python3_sitelib}/tests/
 
 %check
-%pytest --cov-report html --cov-report term --cov mythx_models tests/
+%pytest
 
 %files
 %license LICENSE
