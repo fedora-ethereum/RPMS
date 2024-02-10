@@ -5,6 +5,7 @@ Summary:       Cross-platform Python bindings for libsecp256k1
 License:       MIT or ASL-2.0
 URL:           https://github.com/ofek/coincurve
 Source0:       %{pypi_source coincurve}
+Patch1:        python-coincurve-0001-Re-add-tests-forgotten-in-PyPi.patch
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc
@@ -21,7 +22,6 @@ BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 BuildRequires: python3-wheel
-BuildRequires: tox
 Provides: bundled(libsecp256k1)
 %{?python_provide:%python_provide python3-coincurve}
 
@@ -38,12 +38,10 @@ Cross-platform Python bindings for libsecp256k1.
 %py3_install
 
 %check
-# FIXME - no pytest tests
-#%%pytest
-#tox
+%pytest
 
 %files
-#%%license LICENSE-MIT LICENSE-APACHE
+%license LICENSE-MIT LICENSE-APACHE
 #%%doc docs
 %doc README.md
 %{python3_sitearch}/coincurve/
