@@ -6,6 +6,7 @@ Summary:       A tool for exploring the solc abstract syntax tree
 License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/py-solc-ast
 Source0:       %{pypi_source py-solc-ast}
+Patch1:        python-solc-ast-0001-Readd-missing-in-PyPi-test-data.patch
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
 BuildRequires: python3-rpm-generators
