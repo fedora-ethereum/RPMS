@@ -6,6 +6,7 @@ Summary:       Tools for Ethereum event decoding and topic generation.
 License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/eth-event
 Source0:       %{pypi_source eth-event}
+Patch1:        python-eth_event-0001-Fix-failing-tests.patch
 BuildRequires: python-eth_abi
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_utils
