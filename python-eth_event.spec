@@ -30,7 +30,7 @@ sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
