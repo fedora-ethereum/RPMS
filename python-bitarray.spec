@@ -1,3 +1,5 @@
+# FIXME use a version from Fedora
+
 Name:          python-bitarray
 Version:       2.7.3
 Release:       %autorelease
