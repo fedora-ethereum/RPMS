@@ -6,15 +6,14 @@ License:       MIT or ASL-2.0
 URL:           https://github.com/ofek/coincurve
 Source0:       %{pypi_source coincurve}
 Patch1:        python-coincurve-0001-Re-add-tests-forgotten-in-PyPi.patch
-#Patch2:        python-coincurve-0002-Don-t-use-leading-dot-while-importing-tests.patch
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc
-#BuildRequires: libsecp256k1-devel
 BuildRequires: libtool
 BuildRequires: make
 BuildRequires: python3-asn1crypto
 BuildRequires: python3-cffi
+BuildRequires: python3-codecov
 BuildRequires: python3-devel
 BuildRequires: python3-pip
 BuildRequires: python3-pytest
@@ -23,6 +22,7 @@ BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
 BuildRequires: python3-wheel
+BuildRequires: tox
 Provides: bundled(libsecp256k1)
 %{?python_provide:%python_provide python3-coincurve}
 
@@ -39,7 +39,7 @@ Cross-platform Python bindings for libsecp256k1.
 %py3_install
 
 %check
-%pytest
+%tox
 
 %files
 %license LICENSE-MIT LICENSE-APACHE
