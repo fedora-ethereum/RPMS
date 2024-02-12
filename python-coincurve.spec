@@ -21,6 +21,7 @@ BuildRequires: python3-requests
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
+BuildRequires: python3-tox-current-env
 BuildRequires: python3-wheel
 BuildRequires: tox
 Provides: bundled(libsecp256k1)
