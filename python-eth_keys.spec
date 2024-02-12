@@ -6,7 +6,7 @@ Summary:       A common API for Ethereum key operations.
 License:       MIT
 URL:           https://github.com/ethereum/eth-keys
 Source0:       %{pypi_source eth-keys}
-Patch1:        python-eth_keys-0001-Remove-asn1tools-as-a-dependency.patch
+BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
