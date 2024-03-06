@@ -6,10 +6,7 @@ Summary:       Tools for Ethereum event decoding and topic generation.
 License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/eth-event
 Source0:       %{pypi_source eth-event}
-# FIXME should go into PyPi package
-#Source1:       python-eth_event-trace.json
-#Patch1:        python-eth_event-0001-Fix-failing-tests.patch
-Patch1:		python-eth_event-0001-Readd-missing-test-files.patch
+Patch1:        python-eth_event-0001-Readd-missing-test-files.patch
 BuildRequires: python-eth_abi
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_utils
@@ -28,8 +25,6 @@ Tools for Ethereum event decoding and topic generation.
 %prep
 %autosetup -p1 -n eth-event-%{version}
 sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
-# FIXME should go into PyPi package
-#install -D -p -m 0644 %{SOURCE1} tests/trace.json
 
 %build
 %py3_build
@@ -38,7 +33,6 @@ sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
 %py3_install
 
 %check
-%pytest --fixtures [testpath]
 %pytest
 
 %files
