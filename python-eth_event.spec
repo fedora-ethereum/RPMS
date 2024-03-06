@@ -8,7 +8,7 @@ URL:           https://github.com/iamdefinitelyahuman/eth-event
 Source0:       %{pypi_source eth-event}
 # FIXME should go into PyPi package
 Source1:       python-eth_event-trace.json
-#Patch1:        python-eth_event-0001-Fix-failing-tests.patch
+Patch1:        python-eth_event-0001-Fix-failing-tests.patch
 BuildRequires: python-eth_abi
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_utils
@@ -37,7 +37,7 @@ install -D -p -m 0644 %{SOURCE1} tests/trace.json
 %py3_install
 
 %check
-%pytest tests
+%pytest
 
 %files
 %license LICENSE
