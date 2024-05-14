@@ -24,6 +24,7 @@ BuildRequires: python3-sphinx_rtd_theme
 BuildRequires: python3-towncrier
 BuildRequires: sed
 BuildRequires: tox
+Requires: python-compat-parsimonious09
 %{?python_provide:%python_provide python3-eth_abi}
 
 %description
