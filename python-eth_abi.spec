@@ -1,14 +1,12 @@
 Name:          python-eth_abi
-Version:       5.0.0
+Version:       5.1.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Python utilities for working with Ethereum ABI definitions
 License:       MIT
 URL:           https://github.com/ethereum/eth-abi
 Source0:       %{pypi_source eth_abi}
-Patch1:        python-eth_abi-0001-Fix-four-tests.patch
-# FIXME replace with current parsimonious as soon as support lands upstream
-BuildRequires: python-compat-parsimonious09
+#Patch1:        python-eth_abi-0001-Fix-four-tests.patch
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
@@ -24,7 +22,6 @@ BuildRequires: python3-sphinx_rtd_theme
 BuildRequires: python3-towncrier
 BuildRequires: sed
 BuildRequires: tox
-Requires: python-compat-parsimonious09
 %{?python_provide:%python_provide python3-eth_abi}
 
 %description
