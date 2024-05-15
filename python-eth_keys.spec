@@ -10,6 +10,7 @@ Patch1:        python-eth_keys-0001-Suppress-function-scoped-fixtures-warnings.p
 Patch2:        python-eth_keys-0002-FIXME.-Skip-two-tests-for-now.patch
 BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
+BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
 BuildRequires: python3-factory-boy
