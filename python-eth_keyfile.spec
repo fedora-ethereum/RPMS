@@ -31,7 +31,7 @@ Tools for handling the encrypted keyfile format used to store private keys.
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
