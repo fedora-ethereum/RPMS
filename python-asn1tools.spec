@@ -10,11 +10,11 @@ BuildRequires: python-compat-pyparsing309
 BuildRequires: python-diskcache
 BuildRequires: python3-bitstruct
 BuildRequires: python3-prompt-toolkit
+BuildRequires: python3-pyparsing
 BuildRequires: python3-pytest
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
 BuildRequires: python3-setuptools
-Requires: python-compat-pyparsing309
 %{?python_provide:%python_provide python3-asn1tools}
 
 %description
