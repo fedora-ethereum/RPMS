@@ -5,7 +5,7 @@ BuildArch:     noarch
 Summary:       Account abstraction library for web3.py
 License:       MIT
 URL:           https://github.com/ethereum/eth-account
-Source0:       %{pypi_source eth-account}
+Source0:       %{pypi_source eth_account}
 BuildRequires: python-bitarray
 BuildRequires: python-eth_abi
 BuildRequires: python-eth_keyfile
@@ -33,8 +33,8 @@ BuildRequires: tox
 Account abstraction library for web3.py.
 
 %prep
-%autosetup -p1 -n eth-account-%{version}
-sed -i -e "s,0.4.0\,<0.5,0.3.4,g" setup.py
+%autosetup -p1 -n eth_account-%{version}
+#sed -i -e "s,0.4.0\,<0.5,0.3.4,g" setup.py
 
 %build
 %py3_build
@@ -43,7 +43,7 @@ sed -i -e "s,0.4.0\,<0.5,0.3.4,g" setup.py
 %py3_install
 
 %check
-#%%pytest
+%pytest
 
 %files
 %license LICENSE
