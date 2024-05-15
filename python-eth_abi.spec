@@ -6,9 +6,9 @@ Summary:       Python utilities for working with Ethereum ABI definitions
 License:       MIT
 URL:           https://github.com/ethereum/eth-abi
 Source0:       %{pypi_source eth_abi}
-#Patch1:        python-eth_abi-0001-Fix-four-tests.patch
-Patch1:		python-eth_abi-0001-upgrade-parsimonious-to-0.10.patch
-Patch2:		python-eth_abi-0002-fix-TypeError-with-isinstance-on-optional-expression.patch
+Patch1:        python-eth_abi-0001-upgrade-parsimonious-to-0.10.patch
+Patch2:        python-eth_abi-0002-fix-TypeError-with-isinstance-on-optional-expression.patch
+Patch1:        python-eth_abi-0003-Fix-four-tests.patch
 BuildRequires: python-eth_hash
 BuildRequires: python-eth_typing
 BuildRequires: python-eth_utils
