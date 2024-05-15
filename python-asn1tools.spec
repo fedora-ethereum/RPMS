@@ -6,6 +6,7 @@ Summary:       ASN.1 parsing, encoding and decoding
 License:       MIT
 URL:           https://github.com/eerimoq/asn1tools
 Source0:       %{pypi_source asn1tools}
+Patch1:        python-asn1tools-0001-Fixes-for-pyparsing-3.1.2.patch
 BuildRequires: python-diskcache
 BuildRequires: python3-bitstruct
 BuildRequires: python3-prompt-toolkit
