@@ -6,8 +6,6 @@ Summary:       A common API for Ethereum key operations.
 License:       MIT
 URL:           https://github.com/ethereum/eth-keys
 Source0:       %{pypi_source eth_keys}
-#Patch1:        python-eth_keys-0001-Suppress-function-scoped-fixtures-warnings.patch
-#Patch2:        python-eth_keys-0002-FIXME.-Skip-two-tests-for-now.patch
 BuildRequires: python-asn1tools
 BuildRequires: python-coincurve
 BuildRequires: python-eth_hash
