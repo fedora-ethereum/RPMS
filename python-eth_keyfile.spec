@@ -1,5 +1,5 @@
 Name:          python-eth_keyfile
-Version:       0.6.1
+Version:       0.8.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Tools for handling the encrypted keyfile format used to store private keys
