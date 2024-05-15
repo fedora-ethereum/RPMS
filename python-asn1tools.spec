@@ -21,7 +21,11 @@ BuildRequires: python3-setuptools
 ASN.1 parsing, encoding and decoding.
 
 %prep
+%if 0%{?fedora} < 40
+%setup -q -n asn1tools-%{version}
+%else
 %autosetup -p1 -n asn1tools-%{version}
+%endif
 
 %build
 %py3_build
