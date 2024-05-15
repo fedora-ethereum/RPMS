@@ -16,6 +16,7 @@ BuildRequires: python3-hypothesis
 BuildRequires: python3-jinja2
 BuildRequires: python-parsimonious
 BuildRequires: python3-pytest
+BuildRequires: python3-pytest-timeout
 BuildRequires: python3-pytest-xdist
 BuildRequires: python3-rpm-generators
 BuildRequires: python3-rpm-macros
