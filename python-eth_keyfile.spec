@@ -5,7 +5,7 @@ BuildArch:     noarch
 Summary:       Tools for handling the encrypted keyfile format used to store private keys
 License:       MIT
 URL:           https://github.com/ethereum/eth-keyfile
-Source0:       %{pypi_source eth-keyfile}
+Source0:       %{pypi_source eth_keyfile}
 Patch1:        python-eth_keyfile-0001-Fedora-use-cryptodome-explicitly.patch
 Patch2:        python-eth_keyfile-0002-Relax-dependencies.patch
 BuildRequires: python-eth_keys
@@ -22,7 +22,7 @@ BuildRequires: sed
 Tools for handling the encrypted keyfile format used to store private keys.
 
 %prep
-%autosetup -p1 -n eth-keyfile-%{version}
+%autosetup -p1 -n eth_keyfile-%{version}
 
 %build
 %py3_build
