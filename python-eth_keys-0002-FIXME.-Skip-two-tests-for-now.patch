@@ -5,10 +5,10 @@ Subject: [PATCH] FIXME. Skip two tests for now
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/tests/backends/test_native_backend_against_coincurve.py b/tests/backends/test_native_backend_against_coincurve.py
-index c4d8fa3..bd174ce 100644
+index 1c0e659..2428ab1 100644
 --- a/tests/backends/test_native_backend_against_coincurve.py
 +++ b/tests/backends/test_native_backend_against_coincurve.py
-@@ -55,6 +55,7 @@ def test_public_key_generation_is_equal(private_key_bytes,
+@@ -55,6 +55,7 @@ def test_public_key_generation_is_equal(
      assert native_public_key == coincurve_public_key
  
  
@@ -17,10 +17,10 @@ index c4d8fa3..bd174ce 100644
      private_key_bytes=private_key_st,
      message_hash=message_hash_st,
 diff --git a/tests/core/test_key_and_signature_datastructures.py b/tests/core/test_key_and_signature_datastructures.py
-index bfc7dc0..904963d 100644
+index 5773264..8b628c4 100644
 --- a/tests/core/test_key_and_signature_datastructures.py
 +++ b/tests/core/test_key_and_signature_datastructures.py
-@@ -126,7 +126,7 @@ def test_to_canonical_address_from_public_key(private_key):
+@@ -129,7 +129,7 @@ def test_to_canonical_address_from_public_key(private_key):
      assert is_canonical_address(address)
      assert is_same_address(address, ADDRESS)
  
@@ -28,4 +28,4 @@ index bfc7dc0..904963d 100644
 +@pytest.mark.skip(reason="Zero padding breaks assert hex(signature)")
  def test_hex_conversion(private_key):
      public_key = private_key.public_key
-     signature = private_key.sign_msg(b'message')
+     signature = private_key.sign_msg(b"message")

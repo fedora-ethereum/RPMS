@@ -1,5 +1,5 @@
 Name:          python-eth_keys
-Version:       0.5.0
+Version:       0.5.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A common API for Ethereum key operations.
