@@ -28,10 +28,10 @@ Python domain model classes for the MythX platform.
 %prep
 #%autosetup -p1 -n mythx-models-%{version}
 %setup -q -n mythx-models-%{version}
-%patch1 -p1
-%patch2 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 %if 0%{?fedora} > 39
-%patch3 -p1
+%patch -P3 -p1
 %endif
 
 %build
