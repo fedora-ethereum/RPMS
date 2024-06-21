@@ -1,3 +1,5 @@
+# FIXME use a version from Fedora
+
 %global pypi_name docopt-ng
 
 Name:           python-docopt-ng

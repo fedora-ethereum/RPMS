@@ -1,12 +1,11 @@
 Name:          python-vvm
-Version:       0.1.0
+Version:       0.2.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Vyper version manager
 License:       MIT
 URL:           https://github.com/vyperlang/vvm
 Source0:       %{pypi_source vvm}
-Patch1:        python-vvm-0001-Switch-to-built-in-setuptols-functionality.patch
 BuildRequires: black
 BuildRequires: bumpversion
 BuildRequires: python3-flake8
@@ -31,7 +30,7 @@ BuildRequires: twine
 %{?python_provide:%python_provide python3-vvm}
 
 %description
-Vyper version manager.
+%{summary}.
 
 %prep
 %autosetup -p1 -n vvm-%{version}
