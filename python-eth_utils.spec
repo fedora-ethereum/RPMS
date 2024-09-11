@@ -9,7 +9,7 @@ License:       MIT
 URL:           https://github.com/ethereum/eth-utils
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
-#Patch1:        python-eth_utils-0001-Just-use-eth-hash.patch
+Patch1:        python-eth_utils-0001-Disable-this-test-we-don-t-have-internet-access-anyw.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
