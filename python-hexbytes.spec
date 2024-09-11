@@ -38,8 +38,8 @@ Summary: %{summary}.
 
 %check
 # Warning - there is a circular dependency ( hexbytes <-> eth_utils)
-#%%pyproject_check_import
-#%%pytest
+%pyproject_check_import
+%pytest
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
