@@ -18,7 +18,7 @@ index a095774..d8c0063 100644
  )
  
 diff --git a/setup.py b/setup.py
-index 06e8ec7..87e3fac 100644
+index 06e8ec7..ed9244f 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -24,8 +24,8 @@ extras_require = {
@@ -32,6 +32,17 @@ index 06e8ec7..87e3fac 100644
      ],
      "pysha3": [
          "pysha3>=1.0.0,<2.0.0;python_version<'3.9'",
+@@ -52,7 +52,9 @@ setup(
+     author_email="snakecharmers@ethereum.org",
+     url="https://github.com/ethereum/eth-hash",
+     include_package_data=True,
+-    install_requires=[],
++    install_requires=[
++        "pycryptodomex>=3.6.6,<4",
++    ],
+     python_requires=">=3.8, <4",
+     extras_require=extras_require,
+     py_modules=["eth_hash"],
 diff --git a/tests/core/test_import_and_version.py b/tests/core/test_import_and_version.py
 index 9369ca1..a3336ea 100644
 --- a/tests/core/test_import_and_version.py
