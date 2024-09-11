@@ -16,7 +16,7 @@ BuildRequires: python3-pytest
 %{summary}.
 
 %package -n python3-%{pypi_name}
-Summary: %{summary}.
+Summary: %{summary}
 
 %description -n python3-%{pypi_name}
 %{summary}.
