@@ -1,49 +1,45 @@
-Name:          python-eth_rlp
-Version:       1.0.1
+%global pypi_name eth_rlp
+
+Name:          python-%{pypi_name}
+Version:       2.1.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       RLP definitions for common Ethereum objects in Python
 License:       MIT
 URL:           https://github.com/ethereum/eth-rlp
+VCS:           git:%{url}.git
 Source0:       %{pypi_source eth-rlp}
-BuildRequires: python-eth_hash
-BuildRequires: python-eth_utils
-BuildRequires: python-hexbytes
-BuildRequires: python-rlp
+BuildRequires: python3-devel
 BuildRequires: python3-pytest
-BuildRequires: python3-pytest-xdist
-BuildRequires: python3-rpm-generators
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
-BuildRequires: python3-sphinx
-BuildRequires: python3-sphinx_rtd_theme
-BuildRequires: python3-towncrier
-BuildRequires: python3-typing-extensions
-BuildRequires: tox
-%{?python_provide:%python_provide python3-eth_rlp}
 
 %description
-RLP definitions for common Ethereum objects in Python.
+%{summary}.
+
+%package -n python3-%{pypi_name}
+Summary: %{summary}
+
+%description -n python3-%{pypi_name}
+%{summary}.
 
 %prep
 %autosetup -p1 -n eth-rlp-%{version}
-#sed -i -e "s,<0.9.0,<0.10.0,g" setup.py
+
+%generate_buildrequires
+%pyproject_buildrequires -t
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files -l %{pypi_name}
 
 %check
+%pyproject_check_import
 %pytest
 
-%files
-%license LICENSE
-#%%doc docs
+%files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
-%{python3_sitelib}/eth_rlp/
-%{python3_sitelib}/eth_rlp-*.egg-info/
 
 %changelog
 %autochangelog
