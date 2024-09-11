@@ -1,0 +1,32 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 11 Sep 2024 11:06:17 +0200
+Subject: [PATCH] Just use eth-hash
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/setup.py b/setup.py
+index 5778417..4d67d6f 100644
+--- a/setup.py
++++ b/setup.py
+@@ -10,7 +10,7 @@ extras_require = {
+     "dev": [
+         "build>=0.9.0",
+         "bump_my_version>=0.19.0",
+-        "eth-hash[pycryptodome]",
++        "eth-hash",
+         "ipython",
+         MYPY_REQUIREMENT,
+         "pre-commit>=3.4.0",
+diff --git a/tox.ini b/tox.ini
+index c6ab39a..d1b6bb9 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -34,7 +34,7 @@ extras=
+     docs
+ allowlist_externals=make,pre-commit
+ deps=
+-    eth-hash[pycryptodome]
++    eth-hash
+ 
+ [testenv:py{38,39,310,311,312}-lint]
+ deps=pre-commit

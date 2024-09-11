@@ -10,6 +10,7 @@ URL:           https://github.com/ethereum/eth-utils
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-eth_utils-0001-Readd-fixtures-to-PyPi-tarball.patch
+Patch2:        python-eth_utils-0002-Just-use-eth-hash.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-mypy
