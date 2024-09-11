@@ -17,8 +17,23 @@ index a095774..d8c0063 100644
      keccak,
  )
  
+diff --git a/setup.py b/setup.py
+index 06e8ec7..87e3fac 100644
+--- a/setup.py
++++ b/setup.py
+@@ -24,8 +24,8 @@ extras_require = {
+         "pytest-xdist>=2.4.0",
+     ],
+     # optional backends:
+-    "pycryptodome": [
+-        "pycryptodome>=3.6.6,<4",
++    "pycryptodomex": [
++        "pycryptodomex>=3.6.6,<4",
+     ],
+     "pysha3": [
+         "pysha3>=1.0.0,<2.0.0;python_version<'3.9'",
 diff --git a/tests/core/test_import_and_version.py b/tests/core/test_import_and_version.py
-index 1cb0f7d..f3ee84f 100644
+index 9369ca1..a3336ea 100644
 --- a/tests/core/test_import_and_version.py
 +++ b/tests/core/test_import_and_version.py
 @@ -26,7 +26,7 @@ def test_import_auto_empty_crash(monkeypatch):

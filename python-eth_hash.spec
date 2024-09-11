@@ -1,48 +1,51 @@
-Name:          python-eth_hash
-Version:       0.6.0
+%global pypi_name eth_hash
+%global common_description %{expand:
+The Ethereum hashing function, keccak256, sometimes (erroneously) called sha256
+or sha3.}
+
+Name:          python-%{pypi_name}
+Version:       0.7.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       The Ethereum hashing function
 License:       MIT
 URL:           https://github.com/ethereum/eth-hash
+VCS:           git:%{url}.git
 Source0:       %{pypi_source eth-hash}
+# Fedora-specific
 Patch1:        python-eth_hash-0001-Fedora-use-cryptodome-explicitly.patch
-BuildRequires: python-pycryptodomex
-BuildRequires: python3-jinja2
+# Fedora-secific. We don't have pysha3
+Patch2:        python-eth_hash-0002-Remove-pysha3.patch
+BuildRequires: python3-devel
+BuildRequires: python3-pycryptodomex
 BuildRequires: python3-pytest
-BuildRequires: python3-pytest-xdist
-BuildRequires: python3-sphinx
-BuildRequires: python3-sphinx_rtd_theme
-BuildRequires: python3-rpm-generators
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
-BuildRequires: python3-towncrier
-BuildRequires: tox
-# FIXME should be picked up automatically
-Requires: python3dist(pycryptodomex)
-%{?python_provide:%python_provide python3-eth_hash}
 
-%description
-The Ethereum hashing function, keccak256, sometimes (erroneously) called sha256 or sha3.
+%description  %{common_description}
+
+%package -n python3-%{pypi_name}
+Summary: %{summary}.
+
+%description -n python3-%{pypi_name} %{common_description}
 
 %prep
 %autosetup -p1 -n eth-hash-%{version}
 
+%generate_buildrequires
+%pyproject_buildrequires -t
+
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files -l %{pypi_name}
 
 %check
+%pyproject_check_import
 %pytest ./tests/core/ ./tests/backends/pycryptodome
 
-%files
-%license LICENSE
-#%%doc docs
+%files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
-%{python3_sitelib}/eth_hash/
-%{python3_sitelib}/eth_hash-*.egg-info/
 
 %changelog
 %autochangelog
