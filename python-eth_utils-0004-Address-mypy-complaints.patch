@@ -1,0 +1,34 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Wed, 11 Sep 2024 17:04:45 +0200
+Subject: [PATCH] Address mypy complaints
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/eth_utils/abi.py b/eth_utils/abi.py
+index 431a74d..66760e0 100644
+--- a/eth_utils/abi.py
++++ b/eth_utils/abi.py
+@@ -374,17 +374,17 @@ ABIEvent, ABIError]]`
+         [{'type': 'function', 'name': 'myFunction', 'inputs': [], 'outputs': []}, \
+ {'type': 'function', 'name': 'myFunction2', 'inputs': [], 'outputs': []}]
+     """
+-    if abi_type == Literal["function"] or abi_type == "function":
++    if abi_type == Literal["function"]:
+         return [abi for abi in contract_abi if abi["type"] == "function"]
+-    elif abi_type == Literal["constructor"] or abi_type == "constructor":
++    elif abi_type == Literal["constructor"]:
+         return [abi for abi in contract_abi if abi["type"] == "constructor"]
+-    elif abi_type == Literal["fallback"] or abi_type == "fallback":
++    elif abi_type == Literal["fallback"]:
+         return [abi for abi in contract_abi if abi["type"] == "fallback"]
+-    elif abi_type == Literal["receive"] or abi_type == "receive":
++    elif abi_type == Literal["receive"]:
+         return [abi for abi in contract_abi if abi["type"] == "receive"]
+-    elif abi_type == Literal["event"] or abi_type == "event":
++    elif abi_type == Literal["event"]:
+         return [abi for abi in contract_abi if abi["type"] == "event"]
+-    elif abi_type == Literal["error"] or abi_type == "error":
++    elif abi_type == Literal["error"]:
+         return [abi for abi in contract_abi if abi["type"] == "error"]
+     else:
+         raise ValueError(f"Unsupported ABI type: {abi_type}")
