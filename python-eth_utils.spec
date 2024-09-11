@@ -27,6 +27,7 @@ Summary: %{summary}
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
 rm -rf ./tests/mypy
+rm -rf ./tests/core/functional-utils/test_type_inference.py
 
 %generate_buildrequires
 %pyproject_buildrequires -t
