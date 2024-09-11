@@ -1,47 +1,46 @@
-Name:          python-trie
-Version:       2.1.0
+%global pypi_name trie
+%global common_description %{expand:
+Self-describing content-addressed identifiers for distributed systems
+implementation in Python.}
+
+Name:          python-%{pypi_name}
+Version:       3.0.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Library which implements the Ethereum Trie structure
 License:       MIT
 URL:           https://github.com/ethereum/py-trie
-Source0:       %{pypi_source trie}
-BuildRequires: python-eth_hash
-BuildRequires: python-eth_utils
-BuildRequires: python-hexbytes
-BuildRequires: python-rlp
-BuildRequires: python3-hypothesis
-BuildRequires: python3-pycryptodomex
+VCS:           git:%{url}.git
+Source0:       %{pypi_source %pypi_name}
+BuildRequires: python3-devel
 BuildRequires: python3-pytest
-BuildRequires: python3-pytest-xdist
-BuildRequires: python3-rpm-generators
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
-BuildRequires: python3-sortedcontainers
-BuildRequires: sed
-%{?python_provide:%python_provide python3-trie}
 
-%description
-Self-describing content-addressed identifiers for distributed systems
-implementation in Python.
+%description %{common_description}
+
+%package -n python3-%{pypi_name}
+Summary: %{summary}
+
+%description -n python3-%{pypi_name} %{common_description}
 
 %prep
-%autosetup -p1 -n trie-%{version}
+%autosetup -p1 -n pytest_cid-%{version}
+
+%generate_buildrequires
+%pyproject_buildrequires -t
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files pytest_cid
 
 %check
-#%%pytest
+%pyproject_check_import
+%pytest
 
-%files
-%license LICENSE
+%files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
-%{python3_sitelib}/trie/
-%{python3_sitelib}/trie-*.egg-info/
 
 %changelog
 %autochangelog
