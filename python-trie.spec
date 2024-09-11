@@ -33,7 +33,7 @@ Summary: %{summary}
 
 %install
 %pyproject_install
-%pyproject_save_files pytest_cid
+%pyproject_save_files -l %{pypi_name}
 
 %check
 %pyproject_check_import
