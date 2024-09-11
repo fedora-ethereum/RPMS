@@ -23,7 +23,7 @@ Summary: %{summary}
 %description -n python3-%{pypi_name} %{common_description}
 
 %prep
-%autosetup -p1 -n pytest_cid-%{version}
+%autosetup -p1 -n %{pypi_name}-%{version}
 
 %generate_buildrequires
 %pyproject_buildrequires -t
