@@ -10,7 +10,7 @@ URL:           https://github.com/ethereum/hexbytes
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 # wget https://raw.githubusercontent.com/ethereum/hexbytes/e940383d8cb3ab5057a1d6af66b369d247f4dfe3/tox.ini
-Source1:       python-hexbytes-tox.ini
+# Source1:       python-hexbytes-tox.ini
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
 
@@ -37,10 +37,9 @@ Summary: %{summary}.
 %pyproject_save_files -l %{pypi_name}
 
 %check
-%pyproject_check_import
-%pytest
-# FIXME - requires internet access
-#tox -r
+# Warning - there is a circular dependency ( hexbytes <-> eth_utils)
+#%%pyproject_check_import
+#%%pytest
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
