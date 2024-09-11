@@ -11,8 +11,7 @@ VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-eth_utils-0001-Readd-fixtures-to-PyPi-tarball.patch
 Patch2:        python-eth_utils-0002-Just-use-eth-hash.patch
-Patch3:        python-eth_utils-0003-Don-t-try-to-generate-venv-we-don-t-have-internet-ac.patch
-Patch4:        python-eth_utils-0004-Address-mypy-complaints.patch
+Patch3:        python-eth_utils-0003-Address-mypy-complaints.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-mypy
