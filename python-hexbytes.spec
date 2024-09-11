@@ -1,49 +1,49 @@
-Name:          python-hexbytes
-Version:       0.3.1
+%global pypi_name hexbytes
+
+Name:          python-%{pypi_name}
+Version:       1.2.1
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Python `bytes` subclass that decodes hex, with a readable console output
 License:       MIT
 URL:           https://github.com/ethereum/hexbytes
-Source0:       %{pypi_source hexbytes}
+VCS:           git:%{url}.git
+Source0:       %{pypi_source %pypi_name}
 # wget https://raw.githubusercontent.com/ethereum/hexbytes/e940383d8cb3ab5057a1d6af66b369d247f4dfe3/tox.ini
 Source1:       python-hexbytes-tox.ini
-BuildRequires: python-eth_utils
-BuildRequires: python3-hypothesis
+BuildRequires: python3-devel
 BuildRequires: python3-pytest
-BuildRequires: python3-pytest-xdist
-BuildRequires: python3-rpm-generators
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
-BuildRequires: python3-sphinx
-BuildRequires: python3-sphinx_rtd_theme
-BuildRequires: python3-towncrier
-BuildRequires: tox
-%{?python_provide:%python_provide python3-hexbytes}
 
 %description
-Python `bytes` subclass that decodes hex, with a readable console output.
+%{summary}.
+
+%package -n python3-%{pypi_name}
+Summary: %{summary}.
+
+%description -n python3-%{pypi_name}
+%{summary}.
 
 %prep
-%autosetup -p1 -n hexbytes-%{version}
-install -D -p -m 0644 %{SOURCE1} ./tox.ini
+%autosetup -p1 -n %{pypi_name}-%{version}
+
+%generate_buildrequires
+%pyproject_buildrequires -t
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files -l %{pypi_name}
 
 %check
+%pyproject_check_import
+%pytest
 # FIXME - requires internet access
 #tox -r
 
-%files
-%license LICENSE
-#%%doc docs
+%files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
-%{python3_sitelib}/hexbytes/
-%{python3_sitelib}/hexbytes-*.egg-info/
 
 %changelog
 %autochangelog
