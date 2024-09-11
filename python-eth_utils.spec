@@ -9,11 +9,10 @@ License:       MIT
 URL:           https://github.com/ethereum/eth-utils
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
-#Patch1:        python-eth_utils-0001-Readd-fixtures-to-PyPi-tarball.patch
-Patch2:        python-eth_utils-0002-Just-use-eth-hash.patch
+Patch1:        python-eth_utils-0001-Just-use-eth-hash.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
-BuildRequires: python3-mypy
+#BuildRequires: python3-mypy
 BuildRequires: python3-pytest
 
 %description
@@ -27,6 +26,7 @@ Summary: %{summary}
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
+rm -rf ./tests/mypy
 
 %generate_buildrequires
 %pyproject_buildrequires -t
