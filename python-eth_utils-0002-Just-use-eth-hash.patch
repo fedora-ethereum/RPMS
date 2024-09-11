@@ -17,16 +17,3 @@ index 5778417..4d67d6f 100644
          "ipython",
          MYPY_REQUIREMENT,
          "pre-commit>=3.4.0",
-diff --git a/tox.ini b/tox.ini
-index c6ab39a..d1b6bb9 100644
---- a/tox.ini
-+++ b/tox.ini
-@@ -34,7 +34,7 @@ extras=
-     docs
- allowlist_externals=make,pre-commit
- deps=
--    eth-hash[pycryptodome]
-+    eth-hash
- 
- [testenv:py{38,39,310,311,312}-lint]
- deps=pre-commit
