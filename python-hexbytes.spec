@@ -11,6 +11,7 @@ VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 BuildRequires: python3-devel
 BuildRequires: python3-eth_utils
+BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
 
 %description
