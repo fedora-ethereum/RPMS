@@ -13,6 +13,7 @@ BuildRequires: python3-asn1tools
 BuildRequires: python3-devel
 BuildRequires: python3-factory-boy
 BuildRequires: python3-hypothesis
+BuildRequires: python3-pyasn1
 BuildRequires: python3-pytest
 
 %description
