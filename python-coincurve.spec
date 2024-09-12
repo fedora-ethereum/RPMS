@@ -1,5 +1,5 @@
 Name:          python-coincurve
-Version:       20.0.0
+Version:       19.0.0
 Release:       %autorelease
 Summary:       Cross-platform Python bindings for libsecp256k1
 License:       MIT or ASL-2.0
