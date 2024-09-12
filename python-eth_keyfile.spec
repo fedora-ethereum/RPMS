@@ -11,6 +11,7 @@ VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-eth_keyfile-0001-Fedora-use-cryptodome-explicitly.patch
 Patch2:        python-eth_keyfile-0002-Relax-dependencies.patch
+Patch3:        python-eth_keyfile-0003-Add-fixtures-back.patch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
 
