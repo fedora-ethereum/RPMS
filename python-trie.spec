@@ -13,6 +13,7 @@ URL:           https://github.com/ethereum/py-trie
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-trie-0001-Readd-tools.patch
+Patch2:        python-trie-0002-Re-add-Trie-fixtures.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
