@@ -4,10 +4,10 @@ Subject: [PATCH] Fix four tests
 
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
-diff --git a/tests/test_tools.py b/tests/test_tools.py
-index dbccb83..eceb719 100644
---- a/tests/test_tools.py
-+++ b/tests/test_tools.py
+diff --git a/tests/core/test_tools.py b/tests/core/test_tools.py
+index c479eae..a173eb1 100644
+--- a/tests/core/test_tools.py
++++ b/tests/core/test_tools.py
 @@ -98,18 +98,18 @@ def test_get_abi_strategy_returns_no_strategy_for_invalid_type_strs(malformed_ty
          ("bytes", "binary(max_size=4096)"),
          ("function", "binary(min_size=24, max_size=24)"),
