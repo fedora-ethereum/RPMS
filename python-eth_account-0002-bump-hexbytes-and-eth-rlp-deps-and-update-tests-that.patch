@@ -1,0 +1,110 @@
+From: pacrob <5199899+pacrob@users.noreply.github.com>
+Date: Tue, 19 Mar 2024 12:33:17 -0600
+Subject: [PATCH] bump hexbytes and eth-rlp deps and update tests that needed
+ it
+
+
+diff --git a/247.docs.rst b/newsfragments/247.docs.rst
+similarity index 100%
+rename from 247.docs.rst
+rename to newsfragments/247.docs.rst
+diff --git a/newsfragments/254.internal.rst b/newsfragments/254.internal.rst
+new file mode 100644
+index 0000000..17737c3
+--- /dev/null
++++ b/newsfragments/254.internal.rst
+@@ -0,0 +1 @@
++Bump deps to ``hexbytes>=1.2.0`` and ``eth-rlp>=2.1.0``
+diff --git a/setup.py b/setup.py
+index b6c8302..54abac1 100644
+--- a/setup.py
++++ b/setup.py
+@@ -52,9 +52,9 @@ setup(
+         "eth-abi>=4.0.0-b.2",
+         "eth-keyfile>=0.6.0",
+         "eth-keys>=0.4.0",
+-        "eth-rlp>=2.0.0",
++        "eth-rlp>=2.1.0",
+         "eth-utils>=2.0.0",
+-        "hexbytes>=1.0.0",
++        "hexbytes>=1.2.0",
+         "rlp>=1.0.0",
+     ],
+     python_requires=">=3.8, <4",
+diff --git a/tests/core/test_typed_transactions.py b/tests/core/test_typed_transactions.py
+index 250ef35..6bcfdc7 100644
+--- a/tests/core/test_typed_transactions.py
++++ b/tests/core/test_typed_transactions.py
+@@ -225,7 +225,7 @@ def test_hash(test_case):
+     expected = test_case["expected_hash"]
+     transaction = TypedTransaction.from_dict(test_case["transaction"])
+     hash = transaction.hash()
+-    actual = HexBytes(hash).hex()
++    actual = HexBytes(hash).to_0x_hex()
+     assert actual == expected
+ 
+ 
+@@ -247,7 +247,7 @@ def test_encode(test_case):
+     expected = test_case["expected_raw_transaction"]
+     transaction = TypedTransaction.from_dict(test_case["transaction"])
+     raw_transaction = transaction.encode()
+-    actual = HexBytes(raw_transaction).hex()
++    actual = HexBytes(raw_transaction).to_0x_hex()
+     assert actual == expected
+ 
+ 
+diff --git a/tests/integration/test_comparison_js_eip712_signing.py b/tests/integration/test_comparison_js_eip712_signing.py
+index fe3335a..9c5f6ad 100644
+--- a/tests/integration/test_comparison_js_eip712_signing.py
++++ b/tests/integration/test_comparison_js_eip712_signing.py
+@@ -45,14 +45,14 @@ def test_messages_where_all_3_sigs_match(message_title):
+     try:
+         signable_1 = encode_typed_data(full_message=message)
+         py_signed_1 = py_account.sign_message(signable_1)
+-        py_one_arg = py_signed_1.signature.hex()
++        py_one_arg = py_signed_1.signature.to_0x_hex()
+     except Exception:
+         py_one_arg = "py_one_arg signing failed"
+ 
+     try:
+         signable_3 = encode_typed_data(*convert_to_3_arg(message))
+         py_signed_3 = py_account.sign_message(signable_3)
+-        py_three_arg = py_signed_3.signature.hex()
++        py_three_arg = py_signed_3.signature.to_0x_hex()
+     except Exception:
+         py_three_arg = "py_three_arg signing failed"
+ 
+@@ -70,14 +70,14 @@ def test_messages_where_eth_account_matches_ethers_but_not_metamask(message_titl
+     try:
+         signable_1 = encode_typed_data(full_message=message)
+         py_signed_1 = py_account.sign_message(signable_1)
+-        py_one_arg = py_signed_1.signature.hex()
++        py_one_arg = py_signed_1.signature.to_0x_hex()
+     except Exception:
+         py_one_arg = "py_one_arg signing failed"
+ 
+     try:
+         signable_3 = encode_typed_data(*convert_to_3_arg(message))
+         py_signed_3 = py_account.sign_message(signable_3)
+-        py_three_arg = py_signed_3.signature.hex()
++        py_three_arg = py_signed_3.signature.to_0x_hex()
+     except Exception:
+         py_three_arg = "py_three_arg signing failed"
+ 
+@@ -96,14 +96,14 @@ def test_messages_where_eth_account_matches_metamask_but_not_ethers(message_titl
+     try:
+         signable_1 = encode_typed_data(full_message=message)
+         py_signed_1 = py_account.sign_message(signable_1)
+-        py_one_arg = py_signed_1.signature.hex()
++        py_one_arg = py_signed_1.signature.to_0x_hex()
+     except Exception:
+         py_one_arg = "py_one_arg signing failed"
+ 
+     try:
+         signable_3 = encode_typed_data(*convert_to_3_arg(message))
+         py_signed_3 = py_account.sign_message(signable_3)
+-        py_three_arg = py_signed_3.signature.hex()
++        py_three_arg = py_signed_3.signature.to_0x_hex()
+     except Exception:
+         py_three_arg = "py_three_arg signing failed"
+ 

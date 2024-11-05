@@ -1,4 +1,3 @@
-From 4810b412f50be70cb70f60d1cee546c43249826b Mon Sep 17 00:00:00 2001
 From: pacrob <5199899+pacrob@users.noreply.github.com>
 Date: Tue, 19 Mar 2024 10:14:21 -0600
 Subject: [PATCH] bump hexbytes to >=1, and eth-rlp to >=2 which has the same
