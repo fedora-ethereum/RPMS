@@ -4,17 +4,6 @@ Subject: [PATCH] bump hexbytes and eth-rlp deps and update tests that needed
  it
 
 
-diff --git a/247.docs.rst b/newsfragments/247.docs.rst
-similarity index 100%
-rename from 247.docs.rst
-rename to newsfragments/247.docs.rst
-diff --git a/newsfragments/254.internal.rst b/newsfragments/254.internal.rst
-new file mode 100644
-index 0000000..17737c3
---- /dev/null
-+++ b/newsfragments/254.internal.rst
-@@ -0,0 +1 @@
-+Bump deps to ``hexbytes>=1.2.0`` and ``eth-rlp>=2.1.0``
 diff --git a/setup.py b/setup.py
 index b6c8302..54abac1 100644
 --- a/setup.py
