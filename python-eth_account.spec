@@ -11,7 +11,7 @@ URL:           https://github.com/ethereum/eth-account
 Source0:       %{pypi_source eth-account}
 Patch1:        python-eth_account-0001-bump-hexbytes-to-1-and-eth-rlp-to-2-which-has-the-sa.patch
 Patch2:        python-eth_account-0002-bump-hexbytes-and-eth-rlp-deps-and-update-tests-that.patch
-Patch3:        python-eth_account-0003-Remove-encode_structured_data-269.patch
+#Patch3:        python-eth_account-0003-Remove-encode_structured_data-269.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
