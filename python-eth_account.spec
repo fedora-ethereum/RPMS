@@ -9,6 +9,7 @@ Summary:       Account abstraction library for web3.py
 License:       MIT
 URL:           https://github.com/ethereum/eth-account
 Source0:       %{pypi_source eth-account}
+Patch1:        python-eth_account-0001-bump-hexbytes-to-1-and-eth-rlp-to-2-which-has-the-sa.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
