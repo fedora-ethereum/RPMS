@@ -10,6 +10,7 @@ URL:           https://github.com/iamdefinitelyahuman/eth-event
 Source0:       %{pypi_source eth-event}
 Patch1:        python-eth_event-0001-Readd-missing-test-files.patch
 Patch2:        python-eth_event-0002-Relax-deps.patch
+Patch3:        python-eth_event-0003-Adjust-tests-for-hexbytes-1.0.0.patch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
