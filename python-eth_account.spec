@@ -1,7 +1,8 @@
 %global pypi_name eth_account
 
 Name:          python-%{pypi_name}
-Version:       0.13.4
+# FIXME we have to stick with this version since we don't have ckzg packages
+Version:       0.11.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Account abstraction library for web3.py
