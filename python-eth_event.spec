@@ -1,4 +1,6 @@
-Name:          python-eth_event
+%global pypi_name eth_event
+
+Name:          python-%{pypi_name}
 Version:       1.2.5
 Release:       %autorelease
 BuildArch:     noarch
@@ -7,39 +9,37 @@ License:       MIT
 URL:           https://github.com/iamdefinitelyahuman/eth-event
 Source0:       %{pypi_source eth-event}
 Patch1:        python-eth_event-0001-Readd-missing-test-files.patch
-BuildRequires: python-eth_abi
-BuildRequires: python-eth_hash
-BuildRequires: python-eth_utils
-BuildRequires: python-hexbytes
+BuildRequires: python3-devel
 BuildRequires: python3-pytest
-BuildRequires: python3-pytest-cov
-BuildRequires: python3-rpm-generators
-BuildRequires: python3-rpm-macros
-BuildRequires: python3-setuptools
-BuildRequires: sed
-%{?python_provide:%python_provide python3-eth_event}
 
 %description
-Tools for Ethereum event decoding and topic generation.
+%{summary}.
+
+%package -n python3-%{pypi_name}
+Summary: %{summary}
+
+%description -n python3-%{pypi_name}
+%{summary}.
 
 %prep
 %autosetup -p1 -n eth-event-%{version}
-sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
+
+%generate_buildrequires
+%pyproject_buildrequires -t
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files -l %{pypi_name}
 
 %check
+%pyproject_check_import
 %pytest
 
-%files
-%license LICENSE
+%files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
-%{python3_sitelib}/eth_event/
-%{python3_sitelib}/eth_event-*.egg-info/
 
 %changelog
 %autochangelog
