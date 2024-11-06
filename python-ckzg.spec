@@ -9,6 +9,7 @@ License:       MIT
 URL:           https://github.com/ethereum/c-kzg-4844
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
+Patch1:        python-ckzg-0001-Let-override-CC.patch
 BuildRequires: gcc
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
