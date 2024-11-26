@@ -36,7 +36,8 @@ Summary: %{summary}
 
 %check
 %pyproject_check_import
-%pytest
+# FIXME no tests in PyPi. Tests require ~32.67 Mbytes test data
+#%%pytest
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
