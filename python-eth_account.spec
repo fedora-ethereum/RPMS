@@ -7,7 +7,7 @@ BuildArch:     noarch
 Summary:       Account abstraction library for web3.py
 License:       MIT
 URL:           https://github.com/ethereum/eth-account
-Source0:       %{pypi_source eth-account}
+Source0:       %{pypi_source %pypi_name}
 # Fedora-specific. To begin with we don't have internet access during build in Koji.
 Patch4:        python-eth_account-0004-FIXME-These-tests-requires-internet-access-and-confi.patch
 BuildRequires: nodejs
@@ -25,7 +25,7 @@ Summary: %{summary}
 %{summary}.
 
 %prep
-%autosetup -p1 -n eth-account-%{version}
+%autosetup -p1 -n %{pypi_name}-%{version}
 
 %generate_buildrequires
 %pyproject_buildrequires -t
