@@ -3,16 +3,18 @@
 Name:          python-%{pypi_name}
 Version:       2.0.1
 Release:       %autorelease
-BuildArch:     noarch
 Summary:       A minimal implementation of the Polynomial Commitments API for EIP-4844 and EIP-7594
-License:       MIT
+License:       Apache-2.0
 URL:           https://github.com/ethereum/c-kzg-4844
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-ckzg-0001-Let-override-CC.patch
+Patch2:        python-ckzg-0002-Disable-Werror.patch
 BuildRequires: gcc
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
+# https://github.com/supranational/blst
+Provides:      bundled(blst)
 
 %description
 %{summary}.
@@ -38,7 +40,8 @@ Summary: %{summary}
 
 %check
 %pyproject_check_import
-%pytest
+cd src
+make test
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
