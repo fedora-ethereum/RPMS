@@ -13,6 +13,7 @@ Patch1:        python-eip712-0001-Accept-more-recent-dataclassy.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
+BuildRequires: python3-pytest-cov
 
 %description
 %{summary}.
