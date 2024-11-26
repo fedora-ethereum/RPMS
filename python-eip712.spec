@@ -14,6 +14,7 @@ BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
+BuildRequires: python3-pytest-xdist
 
 %description
 %{summary}.
