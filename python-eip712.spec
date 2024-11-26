@@ -1,8 +1,7 @@
 %global pypi_name eip712
 
 Name:          python-%{pypi_name}
-# FIXME we have to stick with this version since we cant upgrade eth-account yet
-Version:       0.2.7
+Version:       0.2.10
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Message classes for typed structured data hashing and signing in Ethereum
@@ -10,7 +9,6 @@ License:       Apache-2.0
 URL:           https://github.com/ApeWorX/eip712
 VCS:           git:%{url}.git
 Source0:       %{pypi_source eip712}
-Patch1:        python-eip712-0001-feat-3.8-drop-and-upgrade-eth-dependencies-45.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
