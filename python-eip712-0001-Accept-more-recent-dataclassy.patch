@@ -1,0 +1,19 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Tue, 26 Nov 2024 15:58:24 +0100
+Subject: [PATCH] Accept more recent dataclassy
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/setup.py b/setup.py
+index 9ae5283..5db0549 100644
+--- a/setup.py
++++ b/setup.py
+@@ -65,7 +65,7 @@ setup(
+     url="https://github.com/ApeWorX/eip712",
+     include_package_data=True,
+     install_requires=[
+-        "dataclassy>=0.11.1,<1",
++        "dataclassy>=0.11.1",
+         "eth-abi>=5.1.0,<6",
+         "eth-account>=0.11.3,<0.14",
+         "eth-typing>=3.5.2,<6",
