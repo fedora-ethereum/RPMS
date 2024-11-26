@@ -8,9 +8,6 @@ Summary:       Account abstraction library for web3.py
 License:       MIT
 URL:           https://github.com/ethereum/eth-account
 Source0:       %{pypi_source %pypi_name}
-# Fedora-specific. To begin with we don't have internet access during build in Koji.
-#Patch4:        python-eth_account-0004-FIXME-These-tests-requires-internet-access-and-confi.patch
-BuildRequires: nodejs
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
@@ -26,6 +23,8 @@ Summary: %{summary}
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
+# FIXME requires Node.js with a custom setup and Internet access
+rm -f tests/integration/test_comparison_js_eip712_signing.py tests/integration/test_ethers_fuzzing.py
 
 %generate_buildrequires
 %pyproject_buildrequires -t
