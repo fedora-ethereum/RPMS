@@ -1,0 +1,16 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Sat, 30 Nov 2024 10:26:24 +0100
+Subject: [PATCH] Try fixing typo
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/tests/test_messages.py b/tests/test_messages.py
+index e39c143..10d2a89 100644
+--- a/tests/test_messages.py
++++ b/tests/test_messages.py
+@@ -39,4 +39,4 @@ def test_eip712_domain_field_order_is_invariant():
+ 
+ 
+ def test_ux_tuple_and_starargs(permit, Permit):
+-    assert tuple(Permit(*permit)) == tuple(permit)
++    assert tuple(Permit(**permit)) == tuple(permit)
