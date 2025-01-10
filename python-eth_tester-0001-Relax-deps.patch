@@ -5,7 +5,7 @@ Subject: [PATCH] Relax deps
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/setup.py b/setup.py
-index 6fc931a..9e86664 100644
+index 6fc931a..d27a110 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -15,12 +15,12 @@ extras_require = {
@@ -17,8 +17,9 @@ index 6fc931a..9e86664 100644
      ],
      "test": [
          "pytest>=7.0.0",
-         "pytest-xdist>=2.0.0,<3",
+-        "pytest-xdist>=2.0.0,<3",
 -        "eth-hash[pycryptodome]>=0.1.4,<1.0.0",
++        "pytest-xdist>=2.0.0",
 +        "eth-hash>=0.1.4,<1.0.0",
      ],
      "py-evm": [
