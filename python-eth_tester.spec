@@ -10,8 +10,10 @@ License:       MIT
 URL:           https://github.com/ethereum/eth-tester
 VCS:           git:%{url}.git
 Source0:       %{url}/archive/v%{version}-%{pre_release_tag}/eth_tester-%{version}.tar.gz
+Patch1:        python-eth_tester-0001-Relax-deps.patch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
+BuildRequires: python3-pytest-xdist
 
 %description
 %{summary}.
@@ -24,7 +26,6 @@ Summary: %{summary}
 
 %prep
 %autosetup -p1 -n eth-tester-%{version}-%{pre_release_tag}
-#sed -i -e "s,eth-hash\[pycryptodome\],eth-hash,g" setup.py
 # FIXME return as soon as we package py-evm
 rm -rf tests/backends
 
