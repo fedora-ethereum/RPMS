@@ -5,7 +5,7 @@ Name:          python-eth_tester
 Version:       0.12.0
 Release:       %autorelease -e %{pre_release_tag}
 BuildArch:     noarch
-Summary:       Tool suite for testing ethereum applications
+Summary:       Tool suite for testing Ethereum applications
 License:       MIT
 URL:           https://github.com/ethereum/eth-tester
 VCS:           git:%{url}.git
