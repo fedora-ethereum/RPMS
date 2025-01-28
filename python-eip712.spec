@@ -10,7 +10,6 @@ URL:           https://github.com/ApeWorX/eip712
 VCS:           git:%{url}.git
 Source0:       %{pypi_source eip712}
 Patch1:        python-eip712-0001-Accept-more-recent-dataclassy.patch
-Patch2:        python-eip712-0002-test.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
