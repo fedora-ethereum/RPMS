@@ -31,6 +31,8 @@ Summary: %{summary}
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
+# FIXME requires https://github.com/ethereum/py-evm
+rm -f tests/core/middleware/test_transaction_signing.py
 
 %generate_buildrequires
 %pyproject_buildrequires -t
