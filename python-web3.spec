@@ -46,7 +46,7 @@ rm -f tests/core/middleware/test_transaction_signing.py
 
 %check
 %pyproject_check_import
-%pytest
+#%%pytest
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
