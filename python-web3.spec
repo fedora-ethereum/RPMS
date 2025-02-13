@@ -42,7 +42,7 @@ rm -f tests/core/middleware/test_transaction_signing.py
 
 %install
 %pyproject_install
-%pyproject_save_files -l %{pypi_name}
+%pyproject_save_files -l %{pypi_name} ens
 
 %check
 %pyproject_check_import
