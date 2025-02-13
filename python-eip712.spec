@@ -8,7 +8,7 @@ Summary:       Message classes for typed structured data hashing and signing in 
 License:       Apache-2.0
 URL:           https://github.com/ApeWorX/eip712
 VCS:           git:%{url}.git
-Source0:       %{pypi_source eip712}
+Source0:       %{pypi_source %pypi_name}
 Patch1:        python-eip712-0001-Accept-more-recent-dataclassy.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
