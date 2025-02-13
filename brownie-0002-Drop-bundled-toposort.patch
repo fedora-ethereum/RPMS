@@ -5,7 +5,7 @@ Subject: [PATCH] Drop bundled toposort
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/brownie/project/flattener.py b/brownie/project/flattener.py
-index 1e12a09b..478e4e1a 100644
+index 08f2650c..1a4488b3 100644
 --- a/brownie/project/flattener.py
 +++ b/brownie/project/flattener.py
 @@ -3,7 +3,7 @@ from collections import defaultdict
@@ -115,14 +115,14 @@ index 7cafcf67..00000000
 -        result.extend((sorted if sort else list)(d))
 -    return result
 diff --git a/requirements.in b/requirements.in
-index 3fbfb3e5..34ed32bd 100644
+index 2d61ddb7..2a20c2cd 100644
 --- a/requirements.in
 +++ b/requirements.in
-@@ -25,6 +25,7 @@ pyyaml>=5.3.0
+@@ -23,6 +23,7 @@ pyyaml>=6,<7
  requests>=2.25.0,<3
- rlp>=3
+ rlp
  semantic-version<3
 +toposort
  tqdm<5
- vvm>=0.1.0,<1
- vyper>=0.2.11,<1
+ vvm==0.2.1
+ vyper>=0.4.0,<0.5
