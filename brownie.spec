@@ -20,7 +20,7 @@ the Ethereum Virtual Machine.
 %prep
 %autosetup -p1 -n %{name}-%{version}
 # FIXME we do not rely on pre-generated requirements.txt
-#cp -arv requirements.in requirements.txt
+cp -arv requirements.in requirements.txt
 
 %generate_buildrequires
 %pyproject_buildrequires -t
