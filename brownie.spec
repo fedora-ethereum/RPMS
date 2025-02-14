@@ -10,6 +10,7 @@ URL:           https://github.com/eth-brownie/brownie
 Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Patch1:        brownie-0001-Drop-bundled-docopt-ng.patch
 Patch2:        brownie-0002-Drop-bundled-toposort.patch
+Patch3:        brownie-0003-Relax-deps.patch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
 
