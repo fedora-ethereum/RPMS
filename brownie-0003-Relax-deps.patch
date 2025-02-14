@@ -5,10 +5,10 @@ Subject: [PATCH] Relax deps
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/requirements.in b/requirements.in
-index 2a20c2cd..49425bf9 100644
+index 2a20c2cd..94c40b0a 100644
 --- a/requirements.in
 +++ b/requirements.in
-@@ -4,10 +4,10 @@ eip712
+@@ -4,28 +4,28 @@ eip712
  eth-abi
  eth-account
  eth-event>=1.2.5,<2
@@ -20,24 +20,29 @@ index 2a20c2cd..49425bf9 100644
 +hypothesis
  lazy-object-proxy>=1.6.0,<2
  prompt-toolkit<4
- psutil>=5.7.3,<6
-@@ -16,8 +16,8 @@ py-solc-x>=1.1.0,<2
+-psutil>=5.7.3,<6
++psutil>=5.7.3
+ py-solc-ast>=1.2.8,<2
+-py-solc-x>=1.1.0,<2
++py-solc-x>=1.1.0
  py>=1.5.0,<2
  pygments-lexer-solidity<1
  pygments<3
 -pytest-xdist<2
 -pytest<7
+-python-dotenv>=0.16.0,<0.17.0
 +pytest-xdist
 +pytest
- python-dotenv>=0.16.0,<0.17.0
++python-dotenv>=0.16.0
  pyyaml>=6,<7
  requests>=2.25.0,<3
-@@ -25,7 +25,7 @@ rlp
+ rlp
  semantic-version<3
  toposort
  tqdm<5
 -vvm==0.2.1
 +vvm
  vyper>=0.4.0,<0.5
- web3>=6,<7
+-web3>=6,<7
++web3>=6
  wrapt>=1.12.1,<2
