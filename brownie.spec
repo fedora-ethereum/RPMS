@@ -31,7 +31,7 @@ cp -arv requirements.in requirements.txt
 
 %install
 %pyproject_install
-%pyproject_save_files -l %{pypi_name}
+%pyproject_save_files -l %{name}
 
 %check
 %pyproject_check_import
