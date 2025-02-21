@@ -1,0 +1,70 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Fri, 21 Feb 2025 22:54:17 +0100
+Subject: [PATCH] Adjust to a modern Web3.py
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/brownie/network/middlewares/geth_poa.py b/brownie/network/middlewares/geth_poa.py
+index b86265d6..172fe43a 100644
+--- a/brownie/network/middlewares/geth_poa.py
++++ b/brownie/network/middlewares/geth_poa.py
+@@ -2,7 +2,7 @@ from typing import Callable, Dict, List, Optional
+ 
+ from web3 import Web3
+ from web3.exceptions import ExtraDataLengthError
+-from web3.middleware import geth_poa_middleware
++from web3.middleware import ExtraDataToPOAMiddleware
+ 
+ from brownie.network.middlewares import BrownieMiddlewareABC
+ 
+@@ -18,5 +18,5 @@ class GethPOAMiddleware(BrownieMiddlewareABC):
+             return -1
+ 
+     def process_request(self, make_request: Callable, method: str, params: List) -> Dict:
+-        middleware_fn = geth_poa_middleware(make_request, self.w3)
++        middleware_fn = ExtraDataToPOAMiddleware(make_request, self.w3)
+         return middleware_fn(method, params)
+diff --git a/brownie/network/web3.py b/brownie/network/web3.py
+index 689b844c..111f6576 100644
+--- a/brownie/network/web3.py
++++ b/brownie/network/web3.py
+@@ -10,7 +10,7 @@ from ens import ENS
+ from requests import HTTPError
+ from web3 import HTTPProvider, IPCProvider
+ from web3 import Web3 as _Web3
+-from web3 import WebsocketProvider
++from web3 import LegacyWebSocketProvider
+ from web3.contract.contract import ContractEvent  # noqa
+ from web3.contract.contract import ContractEvents as _ContractEvents  # noqa
+ from web3.gas_strategies.rpc import rpc_gas_price_strategy
+@@ -59,7 +59,7 @@ class Web3(_Web3):
+ 
+         if self.provider is None:
+             if uri.startswith("ws"):
+-                self.provider = WebsocketProvider(uri, {"close_timeout": timeout})
++                self.provider = LegacyWebSocketProvider(uri, {"close_timeout": timeout})
+             elif uri.startswith("http"):
+ 
+                 self.provider = HTTPProvider(uri, {"timeout": timeout})
+diff --git a/tests/network/test_web3.py b/tests/network/test_web3.py
+index 8e47a436..d4d4dc2d 100755
+--- a/tests/network/test_web3.py
++++ b/tests/network/test_web3.py
+@@ -1,7 +1,7 @@
+ #!/usr/bin/python3
+ 
+ import pytest
+-from web3 import HTTPProvider, IPCProvider, Web3, WebsocketProvider
++from web3 import HTTPProvider, IPCProvider, Web3, LegacyWebSocketProvider
+ 
+ from brownie.exceptions import MainnetUndefined
+ 
+@@ -26,7 +26,7 @@ def test_connect_ipc(web3, testdir):
+ 
+ def test_connect_ws(web3):
+     web3.connect("ws://localhost")
+-    assert type(web3.provider) is WebsocketProvider
++    assert type(web3.provider) is LegacyWebSocketProvider
+     web3.disconnect()
+ 
+ 

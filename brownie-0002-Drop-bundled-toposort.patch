@@ -115,7 +115,7 @@ index 7cafcf67..00000000
 -        result.extend((sorted if sort else list)(d))
 -    return result
 diff --git a/requirements.in b/requirements.in
-index 2d61ddb7..2a20c2cd 100644
+index 79158d58..cd0dc256 100644
 --- a/requirements.in
 +++ b/requirements.in
 @@ -23,6 +23,7 @@ pyyaml>=6,<7

@@ -11,6 +11,7 @@ Source0:       %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Patch1:        brownie-0001-Drop-bundled-docopt-ng.patch
 Patch2:        brownie-0002-Drop-bundled-toposort.patch
 Patch3:        brownie-0003-Relax-deps.patch
+Patch4:        brownie-0004-Adjust-to-a-modern-Web3.py.patch
 BuildRequires: python3-devel
 BuildRequires: python3-pytest
 
@@ -34,9 +35,7 @@ cp -arv requirements.in requirements.txt
 %pyproject_save_files -l %{name}
 
 %check
-# FIXME fails at:
-# from web3 import WebsocketProvider
-#%%pyproject_check_import
+%pyproject_check_import
 #%%pytest
 
 %files -f %{pyproject_files}

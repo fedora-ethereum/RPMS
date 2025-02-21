@@ -5,7 +5,7 @@ Subject: [PATCH] Relax deps
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/requirements.in b/requirements.in
-index 2a20c2cd..94c40b0a 100644
+index cd0dc256..b3883c40 100644
 --- a/requirements.in
 +++ b/requirements.in
 @@ -4,28 +4,28 @@ eip712
