@@ -4,6 +4,17 @@ Subject: [PATCH] Relax setuptools requirement
 
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
+diff --git a/pyproject.toml b/pyproject.toml
+index 6687558..b86b120 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=75.6.0", "wheel", "setuptools_scm[toml]>=5.0"]
++requires = ["setuptools", "wheel", "setuptools_scm[toml]>=5.0"]
+ 
+ [tool.mypy]
+ exclude = ["build/", "dist/", "docs/"]
 diff --git a/setup.py b/setup.py
 index 0e37cc8..ce70c04 100644
 --- a/setup.py
