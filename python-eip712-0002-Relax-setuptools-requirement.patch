@@ -1,0 +1,19 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Thu, 27 Feb 2025 11:50:41 +0100
+Subject: [PATCH] Relax setuptools requirement
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/setup.py b/setup.py
+index 0e37cc8..ce70c04 100644
+--- a/setup.py
++++ b/setup.py
+@@ -25,7 +25,7 @@ extras_require = {
+         "mdformat-pyproject>=0.0.2",  # Allows configuring in pyproject.toml
+     ],
+     "release": [  # `release` GitHub Action job uses this
+-        "setuptools>=75.6.0",  # Installation tool
++        "setuptools",  # Installation tool
+         "wheel",  # Packaging tool
+         "twine",  # Package upload tool
+     ],

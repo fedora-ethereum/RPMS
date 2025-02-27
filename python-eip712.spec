@@ -10,6 +10,7 @@ URL:           https://github.com/ApeWorX/eip712
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-eip712-0001-Accept-more-recent-dataclassy.patch
+Patch2:        python-eip712-0002-Relax-setuptools-requirement.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
