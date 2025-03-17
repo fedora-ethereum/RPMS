@@ -9,8 +9,9 @@ License:       Apache-2.0
 URL:           https://github.com/ApeWorX/eip712
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
-Patch1:        python-eip712-0001-Accept-more-recent-dataclassy.patch
-Patch2:        python-eip712-0002-Relax-setuptools-requirement.patch
+Patch :        python-eip712-0001-Accept-more-recent-dataclassy.patch
+Patch:         python-eip712-0002-Relax-setuptools-requirement.patch
+Patch:         python-eip712-0003-fix-corrects-list-EIP712Type.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
@@ -41,7 +42,7 @@ Summary: %{summary}
 
 %check
 %pyproject_check_import
-#%%pytest
+%pytest
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
