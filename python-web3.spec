@@ -1,7 +1,7 @@
 %global pypi_name web3
 
 Name:          python-%{pypi_name}
-Version:       7.8.0
+Version:       7.9.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A library for interacting with the Ethereum blockchain and ecosystem
@@ -46,7 +46,7 @@ rm -f tests/core/middleware/test_transaction_signing.py
 
 %check
 %pyproject_check_import
-#%%pytest
+%pytest
 
 %files -n python3-%{pypi_name} -f %{pyproject_files}
 %doc README.md
