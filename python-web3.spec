@@ -34,7 +34,7 @@ Summary: %{summary}
 rm -f tests/core/middleware/test_transaction_signing.py
 
 %generate_buildrequires
-%pyproject_buildrequires -t
+%pyproject_buildrequires
 
 %build
 %pyproject_wheel
