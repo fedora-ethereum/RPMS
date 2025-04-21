@@ -25,6 +25,8 @@ Summary: %{summary}
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}%{pre_release_tag_short}
+# Remove egg-info
+rm -rf %{pypi_name}.egg-info/
 
 %generate_buildrequires
 %pyproject_buildrequires
