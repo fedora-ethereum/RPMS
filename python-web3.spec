@@ -1,7 +1,7 @@
 %global pypi_name web3
 
 Name:          python-%{pypi_name}
-Version:       7.9.0
+Version:       7.10.0
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       A library for interacting with the Ethereum blockchain and ecosystem
