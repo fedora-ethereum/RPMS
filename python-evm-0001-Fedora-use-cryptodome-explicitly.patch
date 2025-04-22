@@ -1,0 +1,19 @@
+From: Peter Lemenkov <lemenkov@gmail.com>
+Date: Tue, 22 Apr 2025 15:33:26 +0200
+Subject: [PATCH] Fedora: use cryptodome explicitly
+
+Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
+
+diff --git a/eth/consensus/ethash.py b/eth/consensus/ethash.py
+index 6ea13926..4e1b321f 100644
+--- a/eth/consensus/ethash.py
++++ b/eth/consensus/ethash.py
+@@ -10,7 +10,7 @@ from typing import (
+     Union,
+ )
+ 
+-from Crypto.Hash import (
++from Cryptodome.Hash import (
+     keccak as pc_keccak,
+ )
+ from eth_typing import (

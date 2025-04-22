@@ -11,7 +11,10 @@ License:       MIT
 URL:           https://github.com/ethereum/py-evm
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name %{version}%{pre_release_tag_short}}
+Patch:         python-evm-0001-Fedora-use-cryptodome-explicitly.patch
 BuildRequires: python3-devel
+BuildRequires: python3-factory-boy
+BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
 
 %description
@@ -25,8 +28,6 @@ Summary: %{summary}
 
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}%{pre_release_tag_short}
-# Remove egg-info
-rm -rf %{pypi_name}.egg-info/
 
 %generate_buildrequires
 %pyproject_buildrequires
@@ -40,7 +41,8 @@ rm -rf %{pypi_name}.egg-info/
 
 %check
 %pyproject_check_import
-%pytest
+# FIXME requires ~4 Gbytes of test data
+#%%pytest
 
 %files -n python3-evm -f %{pyproject_files}
 %doc README.md
