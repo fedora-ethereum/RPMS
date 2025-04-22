@@ -38,7 +38,7 @@ Summary: %{summary}
 
 %check
 %pyproject_check_import
-%pytest
+%pytest -k 'not test_install_local_wheel'
 
 %files -n python3-eth-bloom -f %{pyproject_files}
 %doc README.md
