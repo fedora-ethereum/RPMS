@@ -11,6 +11,7 @@ VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch:         python-eth-bloom-0001-Relax-deps.patch
 BuildRequires: python3-devel
+BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
 
 %description
