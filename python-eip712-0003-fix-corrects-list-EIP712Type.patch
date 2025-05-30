@@ -4,7 +4,7 @@ Subject: [PATCH] fix: corrects list[EIP712Type]
 
 
 diff --git a/eip712/messages.py b/eip712/messages.py
-index 9739fe2..937a5b8 100644
+index e1aad45..79ccfd7 100644
 --- a/eip712/messages.py
 +++ b/eip712/messages.py
 @@ -2,7 +2,7 @@
@@ -16,7 +16,7 @@ index 9739fe2..937a5b8 100644
  
  from dataclassy import asdict, dataclass, fields
  from eth_abi.abi import is_encodable_type  # type: ignore[import-untyped]
-@@ -50,7 +50,33 @@ class EIP712Type:
+@@ -51,7 +51,33 @@ class EIP712Type:
  
          for field in fields(self.__class__):
              value = getattr(self, field)
@@ -51,7 +51,7 @@ index 9739fe2..937a5b8 100644
                  types[repr(self)].append({"name": field, "type": repr(value)})
                  types.update(value._types_)
              else:
-@@ -120,15 +146,18 @@ class EIP712Message(EIP712Type):
+@@ -121,15 +147,18 @@ class EIP712Message(EIP712Type):
      @property
      def _body_(self) -> dict:
          """The EIP-712 structured message to be used for serialization and hashing."""
@@ -74,7 +74,7 @@ index 9739fe2..937a5b8 100644
              },
          }
  
-@@ -167,6 +196,13 @@ def _prepare_data_for_hashing(data: dict) -> dict:
+@@ -192,6 +221,13 @@ def _prepare_data_for_hashing(data: dict) -> dict:
              item = asdict(value)
          elif isinstance(value, dict):
              item = _prepare_data_for_hashing(item)
