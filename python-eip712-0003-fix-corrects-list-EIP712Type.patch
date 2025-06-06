@@ -4,7 +4,7 @@ Subject: [PATCH] fix: corrects list[EIP712Type]
 
 
 diff --git a/eip712/messages.py b/eip712/messages.py
-index e1aad45..79ccfd7 100644
+index bb7619b..2eb5fc8 100644
 --- a/eip712/messages.py
 +++ b/eip712/messages.py
 @@ -2,7 +2,7 @@
@@ -74,7 +74,7 @@ index e1aad45..79ccfd7 100644
              },
          }
  
-@@ -192,6 +221,13 @@ def _prepare_data_for_hashing(data: dict) -> dict:
+@@ -199,6 +228,13 @@ def _prepare_data_for_hashing(data: dict) -> dict:
              item = asdict(value)
          elif isinstance(value, dict):
              item = _prepare_data_for_hashing(item)
