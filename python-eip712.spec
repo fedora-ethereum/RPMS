@@ -1,7 +1,7 @@
 %global pypi_name eip712
 
 Name:          python-%{pypi_name}
-Version:       0.2.13
+Version:       0.2.14
 Release:       %autorelease
 BuildArch:     noarch
 Summary:       Message classes for typed structured data hashing and signing in Ethereum
@@ -11,7 +11,6 @@ VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch:         python-eip712-0001-Accept-more-recent-dataclassy.patch
 Patch:         python-eip712-0002-Relax-setuptools-requirement.patch
-Patch:         python-eip712-0003-fix-corrects-list-EIP712Type.patch
 BuildRequires: python3-devel
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
