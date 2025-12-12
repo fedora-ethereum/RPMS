@@ -1,6 +1,6 @@
 %global pypi_name eth_pydantic_types
 
-Name:          python-%{pypi_name}
+Name:          python-eth-pydantic-types
 Version:       0.2.4
 Release:       %autorelease
 BuildArch:     noarch
@@ -24,16 +24,16 @@ BuildOption(install): -l %{pypi_name}
 %description
 %{summary}.
 
-%package -n python3-%{pypi_name}
+%package -n python3-eth-pydantic-types
 Summary: %{summary}
 
-%description -n python3-%{pypi_name}
+%description -n python3-eth-pydantic-types
 %{summary}.
 
 %check -a
 %pytest
 
-%files -n python3-%{pypi_name} -f %{pyproject_files}
+%files -n python3-eth-pydantic-types -f %{pyproject_files}
 %doc README.md
 
 %changelog
