@@ -1,22 +1,23 @@
-%global pypi_name eip712
+%global pypi_name eth_pydantic_types
 
 Name:          python-%{pypi_name}
-Version:       0.3.0
+Version:       0.2.4
 Release:       %autorelease
 BuildArch:     noarch
-Summary:       Message classes for typed structured data hashing and signing in Ethereum
+Summary:       ETH Pydantic types
 License:       Apache-2.0
-URL:           https://github.com/ApeWorX/eip712
+URL:           https://github.com/ApeWorX/eth-pydantic-types
 VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
-BuildRequires: python3-eth-account
-BuildRequires: python3-eth-pydantic-types
+Patch:         python-eth-pydantic-types-0001-Go-back-to-a-pure-python-to_checksum_address.patch
+BuildRequires: python3-eth-typing
 BuildRequires: python3-eth-utils
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pydantic
 BuildRequires: python3-pytest
 BuildRequires: python3-pytest-cov
 BuildRequires: python3-pytest-xdist
+BuildRequires: python3-typing-extensions
 BuildSystem:   pyproject
 BuildOption(install): -l %{pypi_name}
 
