@@ -5,13 +5,13 @@ Subject: [PATCH] Remove square-bracketed deps
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/setup.py b/setup.py
-index 74027d53..a988a825 100644
+index 9e3fa2db..930fb94a 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -68,7 +68,7 @@ setup(
          # `install_pre_releases.py` script.
          "eth-abi>=5.0.1",
-         "eth-account>=0.13.1",
+         "eth-account>=0.13.6",
 -        "eth-hash[pycryptodome]>=0.5.1",
 +        "eth-hash>=0.5.1",
          "eth-typing>=5.0.0",
