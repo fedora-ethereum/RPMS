@@ -11,6 +11,7 @@ VCS:           git:%{url}.git
 Source0:       %{pypi_source %pypi_name}
 Patch1:        python-web3-0001-Remove-square-bracketed-deps.patch
 BuildRequires: python3-eth-tester
+BuildRequires: python3-evm
 BuildRequires: python3-flaky
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest

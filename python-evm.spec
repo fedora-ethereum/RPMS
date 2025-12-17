@@ -3,7 +3,7 @@
 %global pre_release_tag_short b1
 
 Name:          python-evm
-Version:       0.12.0
+Version:       0.12.1
 Release:       %autorelease -e %{pre_release_tag}
 BuildArch:     noarch
 Summary:       A Python implementation of the Ethereum Virtual Machine
@@ -16,6 +16,8 @@ BuildRequires: python3-devel
 BuildRequires: python3-factory-boy
 BuildRequires: python3-hypothesis
 BuildRequires: python3-pytest
+BuildSystem:   pyproject
+BuildOption(install): -l eth
 
 %description
 %{summary}.
@@ -26,21 +28,7 @@ Summary: %{summary}
 %description -n python3-evm
 %{summary}.
 
-%prep
-%autosetup -p1 -n %{pypi_name}-%{version}%{pre_release_tag_short}
-
-%generate_buildrequires
-%pyproject_buildrequires
-
-%build
-%pyproject_wheel
-
-%install
-%pyproject_install
-%pyproject_save_files -l eth
-
-%check
-%pyproject_check_import
+%check -a
 # FIXME requires ~4 Gbytes of test data
 #%%pytest
 
