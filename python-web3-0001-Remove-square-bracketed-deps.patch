@@ -5,7 +5,7 @@ Subject: [PATCH] Remove square-bracketed deps
 Signed-off-by: Peter Lemenkov <lemenkov@gmail.com>
 
 diff --git a/setup.py b/setup.py
-index 9e3fa2db..930fb94a 100644
+index 9f54fb55..70897dd4 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -68,7 +68,7 @@ setup(
